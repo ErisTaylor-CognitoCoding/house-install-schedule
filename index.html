@@ -628,7 +628,56 @@
   </section>
 
   <section>
-    <h2><span class="idx">10</span> Handover</h2>
+    <h2><span class="idx">10</span> Summer house / office</h2>
+    <p class="lede">A separate building, so this is the one part of the job that is not just swapping accessories. It needs its own supply from the house and its own consumer unit &mdash; not a spur off a socket and not an extension lead.</p>
+
+    <h3>What has to run in there</h3>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Load</th>
+            <th scope="col">Running</th>
+            <th scope="col">Peak</th>
+            <th scope="col">Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="room">Air con</td><td class="mono">~1.3 kW</td><td class="mono">compressor inrush</td><td>12,000&nbsp;BTU / 3.5&nbsp;kW heat pump, R32</td></tr>
+          <tr><td class="room">Desktop PC</td><td class="mono">150&ndash;400 W</td><td class="mono">&mdash;</td><td>Windows desktop, depends on the graphics card</td></tr>
+          <tr><td class="room">Monitor</td><td class="mono">~50 W</td><td class="mono">&mdash;</td><td>&mdash;</td></tr>
+          <tr><td class="room">Printer</td><td class="mono">~10 W idle</td><td class="mono">up to 1.2 kW</td><td>Laser fuser draws hard in short bursts</td></tr>
+          <tr><td class="room">Wall tablet</td><td class="mono">~10 W</td><td class="mono">&mdash;</td><td>Same arrangement as the house ones</td></tr>
+          <tr><td class="room">Light</td><td class="mono">~20 W</td><td class="mono">&mdash;</td><td>Existing fitting moved from the lounge</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede">Worst realistic case is the air con running while the printer fuses and the desktop is under load &mdash; call it 3&nbsp;kW, around 13&nbsp;A. Comfortably inside a 20&nbsp;A radial, with 32&nbsp;A giving room for whatever gets added later. Cable size, burial depth and the earthing arrangement are Tony's calculation, not a number off this page &mdash; they depend on the run length and how it goes in.</p>
+
+    <ul class="stop-list">
+      <li class="stop">
+        <h3>The air con is not an electrician's job</h3>
+        <p>R32 is a fluorinated refrigerant, so connecting a split system legally needs an F-Gas registered engineer, even on a pre-gassed easy-fit unit. What Tony provides is the supply, an isolator next to the indoor unit, and a route for the pipework and condensate drain. Book the F-Gas engineer separately.</p>
+      </li>
+      <li class="stop">
+        <h3>Put a data duct in the same trench</h3>
+        <p>While the ground is open, lay a spare duct for network cable alongside the armoured supply, with proper separation. Everything in that building &mdash; the desktop, the tablet, the air con &mdash; is better on wire than on a wifi extender, and digging the garden twice is the expensive way to find that out.</p>
+      </li>
+    </ul>
+
+    <h3>Sockets and outlets</h3>
+    <div class="card pad">
+      <div class="terms">
+        <div class="term w-live"><code>Aircon</code><span>Fused spur or isolator next to the indoor unit</span></div>
+        <div class="term w-neut"><code>Desk</code><span>Two doubles &mdash; desktop, monitor, and room to spare</span></div>
+        <div class="term w-load"><code>Printer</code><span>One double, kept off the desk pair</span></div>
+        <div class="term w-sig"><code>Tablet</code><span>One single behind the tablet, same as the house</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">11</span> Handover</h2>
     <div class="card pad handover">
       <div class="step"><span class="n">1</span><p>Fit and test <strong>one</strong> module first, not all six. Confirm the light works from the wall before going any further.</p></div>
       <div class="step"><span class="n">2</span><p>Leave the modules on their factory setting. <strong>Edge and Detach are set in software</strong>, from Home&nbsp;Assistant, not on the wall.</p></div>
@@ -638,7 +687,7 @@
   </section>
 
   <section>
-    <h2><span class="idx">11</span> What the house can already talk to</h2>
+    <h2><span class="idx">12</span> What the house can already talk to</h2>
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
