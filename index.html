@@ -589,7 +589,46 @@
   </section>
 
   <section>
-    <h2><span class="idx">09</span> Handover</h2>
+    <h2><span class="idx">09</span> What it will do on its own</h2>
+    <p class="lede">Nothing here needs doing on site &mdash; it is all written and waiting on the server for the hardware to arrive. It is here so the whole job is in one place.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Where</th>
+            <th scope="col">Behaviour</th>
+            <th scope="col">Waiting on</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="room">Garage</td>
+            <td>Light comes on when the cat or anyone goes in, goes off ten minutes after the room empties</td>
+            <td class="mono">Presence sensor</td>
+          </tr>
+          <tr>
+            <td class="room">Lounge</td>
+            <td>Fan runs only when someone is in and it is above 22&nbsp;&deg;C, stops below 20.5&nbsp;&deg;C or five minutes after the room empties</td>
+            <td class="mono">Fan + 2 sensors</td>
+          </tr>
+          <tr>
+            <td class="room">Main bedroom</td>
+            <td>Same as the lounge, on its own thresholds</td>
+            <td class="mono">Fan + 2 sensors</td>
+          </tr>
+          <tr>
+            <td class="room">Lounge, office</td>
+            <td>Tablet charger cuts at 80% and comes back on at 40%, so the battery is not held full</td>
+            <td class="mono">Tablets + sockets</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede">The two fan temperatures are deliberately different. A single figure would have the fan chattering on and off all evening every time the reading wobbled across it; leaving a degree and a half between them stops that.</p>
+  </section>
+
+  <section>
+    <h2><span class="idx">10</span> Handover</h2>
     <div class="card pad handover">
       <div class="step"><span class="n">1</span><p>Fit and test <strong>one</strong> module first, not all six. Confirm the light works from the wall before going any further.</p></div>
       <div class="step"><span class="n">2</span><p>Leave the modules on their factory setting. <strong>Edge and Detach are set in software</strong>, from Home&nbsp;Assistant, not on the wall.</p></div>
@@ -599,7 +638,7 @@
   </section>
 
   <section>
-    <h2><span class="idx">10</span> What the house can already talk to</h2>
+    <h2><span class="idx">11</span> What the house can already talk to</h2>
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
