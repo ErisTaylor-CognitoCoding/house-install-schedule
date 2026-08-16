@@ -684,7 +684,36 @@
   </section>
 
   <section>
-    <h2><span class="idx">11</span> Handover</h2>
+    <h2><span class="idx">11</span> Still to come</h2>
+    <p class="lede">Two things are deliberately not specced yet, because each is waiting on a fact nobody has. They are here so they do not get forgotten or worked out twice.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Waiting on</th>
+            <th scope="col">What the answer changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="room">Boiler thermostat</td>
+            <td>What boiler is actually in the house</td>
+            <td>Whether it takes OpenTherm or is plain on/off. OpenTherm lets the boiler modulate down instead of cycling, which is worth having and needs a different thermostat.</td>
+          </tr>
+          <tr>
+            <td class="room">Smart meter</td>
+            <td>Meters fitted, and which supplier</td>
+            <td>Real-time consumption needs a Hildebrand Glow device reading the meter locally over MQTT. The supplier's own data comes through the DCC and runs about half an hour behind.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede">Neither is the electrician's concern. The thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, it is worth pulling one in.</p>
+  </section>
+
+  <section>
+    <h2><span class="idx">12</span> Handover</h2>
     <div class="card pad handover">
       <div class="step"><span class="n">1</span><p>Fit and test <strong>one</strong> module first, not all six. Confirm the light works from the wall before going any further.</p></div>
       <div class="step"><span class="n">2</span><p>Leave the modules on their factory setting. <strong>Edge and Detach are set in software</strong>, from Home&nbsp;Assistant, not on the wall.</p></div>
@@ -694,7 +723,7 @@
   </section>
 
   <section>
-    <h2><span class="idx">12</span> What the house can already talk to</h2>
+    <h2><span class="idx">13</span> What the house can already talk to</h2>
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
