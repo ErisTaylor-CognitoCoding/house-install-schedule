@@ -300,7 +300,8 @@
         <li><span class="qty">6&times;</span><span class="what">BSEED grey glass rocker, 1 gang 1 way</span><span class="note">Three bedrooms, office, garage. One spare.</span></li>
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
-        <li><span class="qty">1&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage. Zigbee, battery, sticks to a wall. No wiring, nothing for the electrician to do.</span></li>
+        <li><span class="qty">3&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, lounge, main bedroom. Zigbee, battery, sticks to a wall.</span></li>
+        <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Lounge and main bedroom. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Main bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Lounge. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
@@ -522,17 +523,42 @@
   </section>
 
   <section>
-    <h2><span class="idx">07</span> Garage sensor</h2>
-    <p class="lede">One Sonoff SNZB-06P presence sensor on the garage wall. Battery and Zigbee, so there is nothing to wire and nothing to leave space for &mdash; it goes up after the electrics are finished.</p>
+    <h2><span class="idx">07</span> Sensors</h2>
+    <p class="lede">Five battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Room</th>
+            <th scope="col">Sensor</th>
+            <th scope="col">Doing what</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when the cat or anyone goes in, off ten minutes after it empties</td></tr>
+          <tr><td class="room">Lounge</td><td class="mono">SNZB-06P</td><td>Presence, so the fan only runs when someone is in</td></tr>
+          <tr><td class="room">Lounge</td><td class="mono">SNZB-02P</td><td>Room temperature, so the fan only runs when it is warm</td></tr>
+          <tr><td class="room">Main bedroom</td><td class="mono">SNZB-06P</td><td>Presence, same job as the lounge</td></tr>
+          <tr><td class="room">Main bedroom</td><td class="mono">SNZB-02P</td><td>Room temperature</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-live"><code>Why</code><span>The garage light gets left on. This turns it off ten minutes after the room empties.</span></div>
-        <div class="term w-neut"><code>Radar</code><span>5.8&nbsp;GHz, ~4&nbsp;m over 100&deg;. Holds presence while someone stands still.</span></div>
-        <div class="term w-load"><code>Also</code><span>Triggers for the cat coming in through the flap, not just people.</span></div>
-        <div class="term w-sig"><code>Wiring</code><span>None. Battery, sticks to the wall.</span></div>
+        <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still.</span></div>
+        <div class="term w-load"><code>02P</code><span>&plusmn;0.2&nbsp;&deg;C, one CR2477, about four years. No display.</span></div>
       </div>
     </div>
-    <p class="lede">A plain PIR was the wrong tool here &mdash; it only sees movement, so standing at a bench for two minutes reads as an empty room and drops the light on you. Radar holds while you are still.</p>
+    <ul class="stop-list">
+      <li class="stop">
+        <h3>Radar, not a PIR</h3>
+        <p>A PIR only sees movement, so standing at a bench or sitting still on the sofa reads as an empty room and the light or fan drops out. Radar holds while you are still.</p>
+      </li>
+      <li class="stop">
+        <h3>Keep the temperature sensors away from the radiators</h3>
+        <p>Far wall from both the radiator and the fan. The radiator valves do report a temperature, but they read it at the radiator, so the figure runs high and swings whenever the heating fires. That is fine for a valve and wrong for deciding whether a room is too warm.</p>
+      </li>
+    </ul>
   </section>
 
   <section>
@@ -577,7 +603,7 @@
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves and the garage sensor all join this.</span></div>
+        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves and five sensors all join this.</span></div>
         <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The two ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
       </div>
