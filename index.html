@@ -707,7 +707,7 @@
 
   <section>
     <h2><span class="idx">11</span> Still to come</h2>
-    <p class="lede">Three things are deliberately not specced yet. They are here so they do not get forgotten or worked out twice.</p>
+    <p class="lede">Four things are deliberately not specced yet. They are here so they do not get forgotten or worked out twice.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -729,6 +729,11 @@
             <td>Real-time consumption needs a Hildebrand Glow device reading the meter locally over MQTT. The supplier's own data comes through the DCC and runs about half an hour behind.</td>
           </tr>
           <tr>
+            <td class="room">Kitchen notice board</td>
+            <td>Whether it runs on battery or mains</td>
+            <td>An e-paper family board &mdash; a Waveshare panel on an ESP32 running ESPHome, or a ready-made one. Battery lasts months between charges because the screen only draws power when it changes. <strong>Mains is the only version that needs the electrician</strong>, and it needs a socket behind it. If that is wanted, say so before the walls are shut.</td>
+          </tr>
+          <tr>
             <td class="room">Room-level presence</td>
             <td>Nothing &mdash; a decision, not a fact</td>
             <td>A small ESP32 running ESPHome as a Bluetooth proxy in each room, working out which one your phone is nearest. That is what lets a wall tablet or the phone switch itself to the room you have walked into. A few pounds each, plugs into a USB socket, no wiring.</td>
@@ -736,7 +741,7 @@
         </tbody>
       </table>
     </div>
-    <p class="lede">None of it is the electrician's concern. The one exception: the thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, it is worth pulling one in.</p>
+    <p class="lede">Two of these can catch Tony out later. The thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, pull one in. And a mains-powered notice board needs a socket behind it in the kitchen. Everything else here is battery or plug-in and can wait.</p>
     <p class="lede">Room-level presence is the flashiest of the three and the fiddliest to live with &mdash; it handles someone settling in a room well and someone walking down a hall badly, and phones differ a lot in how consistently they can be seen. Worth trying with two proxies before buying six.</p>
   </section>
 
