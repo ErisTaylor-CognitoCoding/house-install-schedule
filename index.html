@@ -300,12 +300,13 @@
         <li><span class="qty">6&times;</span><span class="what">BSEED grey glass rocker, 1 gang 1 way</span><span class="note">Three bedrooms, summer house, garage. One spare.</span></li>
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
-        <li><span class="qty">3&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, lounge, main bedroom. Zigbee, battery, sticks to a wall.</span></li>
+        <li><span class="qty">8&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, lounge, main bedroom, hall, landing, bedrooms 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Lounge and main bedroom. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Main bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Lounge. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
         <li><span class="qty">1&times;</span><span class="what">12,000&nbsp;BTU wall mounted split air conditioner</span><span class="note">Summer house. R32 heat pump, cools and heats, A++. App control.</span></li>
+        <li><span class="qty">5&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage, hall/stairs, summer house, bedrooms 2 and 3. Two already owned, three to buy. Pair straight to Zigbee2MQTT &mdash; no Hue bridge needed.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Lounge, main bedroom, summer house. Plain HD 8, not the Plus.</span></li>
       </ul>
     </div>
@@ -318,13 +319,13 @@
     <div class="modes">
       <div class="mode edge">
         <p class="mode-name">Edge Mode</p>
-        <p class="mode-when">Plain fitting &middot; module switches the power</p>
+        <p class="mode-when">Kitchen only &middot; module switches the power</p>
         <p>The light toggles on every flip of the rocker, whichever way the plate happens to be sitting. Existing two-way wiring works as-is. The wall switch keeps working whether or not the server is up.</p>
       </div>
       <div class="mode detach">
         <p class="mode-name">Detach Relay Mode</p>
-        <p class="mode-when">Tuya fitting &middot; power stays on permanently</p>
-        <p>A smart light must never lose mains or it drops off the network. The relay is detached, so the rocker becomes a button that Home&nbsp;Assistant listens to and passes on to the light.</p>
+        <p class="mode-when">Everywhere else &middot; power stays on permanently</p>
+        <p>A Hue bulb or a Tuya fan must never lose mains or it drops off the network. The relay is detached, so the rocker becomes a button that Home&nbsp;Assistant listens to and passes on to the light. Seven of the eight circuits are like this.</p>
       </div>
     </div>
   </section>
@@ -366,43 +367,43 @@
           </tr>
           <tr>
             <td class="room">Bedroom 2</td>
-            <td>Plain fitting</td>
+            <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-edge">Edge</span></td>
-            <td>&mdash;</td>
+            <td><span class="chip chip-detach">Detach</span></td>
+            <td>Hue stays powered, so the module runs detached</td>
           </tr>
           <tr>
             <td class="room">Bedroom 3</td>
-            <td>Plain fitting</td>
+            <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-edge">Edge</span></td>
-            <td>&mdash;</td>
+            <td><span class="chip chip-detach">Detach</span></td>
+            <td>Hue stays powered, so the module runs detached</td>
           </tr>
           <tr>
             <td class="room">Hall &amp; stairs</td>
-            <td>Plain fitting</td>
+            <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 2 way &times;2</td>
-            <td><span class="chip chip-edge">Edge</span></td>
-            <td>One light, switched from the hall and the landing.</td>
+            <td><span class="chip chip-detach">Detach</span></td>
+            <td>One light, switched from the hall and the landing</td>
           </tr>
           <tr>
             <td class="room">Summer house</td>
-            <td>Plain fitting moved from the lounge</td>
+            <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-edge">Edge</span></td>
+            <td><span class="chip chip-detach">Detach</span></td>
             <td>Fed from the summer house board, not the house &mdash; see section 10</td>
           </tr>
           <tr>
             <td class="room">Garage</td>
-            <td>Plain fitting</td>
+            <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-edge">Edge</span></td>
-            <td>&mdash;</td>
+            <td><span class="chip chip-detach">Detach</span></td>
+            <td>Hue stays powered, so the module runs detached</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="lede">Only the lounge and the main bedroom get smart fittings, and both are ceiling fans with lights. Every other room takes a plain fitting, including the kitchen. If a room's fitting changes, its mode changes with it &mdash; nothing else about the install does.</p>
+    <p class="lede">Only the kitchen keeps a plain fitting. Everywhere else is smart &mdash; Tuya ceiling fans in the lounge and main bedroom, Philips Hue bulbs in the other five &mdash; so seven of the eight modules run detached and only the kitchen switches power. If a room's fitting changes, its mode changes with it; nothing else about the install does.</p>
   </section>
 
   <section>
@@ -527,7 +528,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Five battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
+    <p class="lede">Ten battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -539,16 +540,20 @@
         </thead>
         <tbody>
           <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when the cat or anyone goes in, off ten minutes after it empties</td></tr>
-          <tr><td class="room">Lounge</td><td class="mono">SNZB-06P</td><td>Presence, so the fan only runs when someone is in</td></tr>
+          <tr><td class="room">Hall</td><td class="mono">SNZB-06P</td><td>Stairs light at night, instead of leaving it on until morning</td></tr>
+          <tr><td class="room">Landing</td><td class="mono">SNZB-06P</td><td>Second half of the same light &mdash; one sensor cannot see a whole flight</td></tr>
+          <tr><td class="room">Lounge</td><td class="mono">SNZB-06P</td><td>Presence for the fan, and its light sensor for the dusk lamp</td></tr>
           <tr><td class="room">Lounge</td><td class="mono">SNZB-02P</td><td>Room temperature, so the fan only runs when it is warm</td></tr>
-          <tr><td class="room">Main bedroom</td><td class="mono">SNZB-06P</td><td>Presence, same job as the lounge</td></tr>
+          <tr><td class="room">Main bedroom</td><td class="mono">SNZB-06P</td><td>Presence for the fan</td></tr>
           <tr><td class="room">Main bedroom</td><td class="mono">SNZB-02P</td><td>Room temperature</td></tr>
+          <tr><td class="room">Bedroom 2</td><td class="mono">SNZB-06P</td><td>Turns the light off after the room is empty. Does not turn it on.</td></tr>
+          <tr><td class="room">Bedroom 3</td><td class="mono">SNZB-06P</td><td>Same &mdash; off only</td></tr>
         </tbody>
       </table>
     </div>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still.</span></div>
+        <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still, and reports light level in lux.</span></div>
         <div class="term w-load"><code>02P</code><span>&plusmn;0.2&nbsp;&deg;C, one CR2477, about four years. No display.</span></div>
       </div>
     </div>
@@ -606,7 +611,17 @@
         <tbody>
           <tr>
             <td class="room">Garage</td>
-            <td>Light comes on when the cat or anyone goes in, goes off ten minutes after the room empties</td>
+            <td>Light on when the cat or anyone goes in, off ten minutes after the room empties</td>
+            <td class="mono">Presence sensor</td>
+          </tr>
+          <tr>
+            <td class="room">Hall &amp; stairs</td>
+            <td>Lights while anyone is on the stairs, off shortly after &mdash; instead of being left on all night</td>
+            <td class="mono">2 presence sensors</td>
+          </tr>
+          <tr>
+            <td class="room">Lounge</td>
+            <td>Once it goes dark and you are sat in it, the light comes up to 30% rather than the room going pitch black</td>
             <td class="mono">Presence sensor</td>
           </tr>
           <tr>
@@ -616,8 +631,13 @@
           </tr>
           <tr>
             <td class="room">Main bedroom</td>
-            <td>Same as the lounge, on its own thresholds</td>
+            <td>Same as the lounge fan, on its own thresholds</td>
             <td class="mono">Fan + 2 sensors</td>
+          </tr>
+          <tr>
+            <td class="room">Bedrooms 2 and 3</td>
+            <td>Light switches off once the room has been empty a while. It never switches on by itself.</td>
+            <td class="mono">Presence sensor</td>
           </tr>
           <tr>
             <td class="room">Lounge, summer house</td>
@@ -628,6 +648,8 @@
       </table>
     </div>
     <p class="lede">The two fan temperatures are deliberately different. A single figure would have the fan chattering on and off all evening every time the reading wobbled across it; leaving a degree and a half between them stops that.</p>
+    <p class="lede">The lounge lamp works the same way for the same reason. Going dark is the only thing that switches it on, and it turns off when the room empties rather than when the light level comes back up &mdash; otherwise the lamp would light the room, decide the room was light, and switch itself off again. It also gets one go per sitting, so if you turn it off by hand for a film it stays off until you get up.</p>
+    <p class="lede">The two bedrooms are deliberately off-only. A light that switches itself on when someone walks in is the sort of thing that gets a sensor unplugged in the first week.</p>
   </section>
 
   <section>
