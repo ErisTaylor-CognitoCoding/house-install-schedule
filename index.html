@@ -707,7 +707,7 @@
 
   <section>
     <h2><span class="idx">11</span> Still to come</h2>
-    <p class="lede">Two things are deliberately not specced yet, because each is waiting on a fact nobody has. They are here so they do not get forgotten or worked out twice.</p>
+    <p class="lede">Three things are deliberately not specced yet. They are here so they do not get forgotten or worked out twice.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -728,10 +728,16 @@
             <td>Meters fitted, and which supplier</td>
             <td>Real-time consumption needs a Hildebrand Glow device reading the meter locally over MQTT. The supplier's own data comes through the DCC and runs about half an hour behind.</td>
           </tr>
+          <tr>
+            <td class="room">Room-level presence</td>
+            <td>Nothing &mdash; a decision, not a fact</td>
+            <td>A small ESP32 running ESPHome as a Bluetooth proxy in each room, working out which one your phone is nearest. That is what lets a wall tablet or the phone switch itself to the room you have walked into. A few pounds each, plugs into a USB socket, no wiring.</td>
+          </tr>
         </tbody>
       </table>
     </div>
-    <p class="lede">Neither is the electrician's concern. The thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, it is worth pulling one in.</p>
+    <p class="lede">None of it is the electrician's concern. The one exception: the thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, it is worth pulling one in.</p>
+    <p class="lede">Room-level presence is the flashiest of the three and the fiddliest to live with &mdash; it handles someone settling in a room well and someone walking down a hall badly, and phones differ a lot in how consistently they can be seen. Worth trying with two proxies before buying six.</p>
   </section>
 
   <section>
