@@ -300,7 +300,7 @@
         <li><span class="qty">6&times;</span><span class="what">BSEED grey glass rocker, 1 gang 1 way</span><span class="note">Three bedrooms, Office, Garage. One spare.</span></li>
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
-        <li><span class="qty">8&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
+        <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room and Master Bedroom. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Living Room. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
@@ -379,6 +379,11 @@
             <td class="mono">1 gang, 1 way</td>
             <td><span class="chip chip-edge">Edge</span></td>
             <td>Module switches the power. Switch works with or without the server.</td>
+          </tr>
+          <tr>
+            <td class="room">Garage, Kitchen</td>
+            <td>Logs each cat arriving and leaving through the flaps, so there is a record of who is in and who is out</td>
+            <td class="mono">Presence sensors</td>
           </tr>
           <tr>
             <td class="room">Hall &amp; stairs</td>
@@ -529,7 +534,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Ten battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
+    <p class="lede">Eleven battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -541,6 +546,7 @@
         </thead>
         <tbody>
           <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when the cat or anyone goes in, off ten minutes after it empties</td></tr>
+          <tr><td class="room">Kitchen</td><td class="mono">SNZB-06P</td><td>Watches the back-door cat flap &mdash; tells you a cat has come in</td></tr>
           <tr><td class="room">Hall</td><td class="mono">SNZB-06P</td><td>Stairs light at night, instead of leaving it on until morning</td></tr>
           <tr><td class="room">Landing</td><td class="mono">SNZB-06P</td><td>Second half of the same light &mdash; one sensor cannot see a whole flight</td></tr>
           <tr><td class="room">Living Room</td><td class="mono">SNZB-06P</td><td>Presence for the fan, and its light sensor for the dusk lamp</td></tr>
@@ -562,6 +568,10 @@
       <li class="stop">
         <h3>Radar, not a PIR</h3>
         <p>A PIR only sees movement, so standing at a bench or sitting still on the sofa reads as an empty room and the light or fan drops out. Radar holds while you are still.</p>
+      </li>
+      <li class="stop">
+        <h3>The cat flaps are not smart, and that is fine</h3>
+        <p>Both flaps are microchip-activated but standalone &mdash; no hub, no app, nothing to connect to. Only the flap itself is doing the work, keeping other cats out. Nothing can be fitted to a flap to tell which way a cat went either, because it swings both ways. So the sensors watch the room inside each flap instead: a cat appearing in the Garage or the Kitchen came in, and the room going quiet means she went out.</p>
       </li>
       <li class="stop">
         <h3>Keep the temperature sensors away from the radiators</h3>
@@ -614,6 +624,11 @@
             <td class="room">Garage</td>
             <td>Light on when the cat or anyone goes in, off ten minutes after the room empties</td>
             <td class="mono">Presence sensor</td>
+          </tr>
+          <tr>
+            <td class="room">Garage, Kitchen</td>
+            <td>Logs each cat arriving and leaving through the flaps, so there is a record of who is in and who is out</td>
+            <td class="mono">Presence sensors</td>
           </tr>
           <tr>
             <td class="room">Hall &amp; stairs</td>
