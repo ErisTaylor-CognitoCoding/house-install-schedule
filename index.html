@@ -306,7 +306,7 @@
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Lounge. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
         <li><span class="qty">1&times;</span><span class="what">12,000&nbsp;BTU wall mounted split air conditioner</span><span class="note">Summer house. R32 heat pump, cools and heats, A++. App control.</span></li>
-        <li><span class="qty">5&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage, hall/stairs, summer house, bedrooms 2 and 3. Two already owned, three to buy. Pair straight to Zigbee2MQTT &mdash; no Hue bridge needed.</span></li>
+        <li><span class="qty">2&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage and hall/stairs. Both already owned &mdash; none to buy. Pair straight to Zigbee2MQTT, no Hue bridge needed.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Lounge, main bedroom, summer house. Plain HD 8, not the Plus.</span></li>
       </ul>
     </div>
@@ -319,13 +319,13 @@
     <div class="modes">
       <div class="mode edge">
         <p class="mode-name">Edge Mode</p>
-        <p class="mode-when">Kitchen only &middot; module switches the power</p>
+        <p class="mode-when">Ordinary bulb &middot; module switches the power</p>
         <p>The light toggles on every flip of the rocker, whichever way the plate happens to be sitting. Existing two-way wiring works as-is. The wall switch keeps working whether or not the server is up.</p>
       </div>
       <div class="mode detach">
         <p class="mode-name">Detach Relay Mode</p>
-        <p class="mode-when">Everywhere else &middot; power stays on permanently</p>
-        <p>A Hue bulb or a Tuya fan must never lose mains or it drops off the network. The relay is detached, so the rocker becomes a button that Home&nbsp;Assistant listens to and passes on to the light. Seven of the eight circuits are like this.</p>
+        <p class="mode-when">Smart fitting &middot; power stays on permanently</p>
+        <p>A Hue bulb or a Tuya fan must never lose mains or it drops off the network. The relay is detached, so the rocker becomes a button that Home&nbsp;Assistant listens to and passes on to the light. Four of the eight circuits are like this, and the wall switch in those rooms needs the server to do anything.</p>
       </div>
     </div>
   </section>
@@ -367,30 +367,30 @@
           </tr>
           <tr>
             <td class="room">Bedroom 2</td>
-            <td>Philips Hue bulb</td>
+            <td>Ordinary bulb</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-detach">Detach</span></td>
-            <td>Hue stays powered, so the module runs detached</td>
+            <td><span class="chip chip-edge">Edge</span></td>
+            <td>Module switches the power. Switch works with or without the server.</td>
           </tr>
           <tr>
             <td class="room">Bedroom 3</td>
-            <td>Philips Hue bulb</td>
+            <td>Ordinary bulb</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-detach">Detach</span></td>
-            <td>Hue stays powered, so the module runs detached</td>
+            <td><span class="chip chip-edge">Edge</span></td>
+            <td>Module switches the power. Switch works with or without the server.</td>
           </tr>
           <tr>
             <td class="room">Hall &amp; stairs</td>
             <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 2 way &times;2</td>
             <td><span class="chip chip-detach">Detach</span></td>
-            <td>One light, switched from the hall and the landing</td>
+            <td>Hue already owned. One light, switched from the hall and the landing.</td>
           </tr>
           <tr>
             <td class="room">Summer house</td>
-            <td>Philips Hue bulb</td>
+            <td>Ordinary bulb in the fitting moved from the lounge</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-detach">Detach</span></td>
+            <td><span class="chip chip-edge">Edge</span></td>
             <td>Fed from the summer house board, not the house &mdash; see section 10</td>
           </tr>
           <tr>
@@ -398,12 +398,12 @@
             <td>Philips Hue bulb</td>
             <td class="mono">1 gang, 1 way</td>
             <td><span class="chip chip-detach">Detach</span></td>
-            <td>Hue stays powered, so the module runs detached</td>
+            <td>Hue already owned. Bulb stays powered, module runs detached.</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="lede">Only the kitchen keeps a plain fitting. Everywhere else is smart &mdash; Tuya ceiling fans in the lounge and main bedroom, Philips Hue bulbs in the other five &mdash; so seven of the eight modules run detached and only the kitchen switches power. If a room's fitting changes, its mode changes with it; nothing else about the install does.</p>
+    <p class="lede">Four rooms run ordinary bulbs on Edge mode, which is the simple, well-proven arrangement &mdash; the module switches the power and the wall switch works whether or not the server is up. Four run Detach because the fitting is smart and must keep its power: the two Tuya ceiling fans, and the garage and hall, which get the two Philips Hue bulbs already owned. If a room's fitting changes, its mode changes with it; nothing else about the install does.</p>
   </section>
 
   <section>
@@ -749,7 +749,7 @@
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves and five sensors all join this.</span></div>
+        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, ten sensors and the two Hue bulbs all join this.</span></div>
         <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The two ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
       </div>
