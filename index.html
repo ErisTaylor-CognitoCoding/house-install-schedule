@@ -146,7 +146,7 @@
 
   /* ---------- the mode split ---------- */
   .modes { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 46rem) { .modes { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 46rem) { .modes { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
   .mode {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -158,6 +158,7 @@
   }
   .mode.edge   { --accent: var(--earth); }
   .mode.detach { --accent: var(--neut); }
+  .mode.always { --accent: var(--live); }
   .mode-name {
     font-family: var(--mono);
     font-size: 1rem;
@@ -319,18 +320,27 @@
 
   <section>
     <h2><span class="idx">02</span> The one decision per room</h2>
-    <p class="lede">Every module is wired the same way. What changes room to room is the mode it runs in, and that follows a single question: <strong>is the light fitting itself smart?</strong></p>
+    <p class="lede">Every module is wired the same way. What changes is the mode it runs in, and that follows one question and one question only: <strong>would cutting its power break the thing on the end?</strong></p>
     <div class="modes">
       <div class="mode edge">
         <p class="mode-name">Edge Mode</p>
-        <p class="mode-when">Ordinary bulb &middot; module switches the power</p>
-        <p>The light toggles on every flip of the rocker, whichever way the plate happens to be sitting. Existing two-way wiring works as-is. The wall switch keeps working whether or not the server is up.</p>
+        <p class="mode-when">No &mdash; it is a dumb thing</p>
+        <p>A plain bulb, or a fan with a mechanical cord. Nothing in it to break, so the module simply cuts its power. The light toggles on every flip of the rocker, whichever way the plate happens to be sitting, and existing two-way wiring works as-is. <strong>Works with the server down.</strong></p>
       </div>
       <div class="mode detach">
         <p class="mode-name">Detach Relay Mode</p>
-        <p class="mode-when">Smart fitting &middot; power stays on permanently</p>
-        <p>A Hue bulb or a Tuya fan must never lose mains or it drops off the network. The relay is detached, so the rocker becomes a button that Home&nbsp;Assistant listens to and passes on to the light. Four of the eight circuits are like this, and the wall switch in those rooms needs the server to do anything.</p>
+        <p class="mode-when">Yes &mdash; and it has a wall switch</p>
+        <p>A Hue bulb or a Tuya fan. Cut its power and it drops off the network, so the relay is detached and never opens. The rocker stops switching anything and becomes a button that Home&nbsp;Assistant listens to and passes on to the fitting. Four of the eight circuits. <strong>Needs the server.</strong></p>
       </div>
+      <div class="mode always">
+        <p class="mode-name">Always On</p>
+        <p class="mode-when">Yes &mdash; and it has no wall switch</p>
+        <p>The Office heater. Smart, with its own thermostat, and nothing on the wall is meant to switch it. So it gets no module at all &mdash; a permanently live fused spur, and the temperature is set over Wi-Fi. <strong>Its frost protection works with the server down.</strong></p>
+      </div>
+    </div>
+    <div class="stop">
+      <h3>The switch feels identical in Edge and Detach &mdash; that is the point</h3>
+      <p>In both, you press the rocker and the light changes. Nobody using the room can tell them apart, which is exactly why the two are easy to muddle. The whole difference is behind the wall: <strong>in Edge the module cuts the power; in Detach it never cuts the power and only reports that you pressed.</strong> The one day you would notice is a day the server is down &mdash; the Edge rooms still work by hand, the Detach ones do not. Nothing else about the wiring, the plates or the back boxes changes between them.</p>
     </div>
   </section>
 
@@ -753,7 +763,7 @@
     <ul class="stop-list">
       <li class="stop">
         <h3>The heater gets a fused spur, not a socket</h3>
-        <p>It comes with no plug and draws 10.4&nbsp;A, so it wants a switched fused spur behind it at the mounting height, on its own way in the consumer unit. That also keeps a trailing lead off the floor of a room this small. <strong>Leave the heater permanently live</strong> &mdash; nothing switches its power. The room temperature is set over Wi-Fi instead, and cutting the power would take the frost protection down with it.</p>
+        <p>It comes with no plug and draws 10.4&nbsp;A, so it wants a switched fused spur behind it at the mounting height, on its own way in the consumer unit. That also keeps a trailing lead off the floor of a room this small. <strong>Leave the heater permanently live</strong> &mdash; this is the <strong>Always On</strong> arrangement in section 02, so no module and nothing switches its power. The room temperature is set over Wi-Fi instead, and cutting the power would take the frost protection down with it.</p>
       </li>
       <li class="stop">
         <h3>Air conditioning is parked, and do not fit a big one later</h3>
