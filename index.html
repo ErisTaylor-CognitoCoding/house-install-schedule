@@ -302,19 +302,19 @@
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
         <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought.</span></li>
-        <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room and Master Bedroom. Zigbee, battery, no display.</span></li>
+        <li><span class="qty">3&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room, Master Bedroom and Office. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine. Sticks to the side of the case, CR2032, about two years. The only Aqara part in the house &mdash; nothing else makes one. Still to buy.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02LD probe thermometer</span><span class="note">Fridge and freezer. Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C, IP65, screen on the front. Magnets to the door, probe goes inside. Still to buy.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Living Room. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
-        <li><span class="qty">1&times;</span><span class="what">12,000&nbsp;BTU wall mounted split air conditioner</span><span class="note">Office. R32 heat pump, cools and heats, A++. App control.</span></li>
+        <li><span class="qty">1&times;</span><span class="what">Devola Designer 2.5&nbsp;kW smart glass panel heater</span><span class="note">Office. Wall mounted, own thermostat and anti-frost mode, Wi-Fi. 850 &times; 470 &times; 75&nbsp;mm. No plug &mdash; wants a fused spur. Still to buy.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage and hall/stairs. Both already owned &mdash; none to buy. Pair straight to Zigbee2MQTT, no Hue bridge needed.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room, Master Bedroom, Office. Plain HD 8, not the Plus.</span></li>
       </ul>
     </div>
     <p class="lede">Room names here match Home Assistant exactly &mdash; <strong>Living Room</strong> (alias Lounge), <strong>Office</strong> (alias Summer House), <strong>Master Bedroom</strong>. Say either and the house understands you; the page uses the official one.</p>
-    <p class="lede">Not all of it has arrived. The switches, sockets, modules, valves and fans are ordered; one of the three tablets is ordered and the other two follow once that one has been tried on the wall. The sensors and the air con are still to buy.</p>
+    <p class="lede">Not all of it has arrived. The switches, sockets, modules, valves and fans are ordered; one of the three tablets is ordered and the other two follow once that one has been tried on the wall. The sensors and the Office heater are still to buy; air conditioning is parked &mdash; see section 10.</p>
   </section>
 
   <section>
@@ -532,7 +532,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Twenty battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done. Nineteen have a room below; the ninth presence sensor is a spare with nowhere assigned yet.</p>
+    <p class="lede">Twenty-one battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done. Every one now has a room below; the spare presence sensor went to the Office.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -560,6 +560,8 @@
           <tr><td class="room">Back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
           <tr><td class="room">Garage back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
           <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
+          <tr><td class="room">Office</td><td class="mono">SNZB-06P</td><td>Presence, so the heater drops back to 5&nbsp;&deg;C once the room has been empty a while</td></tr>
+          <tr><td class="room">Office</td><td class="mono">SNZB-02P</td><td>Room temperature for the heater. Put it on the far wall &mdash; the heater's own sensor sits next to the element and reads high.</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
           <tr><td class="room">Back gate</td><td class="mono">SNZB-04</td><td>Open or shut. Weatherproof case, already bought. Reaches the network via the Garage module.</td></tr>
         </tbody>
@@ -690,6 +692,16 @@
             <td class="mono">Tablets + sockets</td>
           </tr>
           <tr>
+            <td class="room">Office</td>
+            <td>Holds the room above 5&nbsp;&deg;C all winter so the computer never sits in the cold. The heater does this on its own thermostat, so it keeps working even if the server is down.</td>
+            <td class="mono">Heater</td>
+          </tr>
+          <tr>
+            <td class="room">Office</td>
+            <td>&ldquo;Warm the Office&rdquo; on a tablet or to Nova takes it to 22&nbsp;&deg;C; it drops back to 5&nbsp;&deg;C once the room has been empty half an hour. Allow 45 minutes from cold.</td>
+            <td class="mono">Heater + 2 sensors</td>
+          </tr>
+          <tr>
             <td class="room">Kitchen</td>
             <td>Tells you the washing machine has finished &mdash; spin detected, then ten minutes still</td>
             <td class="mono">Vibration sensor</td>
@@ -727,7 +739,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td class="room">Air con</td><td class="mono">~1.3 kW</td><td class="mono">compressor inrush</td><td>12,000&nbsp;BTU / 3.5&nbsp;kW heat pump, R32</td></tr>
+          <tr><td class="room">Panel heater</td><td class="mono">2.5 kW</td><td class="mono">&mdash;</td><td>Wall mounted, on its own fused spur. The biggest load out here.</td></tr>
           <tr><td class="room">Desktop PC</td><td class="mono">150&ndash;400 W</td><td class="mono">&mdash;</td><td>Windows desktop, depends on the graphics card</td></tr>
           <tr><td class="room">Monitor</td><td class="mono">~50 W</td><td class="mono">&mdash;</td><td>&mdash;</td></tr>
           <tr><td class="room">Printer</td><td class="mono">~10 W idle</td><td class="mono">up to 1.2 kW</td><td>Laser fuser draws hard in short bursts</td></tr>
@@ -736,23 +748,27 @@
         </tbody>
       </table>
     </div>
-    <p class="lede">Worst realistic case is the air con running while the printer fuses and the desktop is under load &mdash; call it 3&nbsp;kW, around 13&nbsp;A. Comfortably inside a 20&nbsp;A radial, with 32&nbsp;A giving room for whatever gets added later. Cable size, burial depth and the earthing arrangement are Tony's calculation, not a number off this page &mdash; they depend on the run length and how it goes in.</p>
+    <p class="lede">Worst realistic case is the heater at full output while the printer fuses and the desktop is under load &mdash; 4.18&nbsp;kW, about 18&nbsp;A. That is 91% of a 20&nbsp;A radial, which would hold but leaves nothing spare, so <strong>make it 32&nbsp;A</strong>. Cleanest arrangement is the heater on its own 16&nbsp;A way and the sockets on a 20&nbsp;A way, both off the one submain. Cable size, burial depth and the earthing arrangement are Tony's calculation, not a number off this page &mdash; they depend on the run length and how it goes in.</p>
 
     <ul class="stop-list">
       <li class="stop">
-        <h3>The air con is not an electrician's job</h3>
-        <p>R32 is a fluorinated refrigerant, so connecting a split system legally needs an F-Gas registered engineer, even on a pre-gassed easy-fit unit. What Tony provides is the supply, an isolator next to the indoor unit, and a route for the pipework and condensate drain. Book the F-Gas engineer separately.</p>
+        <h3>The heater gets a fused spur, not a socket</h3>
+        <p>It comes with no plug and draws 10.4&nbsp;A, so it wants a switched fused spur behind it at the mounting height, on its own way in the consumer unit. That also keeps a trailing lead off the floor of a room this small. <strong>Leave the heater permanently live</strong> &mdash; nothing switches its power. The room temperature is set over Wi-Fi instead, and cutting the power would take the frost protection down with it.</p>
+      </li>
+      <li class="stop">
+        <h3>Air conditioning is parked, and do not fit a big one later</h3>
+        <p>The room is 8&nbsp;ft by 6&nbsp;ft, which is 4.46&nbsp;m&sup2;. That is below the minimum floor area printed in the manuals of most portable air conditioners &mdash; the MeacoCool range bars anything under 5.2&nbsp;m&sup2;, De'Longhi under 15&nbsp;m&sup2; &mdash; because they run on flammable R290 refrigerant. Only 5,000&nbsp;BTU units, rated for over 4&nbsp;m&sup2;, are permitted in here. Nothing bigger, at any price. Nothing needs doing on site for it either way.</p>
       </li>
       <li class="stop">
         <h3>Put a data duct in the same trench</h3>
-        <p>While the ground is open, lay a spare duct for network cable alongside the armoured supply, with proper separation. Everything in that building &mdash; the desktop, the tablet, the air con &mdash; is better on wire than on a wifi extender, and digging the garden twice is the expensive way to find that out.</p>
+        <p>While the ground is open, lay a spare duct for network cable alongside the armoured supply, with proper separation. Everything in that building &mdash; the desktop, the tablet, the heater &mdash; is better on wire than on a wifi extender, and digging the garden twice is the expensive way to find that out.</p>
       </li>
     </ul>
 
     <h3>Sockets and outlets</h3>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-live"><code>Aircon</code><span>Fused spur or isolator next to the indoor unit</span></div>
+        <div class="term w-live"><code>Heater</code><span>Switched fused spur behind the heater, own 16&nbsp;A way</span></div>
         <div class="term w-neut"><code>Desk</code><span>Two doubles &mdash; desktop, monitor, and room to spare</span></div>
         <div class="term w-load"><code>Printer</code><span>One double, kept off the desk pair</span></div>
         <div class="term w-sig"><code>Tablet</code><span>One single behind the tablet, same as the house</span></div>
