@@ -301,8 +301,8 @@
         <li><span class="qty">6&times;</span><span class="what">BSEED grey glass rocker, 1 gang 1 way</span><span class="note">Three bedrooms, Office, Garage. One spare.</span></li>
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
-        <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
-        <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought.</span></li>
+        <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3, Office. Zigbee, but <strong>mains powered &mdash; 5&nbsp;V 1&nbsp;A over USB-C, not batteries</strong>. Each has a built-in light sensor. See section 05.</span></li>
+        <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04P contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought. The P is the current model &mdash; CR2477 and about five years, against one to two on the old SNZB-04.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room, Master Bedroom and Office. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine. Sticks to the side of the case, CR2032, about two years. The only Aqara part in the house &mdash; nothing else makes one. Still to buy.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02LD probe thermometer</span><span class="note">Fridge and freezer. Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C, IP65, screen on the front. Magnets to the door, probe goes inside. Still to buy.</span></li>
@@ -479,6 +479,10 @@
     <h2><span class="idx">05</span> Before you close anything up</h2>
     <ul class="stop-list">
       <li class="stop">
+        <h3>Nine presence sensors need a power point, not a battery</h3>
+        <p>The SNZB-06P runs a 5.8&nbsp;GHz radar continuously, which no coin cell would last a week on. Sonoff's specification is <strong>5&nbsp;V 1&nbsp;A over USB-C</strong>. So each one needs power within a cable's reach, at the height it mounts: <strong>Garage, Kitchen, hall, landing, Living Room, Master Bedroom, Bedroom 2, Bedroom 3, and the Office off the summer house board.</strong> Nine positions. A socket high on the wall with a USB adapter does it, or a USB outlet on one of the BSEED plates where the position suits. What does not work is finding this out after the walls are shut &mdash; agree every position with Zero at first fix. Everything else on the sensor list is battery and can wait until after decorating.</p>
+      </li>
+      <li class="stop">
         <h3>Never put neutral or earth on S1 or S2</h3>
         <p>Sonoff call this out explicitly. Those terminals take the wall switch contacts and nothing else &mdash; anything else damages the module.</p>
       </li>
@@ -543,7 +547,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Twenty-one battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done. Every one now has a room below; the spare presence sensor went to the Office.</p>
+    <p class="lede">Twenty-one sensors, all Zigbee &mdash; but they are not all battery. Twelve run on coin cells and go up after the decorating is done. <strong>The nine presence sensors are mains powered and need a socket at each position</strong>, which makes them a first-fix job rather than an afterthought &mdash; see section 05. Every one now has a room below; the spare presence sensor went to the Office.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -567,21 +571,22 @@
           <tr><td class="room">Master Bedroom</td><td class="mono">SNZB-02P</td><td>Room temperature</td></tr>
           <tr><td class="room">Bedroom 2</td><td class="mono">SNZB-06P</td><td>Turns the light off after the room is empty. Does not turn it on.</td></tr>
           <tr><td class="room">Bedroom 3</td><td class="mono">SNZB-06P</td><td>Same &mdash; off only</td></tr>
-          <tr><td class="room">Front door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
-          <tr><td class="room">Back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
-          <tr><td class="room">Garage back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
-          <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
+          <tr><td class="room">Front door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Back door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Garage back door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04P</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-06P</td><td>Presence, so the heater drops back to 5&nbsp;&deg;C once the room has been empty a while</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-02P</td><td>Room temperature for the heater. Put it on the far wall &mdash; the heater's own sensor sits next to the element and reads high.</td></tr>
-          <tr><td class="room">Office</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
-          <tr><td class="room">Back gate</td><td class="mono">SNZB-04</td><td>Open or shut. Weatherproof case, already bought. Reaches the network via the Garage module.</td></tr>
+          <tr><td class="room">Office</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Back gate</td><td class="mono">SNZB-04P</td><td>Open or shut. Weatherproof case, already bought. Reaches the network via the Garage module.</td></tr>
         </tbody>
       </table>
     </div>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still, and reports light level in lux.</span></div>
+        <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still, and reports light level in lux. <strong>USB-C, 5&nbsp;V 1&nbsp;A &mdash; no battery.</strong></span></div>
         <div class="term w-load"><code>02P</code><span>&plusmn;0.2&nbsp;&deg;C, one CR2477, about four years. No display.</span></div>
+        <div class="term w-sig"><code>04P</code><span>Contact, one CR2477, about five years. Reports tamper as well as open and shut.</span></div>
         <div class="term w-load"><code>DJT11LM</code><span>Accelerometer, sensitivity settable. Reports vibration and how hard, so a spin can be told apart from a door being shut.</span></div>
         <div class="term w-load"><code>02LD</code><span>Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C. IP65 body with a screen and a magnetic back.</span></div>
       </div>
@@ -597,11 +602,11 @@
       </li>
       <li class="stop">
         <h3>The garage is unheated</h3>
-        <p>Both garage sensors will get through batteries faster than the indoor ones and want an occasional check for condensation. Normal, just not the same interval as the rest.</p>
+        <p>The two garage contact sensors will get through batteries faster than the indoor ones and want an occasional check for condensation. Normal, just not the same interval as the rest. The presence sensor in there is on mains, so it is only the coin cells to watch.</p>
       </li>
       <li class="stop">
         <h3>The gate sensor only survives if the case is properly sealed</h3>
-        <p>An SNZB-04 has no IP rating of its own &mdash; outdoors it corrodes at the battery contacts within months. In a sealed weatherproof case it is fine, but the seal is doing all the work, so check it when the batteries are changed.</p>
+        <p>An SNZB-04P has no IP rating of its own &mdash; outdoors it corrodes at the battery contacts within months. In a sealed weatherproof case it is fine, but the seal is doing all the work, so check it when the batteries are changed.</p>
       </li>
       <li class="stop">
         <h3>The cat flaps are not smart, and that is fine</h3>
@@ -865,7 +870,7 @@
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty sensors and the two Hue bulbs all join this.</span></div>
+        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty-one sensors and the two Hue bulbs all join this.</span></div>
         <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The three ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
       </div>
