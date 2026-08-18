@@ -301,7 +301,7 @@
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
         <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
-        <li><span class="qty">3&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage door. Zigbee, battery, indoor only.</span></li>
+        <li><span class="qty">5&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office. Zigbee, battery, indoor only.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Outdoor-rated contact sensor</span><span class="note">Back gate. Must be weatherproof &mdash; see the note in section 07.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room and Master Bedroom. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
@@ -536,7 +536,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Fifteen battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
+    <p class="lede">Seventeen battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -559,7 +559,9 @@
           <tr><td class="room">Bedroom 3</td><td class="mono">SNZB-06P</td><td>Same &mdash; off only</td></tr>
           <tr><td class="room">Front door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
           <tr><td class="room">Back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
-          <tr><td class="room">Garage door</td><td class="mono">SNZB-04</td><td>Open or shut. A tilt sensor instead if it is an up-and-over.</td></tr>
+          <tr><td class="room">Garage back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
+          <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
+          <tr><td class="room">Office</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
           <tr><td class="room">Back gate</td><td class="mono">outdoor</td><td>Open or shut. Outside, so it cannot be an SNZB-04.</td></tr>
         </tbody>
       </table>
@@ -574,6 +576,14 @@
       <li class="stop">
         <h3>Radar, not a PIR</h3>
         <p>A PIR only sees movement, so standing at a bench or sitting still on the sofa reads as an empty room and the light or fan drops out. Radar holds while you are still.</p>
+      </li>
+      <li class="stop">
+        <h3>Contact sensor on the up-and-over, not a tilt sensor</h3>
+        <p>A tilt sensor sounds like the right part for a door that swings up, but the Zigbee ones are slow &mdash; people using the Aqara on garage doors report the angle taking seconds to report. An ordinary contact sensor mounted where the door meets the frame when closed gives open and shut straight away. You lose "opening" and "closing" as states, which is not what was asked for anyway.</p>
+      </li>
+      <li class="stop">
+        <h3>The garage is unheated</h3>
+        <p>Both garage sensors will get through batteries faster than the indoor ones and want an occasional check for condensation. Normal, just not the same interval as the rest.</p>
       </li>
       <li class="stop">
         <h3>The back gate cannot take an ordinary door sensor</h3>
