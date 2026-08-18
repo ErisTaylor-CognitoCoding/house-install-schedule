@@ -315,6 +315,7 @@
         <li><span class="qty">1&times;</span><span class="what">Devola Designer 2.5&nbsp;kW smart glass panel heater</span><span class="note">Office. Wall mounted, own thermostat and anti-frost mode, Wi-Fi. 850 &times; 470 &times; 75&nbsp;mm. No plug &mdash; wants a fused spur. Ordered.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage and hall/stairs. Both already owned &mdash; none to buy. Pair straight to Zigbee2MQTT, no Hue bridge needed.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Ring Stick Up Cam (3rd Gen) &mdash; Garage</span><span class="note">Bought used. The fifth Ring on an account already connected to the server, and the same model as the four cameras there now. Rated &minus;20 to 50&nbsp;&deg;C, so the unheated garage is fine. Battery as standard; the plug-in adapter is sold separately and worth it here. Ordered.</span></li>
+        <li><span class="qty">1&times;</span><span class="what">Apolosign 21.5&quot; digital wall planner</span><span class="note">Kitchen. Mains, wall mounted. Runs Android 15 with Google Play, so the Home Assistant app installs on it &mdash; a 21.5&quot; dashboard as well as the family calendar. Syncs Google, iCloud and Outlook with no subscription. Ordered.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room, Master Bedroom, Office. Plain HD 8, not the Plus.</span></li>
       </ul>
     </div>
@@ -650,7 +651,7 @@
 
   <section>
     <h2><span class="idx">08</span> Wall tablets</h2>
-    <p class="lede">Three Fire HD 8 tablets running the dashboard. Two of them need the electrician; the bedroom one does not.</p>
+    <p class="lede">Four screens run the dashboard: three Fire HD 8 tablets and the 21.5&quot; planner in the Kitchen. Three of the four need a socket; the bedroom tablet does not.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -664,6 +665,7 @@
           <tr><td class="room">Living Room</td><td>Single socket behind the tablet</td><td class="mono">Spare ZBMINI R2</td></tr>
           <tr><td class="room">Office</td><td>Single socket behind the tablet</td><td class="mono">Spare ZBMINI R2, on the summer house board</td></tr>
           <tr><td class="room">Master Bedroom</td><td>Nothing &mdash; charged from the bed's own USB ports</td><td class="mono">&mdash;</td></tr>
+          <tr><td class="room">Kitchen</td><td>Socket behind the 21.5&quot; planner. Mains, never on battery, so no charge limiting.</td><td class="mono">Direct &mdash; no module</td></tr>
         </tbody>
       </table>
     </div>
@@ -838,7 +840,7 @@
 
   <section>
     <h2><span class="idx">12</span> Still to come</h2>
-    <p class="lede">Five things are deliberately not specced yet. They are here so they do not get forgotten or worked out twice.</p>
+    <p class="lede">Four things are deliberately not specced yet. They are here so they do not get forgotten or worked out twice.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -860,11 +862,6 @@
             <td>Real-time consumption needs a Hildebrand Glow device reading the meter locally over MQTT. The supplier's own data comes through the DCC and runs about half an hour behind.</td>
           </tr>
           <tr>
-            <td class="room">Kitchen notice board</td>
-            <td>Whether it runs on battery or mains</td>
-            <td>An e-paper family board &mdash; a Waveshare panel on an ESP32 running ESPHome, or a ready-made one. Battery lasts months between charges because the screen only draws power when it changes. <strong>Mains is the only version that needs the electrician</strong>, and it needs a socket behind it &mdash; so either an existing one within reach, or a new spur run while he is there. Say which before he finishes in the kitchen.</td>
-          </tr>
-          <tr>
             <td class="room">Bathroom &amp; kitchen extractors</td>
             <td>Seeing the two fans, which means being in the house</td>
             <td>Both sensors are already bought and both spare modules are already owned, so <strong>nothing else needs buying</strong> &mdash; this is a survey, not a purchase. Three things to establish on the day. <strong>Does the bathroom fan have a built-in overrun timer</strong> that runs on after the light, and is it fed from the lighting circuit's switched live rather than its own supply? <strong>Is the kitchen one a cooker hood or a wall extractor?</strong> A hood is the awkward case &mdash; cutting its power will not bring it back at a speed, so it needs a different approach. And <strong>where does the bathroom fan isolate</strong>, since the module has to sit outside the bathroom zones. The control itself is settled: each room compares its own dew point against the rest of the house, so it works in January as well as August.</td>
@@ -877,7 +874,7 @@
         </tbody>
       </table>
     </div>
-    <p class="lede">Two of these can catch Tony out later. The thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, pull one in. And a mains-powered notice board needs a socket behind it in the kitchen. Everything else here is battery or plug-in and can wait.</p>
+    <p class="lede">One of these can catch Tony out later. The thermostat may want a wire from the boiler to wherever it goes, so if the boiler position is known while the floors are up, pull one in. Everything else here is battery or plug-in and can wait. The kitchen notice board has come off this list &mdash; it is bought, it is mains, and the socket for it is in section 08.</p>
     <p class="lede">Room-level presence is the flashiest of the three and the fiddliest to live with &mdash; it handles someone settling in a room well and someone walking down a hall badly, and phones differ a lot in how consistently they can be seen. Worth trying with two proxies before buying six.</p>
   </section>
 
