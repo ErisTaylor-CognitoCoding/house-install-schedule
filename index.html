@@ -307,6 +307,7 @@
         <li><span class="qty">1&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine. Sticks to the side of the case, CR2032, about two years. The only Aqara part in the house &mdash; nothing else makes one. Still to buy.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02LD probe thermometer</span><span class="note">Fridge and freezer. Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C, IP65, screen on the front. Magnets to the door, probe goes inside. Still to buy.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
+        <li><span class="qty">1&times;</span><span class="what">CHANFOK Neo 22&quot; smart ceiling fan with light</span><span class="note">Office. Tuya / Smart Life. Low profile, drops only 180&nbsp;mm. Reversible, 6 speed, DC. 40&ndash;64&nbsp;W. Frees up the fitting that was going to be moved from the Living Room.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Living Room. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Devola Designer 2.5&nbsp;kW smart glass panel heater</span><span class="note">Office. Wall mounted, own thermostat and anti-frost mode, Wi-Fi. 850 &times; 470 &times; 75&nbsp;mm. No plug &mdash; wants a fused spur. Still to buy.</span></li>
@@ -330,7 +331,7 @@
       <div class="mode detach">
         <p class="mode-name">Detach Relay Mode</p>
         <p class="mode-when">Yes &mdash; and it has a wall switch</p>
-        <p>A Hue bulb or a Tuya fan. Cut its power and it drops off the network, so the relay is detached and never opens. The rocker stops switching anything and becomes a button that Home&nbsp;Assistant listens to and passes on to the fitting. Four of the eight circuits. <strong>Needs the server.</strong></p>
+        <p>A Hue bulb or a Tuya fan. Cut its power and it drops off the network, so the relay is detached and never opens. The rocker stops switching anything and becomes a button that Home&nbsp;Assistant listens to and passes on to the fitting. Five of the eight circuits. <strong>Needs the server.</strong></p>
       </div>
       <div class="mode always">
         <p class="mode-name">Always On</p>
@@ -402,10 +403,10 @@
           </tr>
           <tr>
             <td class="room">Office</td>
-            <td>Ordinary bulb in the fitting moved from the Living Room</td>
+            <td>CHANFOK Neo 22&quot; ceiling fan + light</td>
             <td class="mono">1 gang, 1 way</td>
-            <td><span class="chip chip-edge">Edge</span></td>
-            <td>Fed from the summer house board, not the house &mdash; see section 10</td>
+            <td><span class="chip chip-detach">Detach</span></td>
+            <td>Fed from the summer house board, not the house &mdash; see section 10. Fan and light are separate entities, both over Tuya.</td>
           </tr>
           <tr>
             <td class="room">Garage</td>
@@ -417,7 +418,7 @@
         </tbody>
       </table>
     </div>
-    <p class="lede">Four rooms run ordinary bulbs on Edge mode, which is the simple, well-proven arrangement &mdash; the module switches the power and the wall switch works whether or not the server is up. Four run Detach because the fitting is smart and must keep its power: the two Tuya ceiling fans, and the Garage and hall, which get the two Philips Hue bulbs already owned. If a room's fitting changes, its mode changes with it; nothing else about the install does.</p>
+    <p class="lede">Three rooms run ordinary bulbs on Edge mode, which is the simple, well-proven arrangement &mdash; the module switches the power and the wall switch works whether or not the server is up. Five run Detach because the fitting is smart and must keep its power: the three Tuya ceiling fans, and the Garage and hall, which get the two Philips Hue bulbs already owned. If a room's fitting changes, its mode changes with it; nothing else about the install does &mdash; which is exactly what happened to the Office when its plain bulb became a fan.</p>
   </section>
 
   <section>
@@ -703,6 +704,11 @@
           </tr>
           <tr>
             <td class="room">Office</td>
+            <td>Fan runs when you are in and it is warm, and reverses to push the warm air back down in winter while the heater is on</td>
+            <td class="mono">Fan + 2 sensors</td>
+          </tr>
+          <tr>
+            <td class="room">Office</td>
             <td>Holds the room above 5&nbsp;&deg;C all winter so the computer never sits in the cold. The heater does this on its own thermostat, so it keeps working even if the server is down.</td>
             <td class="mono">Heater</td>
           </tr>
@@ -754,13 +760,17 @@
           <tr><td class="room">Monitor</td><td class="mono">~50 W</td><td class="mono">&mdash;</td><td>&mdash;</td></tr>
           <tr><td class="room">Printer</td><td class="mono">~10 W idle</td><td class="mono">up to 1.2 kW</td><td>Laser fuser draws hard in short bursts</td></tr>
           <tr><td class="room">Wall tablet</td><td class="mono">~10 W</td><td class="mono">&mdash;</td><td>Same arrangement as the house ones</td></tr>
-          <tr><td class="room">Light</td><td class="mono">~20 W</td><td class="mono">&mdash;</td><td>Existing fitting moved from the Living Room</td></tr>
+          <tr><td class="room">Ceiling fan + light</td><td class="mono">40&ndash;64 W</td><td class="mono">&mdash;</td><td>CHANFOK Neo 22&quot;, low profile. Replaces the fitting that was going to be moved out here.</td></tr>
         </tbody>
       </table>
     </div>
     <p class="lede">Worst realistic case is the heater at full output while the printer fuses and the desktop is under load &mdash; 4.18&nbsp;kW, about 18&nbsp;A. That is 91% of a 20&nbsp;A radial, which would hold but leaves nothing spare, so <strong>make it 32&nbsp;A</strong>. Cleanest arrangement is the heater on its own 16&nbsp;A way and the sockets on a 20&nbsp;A way, both off the one submain. Cable size, burial depth and the earthing arrangement are Tony's calculation, not a number off this page &mdash; they depend on the run length and how it goes in.</p>
 
     <ul class="stop-list">
+      <li class="stop">
+        <h3>The ceiling is 2.2 m &mdash; check where the fan sits before fixing it</h3>
+        <p>The Neo is low profile and drops only 180&nbsp;mm, so the blades end up at 2.02&nbsp;m. That is above head height but 80&nbsp;mm under the 2.1&nbsp;m normally wanted over a fan, and you can reach it with a raised arm. Zero has decided that is fine. What matters on the day is <strong>where</strong> it goes: not directly over the spot you stand up into from the desk chair. Agree the position with him before drilling.</p>
+      </li>
       <li class="stop">
         <h3>The heater gets a fused spur, not a socket</h3>
         <p>It comes with no plug and draws 10.4&nbsp;A, so it wants a switched fused spur behind it at the mounting height, on its own way in the consumer unit. That also keeps a trailing lead off the floor of a room this small. <strong>Leave the heater permanently live</strong> &mdash; this is the <strong>Always On</strong> arrangement in section 02, so no module and nothing switches its power. The room temperature is set over Wi-Fi instead, and cutting the power would take the frost protection down with it.</p>
@@ -856,7 +866,7 @@
     <div class="card pad">
       <div class="terms">
         <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty sensors and the two Hue bulbs all join this.</span></div>
-        <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The two ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
+        <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The three ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
       </div>
     </div>
