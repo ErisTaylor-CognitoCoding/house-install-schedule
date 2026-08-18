@@ -303,6 +303,8 @@
         <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room and Master Bedroom. Zigbee, battery, no display.</span></li>
+        <li><span class="qty">1&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine. Sticks to the side of the case, CR2032, about two years. The only Aqara part in the house &mdash; nothing else makes one. Still to buy.</span></li>
+        <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02LD probe thermometer</span><span class="note">Fridge and freezer. Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C, IP65, screen on the front. Magnets to the door, probe goes inside. Still to buy.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Living Room. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
@@ -380,11 +382,6 @@
             <td class="mono">1 gang, 1 way</td>
             <td><span class="chip chip-edge">Edge</span></td>
             <td>Module switches the power. Switch works with or without the server.</td>
-          </tr>
-          <tr>
-            <td class="room">Garage, Kitchen</td>
-            <td>Logs each cat arriving and leaving through the flaps, so there is a record of who is in and who is out</td>
-            <td class="mono">Presence sensors</td>
           </tr>
           <tr>
             <td class="room">Hall &amp; stairs</td>
@@ -535,7 +532,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Seventeen battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done.</p>
+    <p class="lede">Twenty battery sensors, all Zigbee. Nothing to wire, nothing to leave space for &mdash; they go up after the electrics are finished and the decorating is done. Nineteen have a room below; the ninth presence sensor is a spare with nowhere assigned yet.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -548,6 +545,9 @@
         <tbody>
           <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when the cat or anyone goes in, off ten minutes after it empties</td></tr>
           <tr><td class="room">Kitchen</td><td class="mono">SNZB-06P</td><td>Watches the back-door cat flap &mdash; tells you a cat has come in</td></tr>
+          <tr><td class="room">Kitchen &mdash; washing machine</td><td class="mono">DJT11LM</td><td>Feels the drum. Ten minutes still after a spin means the wash is done and wants emptying.</td></tr>
+          <tr><td class="room">Kitchen &mdash; fridge</td><td class="mono">SNZB-02LD</td><td>Probe inside, body magnetted to the door. Warns you if the temperature climbs and stays climbed.</td></tr>
+          <tr><td class="room">Kitchen &mdash; freezer</td><td class="mono">SNZB-02LD</td><td>Same again. This is the one that matters &mdash; a freezer failing unnoticed costs a whole load of food.</td></tr>
           <tr><td class="room">Hall</td><td class="mono">SNZB-06P</td><td>Stairs light at night, instead of leaving it on until morning</td></tr>
           <tr><td class="room">Landing</td><td class="mono">SNZB-06P</td><td>Second half of the same light &mdash; one sensor cannot see a whole flight</td></tr>
           <tr><td class="room">Living Room</td><td class="mono">SNZB-06P</td><td>Presence for the fan, and its light sensor for the dusk lamp</td></tr>
@@ -569,6 +569,8 @@
       <div class="terms">
         <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still, and reports light level in lux.</span></div>
         <div class="term w-load"><code>02P</code><span>&plusmn;0.2&nbsp;&deg;C, one CR2477, about four years. No display.</span></div>
+        <div class="term w-load"><code>DJT11LM</code><span>Accelerometer, sensitivity settable. Reports vibration and how hard, so a spin can be told apart from a door being shut.</span></div>
+        <div class="term w-load"><code>02LD</code><span>Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C. IP65 body with a screen and a magnetic back.</span></div>
       </div>
     </div>
     <ul class="stop-list">
@@ -591,6 +593,14 @@
       <li class="stop">
         <h3>The cat flaps are not smart, and that is fine</h3>
         <p>Both flaps are microchip-activated but standalone &mdash; no hub, no app, nothing to connect to. Only the flap itself is doing the work, keeping other cats out. Nothing can be fitted to a flap to tell which way a cat went either, because it swings both ways. So the sensors watch the room inside each flap instead: a cat appearing in the Garage or the Kitchen came in, and the room going quiet means she went out.</p>
+      </li>
+      <li class="stop">
+        <h3>The washing machine goes quiet in the middle of a cycle</h3>
+        <p>Soaking and draining are silent, and some of those pauses run past ten minutes, so "it has stopped shaking" on its own would announce a finished wash halfway through. It only counts as done if the machine did a proper spin first and has then been still for ten minutes. Stick the sensor to the side panel, not the front &mdash; the door flexes and the top gets things put on it.</p>
+      </li>
+      <li class="stop">
+        <h3>Only the probe goes in the fridge &mdash; never the sensor</h3>
+        <p>A fridge or freezer is a metal box, and a battery radio sitting inside it drops off the network. That is why these two are the probe version and not the same 02P used in the rooms: the body magnets to the outside of the door and only the stainless probe goes in, on its lead, run through the rubber door seal. The seal closes over a thin cable without leaking. An 02P would also read wrong &mdash; it stops at &minus;10&nbsp;&deg;C, and a freezer sits well below that.</p>
       </li>
       <li class="stop">
         <h3>Keep the temperature sensors away from the radiators</h3>
@@ -678,6 +688,16 @@
             <td class="room">Living Room, Office</td>
             <td>Tablet charger cuts at 80% and comes back on at 40%, so the battery is not held full</td>
             <td class="mono">Tablets + sockets</td>
+          </tr>
+          <tr>
+            <td class="room">Kitchen</td>
+            <td>Tells you the washing machine has finished &mdash; spin detected, then ten minutes still</td>
+            <td class="mono">Vibration sensor</td>
+          </tr>
+          <tr>
+            <td class="room">Kitchen</td>
+            <td>Alerts the phone if the fridge or freezer stays above its limit for half an hour &mdash; long enough that unpacking the shopping does not set it off, short enough to save the food</td>
+            <td class="mono">2 probe thermometers</td>
           </tr>
         </tbody>
       </table>
@@ -809,7 +829,7 @@
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, ten sensors and the two Hue bulbs all join this.</span></div>
+        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty sensors and the two Hue bulbs all join this.</span></div>
         <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The two ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
       </div>
