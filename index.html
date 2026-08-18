@@ -302,7 +302,8 @@
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
         <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3, Office. Zigbee, but <strong>mains powered &mdash; 5&nbsp;V 1&nbsp;A over USB-C, not batteries</strong>. Each has a built-in light sensor. See section 05.</span></li>
-        <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04P contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought. The P is the current model &mdash; CR2477 and about five years, against one to two on the old SNZB-04.</span></li>
+        <li><span class="qty">4&times;</span><span class="what">Sonoff SNZB-04PR2 contact sensor</span><span class="note">Front door, back door, garage back door, Office &mdash; the ones opened often. Cheaper, and identical in what it reports.</span></li>
+        <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-04P contact sensor</span><span class="note">Back gate and garage up-and-over. The older P on purpose &mdash; see section 07. Both take CR2477, about five years.</span></li>
         <li><span class="qty">4&times;</span><span class="what">Sonoff SNZB-02B temperature &amp; humidity sensor</span><span class="note">Living Room, Master Bedroom, Office and Kitchen. Bought as a four pack. No display. Two AAA each, about two years. Reports dew point as well as temperature and humidity.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Sonoff SNZB-02WD temperature &amp; humidity sensor</span><span class="note">Bathroom. The IP65 sealed one &mdash; the indoor sensors are rated non-condensing and would corrode in there. One CR2477.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine, and both cat flaps. 36 &times; 36 &times; 9&nbsp;mm, 11.5&nbsp;g, CR2032, about two years. The only Aqara parts in the house &mdash; nothing else makes one. Still to buy.</span></li>
@@ -577,13 +578,13 @@
           <tr><td class="room">Master Bedroom</td><td class="mono">SNZB-02B</td><td>Room temperature, same job as the Living Room one</td></tr>
           <tr><td class="room">Bedroom 2</td><td class="mono">SNZB-06P</td><td>Turns the light off after the room is empty. Does not turn it on.</td></tr>
           <tr><td class="room">Bedroom 3</td><td class="mono">SNZB-06P</td><td>Same &mdash; off only</td></tr>
-          <tr><td class="room">Front door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
-          <tr><td class="room">Back door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
-          <tr><td class="room">Garage back door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Front door</td><td class="mono">SNZB-04PR2</td><td>Open or shut</td></tr>
+          <tr><td class="room">Back door</td><td class="mono">SNZB-04PR2</td><td>Open or shut</td></tr>
+          <tr><td class="room">Garage back door</td><td class="mono">SNZB-04PR2</td><td>Open or shut</td></tr>
           <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04P</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-06P</td><td>Presence, so the heater drops back to 5&nbsp;&deg;C once the room has been empty a while</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-02B</td><td>Room temperature for the heater. Put it on the far wall &mdash; the heater's own sensor sits next to the element and reads high.</td></tr>
-          <tr><td class="room">Office</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Office</td><td class="mono">SNZB-04PR2</td><td>Open or shut</td></tr>
           <tr><td class="room">Bathroom</td><td class="mono">SNZB-02WD</td><td>Humidity, for the extractor once that is specced. IP65, so it survives the steam.</td></tr>
           <tr><td class="room">Back gate</td><td class="mono">SNZB-04P</td><td>Open or shut. Weatherproof case, already bought. Reaches the network via the Garage module.</td></tr>
         </tbody>
@@ -594,7 +595,8 @@
         <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still, and reports light level in lux. <strong>USB-C, 5&nbsp;V 1&nbsp;A &mdash; no battery.</strong></span></div>
         <div class="term w-load"><code>02B</code><span>&plusmn;0.2&nbsp;&deg;C and &plusmn;2% RH, two AAA, about two years. Reports dew point, which is what the extractors want. <strong>Indoor only, non-condensing.</strong></span></div>
         <div class="term w-live"><code>02WD</code><span>Same readings but <strong>IP65 with a breathable membrane</strong>, and down to &minus;20&nbsp;&deg;C. One CR2477. The wet-room one.</span></div>
-        <div class="term w-sig"><code>04P</code><span>Contact, one CR2477, about five years. Reports tamper as well as open and shut.</span></div>
+        <div class="term w-sig"><code>04P</code><span>Contact, one CR2477, about five years. Reports tamper as well as open and shut. On the gate and the up-and-over.</span></div>
+        <div class="term w-sig"><code>04PR2</code><span>Same readings, cheaper, on the four doors used often. Has a known bug &mdash; see below.</span></div>
         <div class="term w-load"><code>DJT11LM</code><span>Accelerometer, sensitivity settable. Reports vibration and how hard, so a spin can be told apart from a door being shut.</span></div>
         <div class="term w-load"><code>02LD</code><span>Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C. IP65 body with a screen and a magnetic back.</span></div>
       </div>
@@ -611,6 +613,10 @@
       <li class="stop">
         <h3>The garage is unheated</h3>
         <p>The two garage contact sensors will get through batteries faster than the indoor ones and want an occasional check for condensation. Normal, just not the same interval as the rest. The presence sensor in there is on mains, so it is only the coin cells to watch.</p>
+      </li>
+      <li class="stop">
+        <h3>Two of the contact sensors are deliberately the dearer model</h3>
+        <p>The cheaper <strong>SNZB-04PR2</strong> has a bug logged against it in Zigbee2MQTT: it may fail to send the first action after a few hours of inactivity. On a front or back door that opens all day it never shows. On something that sits shut for days it is exactly the opening you wanted to hear about. So <strong>the back gate and the garage up-and-over get the older SNZB-04P</strong>, which has no such fault, and the other four get the PR2. They report the same things and pair the same way &mdash; only the model name differs. If SONOFF fix the PR2 the distinction stops mattering; both take OTA updates.</p>
       </li>
       <li class="stop">
         <h3>The gate sensor only survives if the case is properly sealed</h3>
