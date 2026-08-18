@@ -301,8 +301,7 @@
         <li><span class="qty">5&times;</span><span class="what">BSEED grey glass socket, 2 gang 13&nbsp;A + USB</span><span class="note">Already ordered. The switches were chosen to match these.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
         <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3. Zigbee, battery. Each has a built-in light sensor.</span></li>
-        <li><span class="qty">5&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office. Zigbee, battery, indoor only.</span></li>
-        <li><span class="qty">1&times;</span><span class="what">Outdoor-rated contact sensor</span><span class="note">Back gate. Must be weatherproof &mdash; see the note in section 07.</span></li>
+        <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04 contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room and Master Bedroom. Zigbee, battery, no display.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
         <li><span class="qty">1&times;</span><span class="what">ycwdcz smart ceiling fan with light</span><span class="note">Living Room. Tuya / Smart Life. Dimmable, 6 speed, reversible DC motor.</span></li>
@@ -562,7 +561,7 @@
           <tr><td class="room">Garage back door</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
           <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-04</td><td>Open or shut</td></tr>
-          <tr><td class="room">Back gate</td><td class="mono">outdoor</td><td>Open or shut. Outside, so it cannot be an SNZB-04.</td></tr>
+          <tr><td class="room">Back gate</td><td class="mono">SNZB-04</td><td>Open or shut. Goes in a weatherproof case, already bought.</td></tr>
         </tbody>
       </table>
     </div>
@@ -586,8 +585,8 @@
         <p>Both garage sensors will get through batteries faster than the indoor ones and want an occasional check for condensation. Normal, just not the same interval as the rest.</p>
       </li>
       <li class="stop">
-        <h3>The back gate cannot take an ordinary door sensor</h3>
-        <p>SNZB-04 and Aqara contact sensors have no IP rating and are indoor parts. On a gate they meet rain, frost and condensation, and they fail within months &mdash; usually corroded battery contacts. Either use an outdoor-rated sensor such as the Bosch RFMS-ZBMS, which Zigbee2MQTT supports, or put an ordinary one inside a sealed IP65 junction box.</p>
+        <h3>The gate sensor only survives if the case is properly sealed</h3>
+        <p>An SNZB-04 has no IP rating of its own &mdash; outdoors it corrodes at the battery contacts within months. In a sealed weatherproof case it is fine, but the seal is doing all the work, so check it when the batteries are changed.</p>
       </li>
       <li class="stop">
         <h3>Check the gate is in Zigbee range before buying for it</h3>
