@@ -314,14 +314,15 @@
         <li><span class="qty">1&times;</span><span class="what">Flush mount square ceiling light, 33&nbsp;W 6000&nbsp;K</span><span class="note">Kitchen. Not smart &mdash; fixed cool white, no dimming.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Devola Designer 2.5&nbsp;kW smart glass panel heater</span><span class="note">Office. Wall mounted, own thermostat and anti-frost mode, Wi-Fi. 850 &times; 470 &times; 75&nbsp;mm. No plug &mdash; wants a fused spur. Ordered.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage and hall/stairs. Both already owned &mdash; none to buy. Pair straight to Zigbee2MQTT, no Hue bridge needed.</span></li>
+        <li><span class="qty">1&times;</span><span class="what">Ring camera &mdash; Garage</span><span class="note">Bought used. Joins the Ring account already connected to the server. Model still to confirm, which decides whether it plugs in or runs on a battery, and whether it is rated for an unheated garage. Ordered.</span></li>
         <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room, Master Bedroom, Office. Plain HD 8, not the Plus.</span></li>
       </ul>
     </div>
     <p class="lede">Room names here match Home Assistant exactly &mdash; <strong>Living Room</strong> (alias Lounge), <strong>Office</strong> (alias Summer House), <strong>Master Bedroom</strong>. Say either and the house understands you; the page uses the official one.</p>
     <p class="lede">Not all of it has arrived, but as of 18 August 2026 <strong>everything on this list is ordered</strong> &mdash; switches, sockets, modules, valves, fans, all twenty-five sensors, the Office heater and the Office ceiling fan. Two of the three tablets follow once the first has been tried on the wall. Air conditioning is parked &mdash; see section 10.</p>
     <div class="stop">
-      <h3>Still outstanding: the batteries</h3>
-      <p>Nothing on this list ships with batteries. You need <strong>18 &times; AA</strong> (three per radiator valve), <strong>8 &times; AAA</strong> (two per 02B sensor), <strong>9 &times; CR2477</strong> and <strong>3 &times; CR2032</strong>. <strong>Alkaline, not rechargeable</strong> &mdash; Sonoff specify 1.5&nbsp;V LR6 and LR03, and NiMH cells at 1.2&nbsp;V leave a valve on 3.6&nbsp;V against its rated 4.5&nbsp;V. They also read as flat from the day they go in, so every low-battery warning in the house becomes noise.</p>
+      <h3>Batteries &mdash; ordered 18 August 2026</h3>
+      <p>Nothing on this list ships with batteries, so these went in separately: <strong>18 &times; AA</strong> (three per radiator valve), <strong>8 &times; AAA</strong> (two per 02B sensor), <strong>9 &times; CR2477</strong> and <strong>3 &times; CR2032</strong>. <strong>Alkaline, not rechargeable</strong> &mdash; Sonoff specify 1.5&nbsp;V LR6 and LR03, and NiMH cells at 1.2&nbsp;V leave a valve on 3.6&nbsp;V against its rated 4.5&nbsp;V. They also read as flat from the day they go in, so every low-battery warning in the house becomes noise.</p>
       <p><strong>Brand matters for leaking, not for capacity.</strong> These cells sit in a device for one to two years, and a leak writes off a &pound;40 valve. On capacity the brands are close enough to ignore. On leaking, the weight of user reports goes against Duracell &mdash; most reported leaks are Duracell, often still in date &mdash; while Kodak and GP come out clean. <strong>Buy Kodak or GP</strong>, and check the date code whatever the label says: expired alkalines leak regardless of brand, and cheap multipacks are often near the end of their shelf life.</p>
     </div>
   </section>
@@ -892,12 +893,13 @@
 
   <section>
     <h2><span class="idx">14</span> What the house can already talk to</h2>
-    <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
+    <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house &mdash; with one exception already in use, below.</p>
     <div class="card pad">
       <div class="terms">
         <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty-five sensors and the two Hue bulbs all join this.</span></div>
         <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The three ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
+        <div class="term w-sig"><code>Ring</code><span>Not a radio &mdash; an account. Already connected, and the Garage camera joins it. <strong>Cloud only</strong>, polled every 60 seconds, and recorded clips need a Ring subscription. It stops when the internet does.</span></div>
       </div>
     </div>
     <p class="lede">Matter is the one to look for on any future fitting &mdash; it works like Tuya but without the round trip to a cloud, so it keeps working when the internet does not.</p>
