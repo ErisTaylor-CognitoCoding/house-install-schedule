@@ -316,7 +316,7 @@
         <li><span class="qty">2&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage and hall/stairs. Both already owned &mdash; none to buy. Pair straight to Zigbee2MQTT, no Hue bridge needed.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Ring Stick Up Cam (3rd Gen) &mdash; Garage</span><span class="note">Bought used. The fifth Ring on an account already connected to the server, and the same model as the four cameras there now. Rated &minus;20 to 50&nbsp;&deg;C, so the unheated garage is fine. Battery as standard; the plug-in adapter is sold separately and worth it here. Ordered.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Apolosign 21.5&quot; digital wall planner</span><span class="note">Kitchen. Mains, wall mounted. Runs Android 15 with Google Play, so the Home Assistant app installs on it &mdash; a 21.5&quot; dashboard as well as the family calendar. Syncs Google, iCloud and Outlook with no subscription. Ordered.</span></li>
-        <li><span class="qty">2&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room and Master Bedroom. Plain HD 8, not the Plus. The Office screen is not decided &mdash; see section 08.</span></li>
+        <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room, Master Bedroom and Office. Plain HD 8, not the Plus. One ordered; the other two follow once that one has been tried on the wall.</span></li>
       </ul>
     </div>
     <p class="lede">Room names here match Home Assistant exactly &mdash; <strong>Living Room</strong> (alias Lounge), <strong>Office</strong> (alias Summer House), <strong>Master Bedroom</strong>. Say either and the house understands you; the page uses the official one.</p>
@@ -651,7 +651,7 @@
 
   <section>
     <h2><span class="idx">08</span> Wall tablets</h2>
-    <p class="lede">Three screens are settled: two Fire HD 8 tablets and the 21.5&quot; planner in the Kitchen. The Office is still open. Two of the three need a socket; the bedroom tablet does not.</p>
+    <p class="lede">Four screens run the dashboard: three Fire HD 8 tablets and the 21.5&quot; planner in the Kitchen. Three of the four need a socket; the bedroom tablet does not.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -673,11 +673,11 @@
       <h3>The two sockets are switched, not permanent</h3>
       <p>A tablet left on charge at 100% swells its battery and pushes the screen out of the bezel within a year or two. The Living Room and Office sockets are fed through spare modules so the charger can be cut automatically at 80% and switched back on at 40%. Two of the four spares are used here, which is what they are for.</p>
     </div>
-    <p class="lede">The bedroom tablet plugs into the bed's USB ports by hand, so it needs no socket and no module. Plain Fire HD 8, not the Plus, so there is no wireless charging &mdash; both are cable.</p>
+    <p class="lede">The bedroom tablet plugs into the bed's USB ports by hand, so it needs no socket and no module. Plain Fire HD 8, not the Plus, so there is no wireless charging on any of them &mdash; all three are cable.</p>
     <div class="stop">
-      <h3>The Office model is open, but the wiring is not</h3>
-      <p>It will be a Fire tablet either way &mdash; the only question is an HD 8 like the others or a larger <strong>HD 10</strong>, wanted so the cameras can be watched while Zero is teaching without putting them on the desktop. Both run on battery, so <strong>either way it is a socket fed through a spare module</strong> for the 80/40 charge limiting, exactly as the Living Room. Nothing about the electrics waits on the decision.</p>
-      <p>The HD 8 <em>Plus</em> is not the upgrade it sounds like: same 8&quot; 1280 &times; 800 screen as the plain one, with wireless charging and more memory added. The step up for reading camera images is the <strong>HD 10 at 10.1&quot; and 1920 &times; 1200</strong>, which also has dual-band wifi &mdash; worth having at the end of the garden.</p>
+      <h3>The Office tablet is for being interrupted, not for watching</h3>
+      <p>What it is there for is the doorbell going while Zero is teaching, without the cameras sitting on the desktop he is teaching from. That is an alert, not a video wall &mdash; so <strong>a plain Fire HD 8 like the other two is enough</strong>, and all three screens stay the same thing to set up. It runs on battery like the others, so it is a socket fed through a spare module for the 80/40 charge limiting, exactly as the Living Room.</p>
+      <p>The work is in the automation rather than the hardware: a doorbell press wakes the tablet and puts the front door camera on full screen, so it interrupts him rather than needing to be watched. <strong>That only arrives instantly if outbound TCP 5228 to Ring is open</strong> &mdash; blocked, the press comes through on the 60-second poll instead, which is too late to answer a door.</p>
     </div>
     <p class="lede">Agree the exact height and position with Zero before chasing anything &mdash; each socket has to sit behind the tablet, hidden by it, not beside it.</p>
   </section>
