@@ -303,7 +303,8 @@
         <li><span class="qty">6&times;</span><span class="what">Sonoff TRVZB thermostatic radiator valve</span><span class="note">Zigbee, battery powered. Joins the same network as the light modules.</span></li>
         <li><span class="qty">9&times;</span><span class="what">Sonoff SNZB-06P presence sensor</span><span class="note">Garage, Kitchen, Living Room, Master Bedroom, hall, landing, Bedroom 2 and 3, Office. Zigbee, but <strong>mains powered &mdash; 5&nbsp;V 1&nbsp;A over USB-C, not batteries</strong>. Each has a built-in light sensor. See section 05.</span></li>
         <li><span class="qty">6&times;</span><span class="what">Sonoff SNZB-04P contact sensor</span><span class="note">Front door, back door, garage back door, garage up-and-over, Office, back gate. The gate one goes in a weatherproof case, already bought. The P is the current model &mdash; CR2477 and about five years, against one to two on the old SNZB-04.</span></li>
-        <li><span class="qty">3&times;</span><span class="what">Sonoff SNZB-02P temperature sensor</span><span class="note">Living Room, Master Bedroom and Office. Zigbee, battery, no display.</span></li>
+        <li><span class="qty">4&times;</span><span class="what">Sonoff SNZB-02B temperature &amp; humidity sensor</span><span class="note">Living Room, Master Bedroom, Office and Kitchen. Bought as a four pack. No display. Two AAA each, about two years. Reports dew point as well as temperature and humidity.</span></li>
+        <li><span class="qty">1&times;</span><span class="what">Sonoff SNZB-02WD temperature &amp; humidity sensor</span><span class="note">Bathroom. The IP65 sealed one &mdash; the indoor sensors are rated non-condensing and would corrode in there. One CR2477.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine. Sticks to the side of the case, CR2032, about two years. The only Aqara part in the house &mdash; nothing else makes one. Still to buy.</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02LD probe thermometer</span><span class="note">Fridge and freezer. Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C, IP65, screen on the front. Magnets to the door, probe goes inside. Still to buy.</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities.</span></li>
@@ -549,7 +550,7 @@
 
   <section>
     <h2><span class="idx">07</span> Sensors</h2>
-    <p class="lede">Twenty-one sensors, all Zigbee &mdash; but they are not all battery. Twelve run on coin cells and go up after the decorating is done. <strong>The nine presence sensors are mains powered and have to sit within a lead's reach of a socket</strong>, which constrains where they can go &mdash; see section 05. Every one now has a room below; the spare presence sensor went to the Office.</p>
+    <p class="lede">Twenty-three sensors, all Zigbee &mdash; but they are not all battery. Fourteen run on batteries and go up after the decorating is done. <strong>The nine presence sensors are mains powered and have to sit within a lead's reach of a socket</strong>, which constrains where they can go &mdash; see section 05. Every one now has a room below; the spare presence sensor went to the Office.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -563,14 +564,15 @@
           <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when the cat or anyone goes in, off ten minutes after it empties</td></tr>
           <tr><td class="room">Kitchen</td><td class="mono">SNZB-06P</td><td>Watches the back-door cat flap &mdash; tells you a cat has come in</td></tr>
           <tr><td class="room">Kitchen &mdash; washing machine</td><td class="mono">DJT11LM</td><td>Feels the drum. Ten minutes still after a spin means the wash is done and wants emptying.</td></tr>
+          <tr><td class="room">Kitchen</td><td class="mono">SNZB-02B</td><td>Humidity, for the extractor once that is specced. Keep it off the hob wall.</td></tr>
           <tr><td class="room">Kitchen &mdash; fridge</td><td class="mono">SNZB-02LD</td><td>Probe inside, body magnetted to the door. Warns you if the temperature climbs and stays climbed.</td></tr>
           <tr><td class="room">Kitchen &mdash; freezer</td><td class="mono">SNZB-02LD</td><td>Same again. This is the one that matters &mdash; a freezer failing unnoticed costs a whole load of food.</td></tr>
           <tr><td class="room">Hall</td><td class="mono">SNZB-06P</td><td>Stairs light at night, instead of leaving it on until morning</td></tr>
           <tr><td class="room">Landing</td><td class="mono">SNZB-06P</td><td>Second half of the same light &mdash; one sensor cannot see a whole flight</td></tr>
           <tr><td class="room">Living Room</td><td class="mono">SNZB-06P</td><td>Presence for the fan, and its light sensor for the dusk lamp</td></tr>
-          <tr><td class="room">Living Room</td><td class="mono">SNZB-02P</td><td>Room temperature, so the fan only runs when it is warm</td></tr>
+          <tr><td class="room">Living Room</td><td class="mono">SNZB-02B</td><td>Room temperature, so the fan only runs when it is warm</td></tr>
           <tr><td class="room">Master Bedroom</td><td class="mono">SNZB-06P</td><td>Presence for the fan</td></tr>
-          <tr><td class="room">Master Bedroom</td><td class="mono">SNZB-02P</td><td>Room temperature</td></tr>
+          <tr><td class="room">Master Bedroom</td><td class="mono">SNZB-02B</td><td>Room temperature, same job as the Living Room one</td></tr>
           <tr><td class="room">Bedroom 2</td><td class="mono">SNZB-06P</td><td>Turns the light off after the room is empty. Does not turn it on.</td></tr>
           <tr><td class="room">Bedroom 3</td><td class="mono">SNZB-06P</td><td>Same &mdash; off only</td></tr>
           <tr><td class="room">Front door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
@@ -578,8 +580,9 @@
           <tr><td class="room">Garage back door</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
           <tr><td class="room">Garage up-and-over</td><td class="mono">SNZB-04P</td><td>Open or shut. Mount where the door meets the frame when closed.</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-06P</td><td>Presence, so the heater drops back to 5&nbsp;&deg;C once the room has been empty a while</td></tr>
-          <tr><td class="room">Office</td><td class="mono">SNZB-02P</td><td>Room temperature for the heater. Put it on the far wall &mdash; the heater's own sensor sits next to the element and reads high.</td></tr>
+          <tr><td class="room">Office</td><td class="mono">SNZB-02B</td><td>Room temperature for the heater. Put it on the far wall &mdash; the heater's own sensor sits next to the element and reads high.</td></tr>
           <tr><td class="room">Office</td><td class="mono">SNZB-04P</td><td>Open or shut</td></tr>
+          <tr><td class="room">Bathroom</td><td class="mono">SNZB-02WD</td><td>Humidity, for the extractor once that is specced. IP65, so it survives the steam.</td></tr>
           <tr><td class="room">Back gate</td><td class="mono">SNZB-04P</td><td>Open or shut. Weatherproof case, already bought. Reaches the network via the Garage module.</td></tr>
         </tbody>
       </table>
@@ -587,7 +590,8 @@
     <div class="card pad">
       <div class="terms">
         <div class="term w-neut"><code>06P</code><span>5.8&nbsp;GHz radar, ~4&nbsp;m over 100&deg;. Holds presence while someone is still, and reports light level in lux. <strong>USB-C, 5&nbsp;V 1&nbsp;A &mdash; no battery.</strong></span></div>
-        <div class="term w-load"><code>02P</code><span>&plusmn;0.2&nbsp;&deg;C, one CR2477, about four years. No display.</span></div>
+        <div class="term w-load"><code>02B</code><span>&plusmn;0.2&nbsp;&deg;C and &plusmn;2% RH, two AAA, about two years. Reports dew point, which is what the extractors want. <strong>Indoor only, non-condensing.</strong></span></div>
+        <div class="term w-live"><code>02WD</code><span>Same readings but <strong>IP65 with a breathable membrane</strong>, and down to &minus;20&nbsp;&deg;C. One CR2477. The wet-room one.</span></div>
         <div class="term w-sig"><code>04P</code><span>Contact, one CR2477, about five years. Reports tamper as well as open and shut.</span></div>
         <div class="term w-load"><code>DJT11LM</code><span>Accelerometer, sensitivity settable. Reports vibration and how hard, so a spin can be told apart from a door being shut.</span></div>
         <div class="term w-load"><code>02LD</code><span>Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C. IP65 body with a screen and a magnetic back.</span></div>
@@ -872,7 +876,7 @@
     <p class="lede">Three radios are live on the server, so a fitting bought later only has to speak one of them. Anything that names none of these is cloud-only and will not reach the house.</p>
     <div class="card pad">
       <div class="terms">
-        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty-one sensors and the two Hue bulbs all join this.</span></div>
+        <div class="term w-neut"><code>Zigbee</code><span>Zigbee2MQTT on a Sonoff ZBDongle-P. Local. The eight light modules, six radiator valves, twenty-three sensors and the two Hue bulbs all join this.</span></div>
         <div class="term w-load"><code>Tuya</code><span>Already connected, currently running the cat litter trays. The three ceiling fans join it once fitted. Goes via Tuya's cloud.</span></div>
         <div class="term w-live"><code>Matter</code><span>Server added 16 Aug 2026, running on the same box. Local, no account. Nothing paired to it yet.</span></div>
       </div>
