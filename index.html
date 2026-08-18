@@ -316,7 +316,7 @@
         <li><span class="qty">2&times;</span><span class="what">Philips Hue bulb</span><span class="note">Garage and hall/stairs. Both already owned &mdash; none to buy. Pair straight to Zigbee2MQTT, no Hue bridge needed.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Ring Stick Up Cam (3rd Gen) &mdash; Garage</span><span class="note">Bought used. The fifth Ring on an account already connected to the server, and the same model as the four cameras there now. Rated &minus;20 to 50&nbsp;&deg;C, so the unheated garage is fine. Battery as standard; the plug-in adapter is sold separately and worth it here. Ordered.</span></li>
         <li><span class="qty">1&times;</span><span class="what">Apolosign 21.5&quot; digital wall planner</span><span class="note">Kitchen. Mains, wall mounted. Runs Android 15 with Google Play, so the Home Assistant app installs on it &mdash; a 21.5&quot; dashboard as well as the family calendar. Syncs Google, iCloud and Outlook with no subscription. Ordered.</span></li>
-        <li><span class="qty">3&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room, Master Bedroom, Office. Plain HD 8, not the Plus.</span></li>
+        <li><span class="qty">2&times;</span><span class="what">Amazon Fire HD 8 tablet</span><span class="note">Living Room and Master Bedroom. Plain HD 8, not the Plus. The Office screen is not decided &mdash; see section 08.</span></li>
       </ul>
     </div>
     <p class="lede">Room names here match Home Assistant exactly &mdash; <strong>Living Room</strong> (alias Lounge), <strong>Office</strong> (alias Summer House), <strong>Master Bedroom</strong>. Say either and the house understands you; the page uses the official one.</p>
@@ -651,7 +651,7 @@
 
   <section>
     <h2><span class="idx">08</span> Wall tablets</h2>
-    <p class="lede">Four screens run the dashboard: three Fire HD 8 tablets and the 21.5&quot; planner in the Kitchen. Three of the four need a socket; the bedroom tablet does not.</p>
+    <p class="lede">Three screens are settled: two Fire HD 8 tablets and the 21.5&quot; planner in the Kitchen. The Office is still open. Two of the three need a socket; the bedroom tablet does not.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -663,7 +663,7 @@
         </thead>
         <tbody>
           <tr><td class="room">Living Room</td><td>Single socket behind the tablet</td><td class="mono">Spare ZBMINI R2</td></tr>
-          <tr><td class="room">Office</td><td>Single socket behind the tablet</td><td class="mono">Spare ZBMINI R2, on the summer house board</td></tr>
+          <tr><td class="room">Office</td><td>Undecided &mdash; see the note below</td><td class="mono">Depends which way it goes</td></tr>
           <tr><td class="room">Master Bedroom</td><td>Nothing &mdash; charged from the bed's own USB ports</td><td class="mono">&mdash;</td></tr>
           <tr><td class="room">Kitchen</td><td>Socket behind the 21.5&quot; planner. Mains, never on battery, so no charge limiting.</td><td class="mono">Direct &mdash; no module</td></tr>
         </tbody>
@@ -673,7 +673,12 @@
       <h3>The two sockets are switched, not permanent</h3>
       <p>A tablet left on charge at 100% swells its battery and pushes the screen out of the bezel within a year or two. The Living Room and Office sockets are fed through spare modules so the charger can be cut automatically at 80% and switched back on at 40%. Two of the four spares are used here, which is what they are for.</p>
     </div>
-    <p class="lede">The bedroom tablet plugs into the bed's USB ports by hand, so it needs no socket and no module. Plain Fire HD 8, not the Plus, so there is no wireless charging on any of them &mdash; all three are cable.</p>
+    <p class="lede">The bedroom tablet plugs into the bed's USB ports by hand, so it needs no socket and no module. Plain Fire HD 8, not the Plus, so there is no wireless charging &mdash; both are cable.</p>
+    <div class="stop">
+      <h3>The Office screen is not decided, and it changes what Tony fits</h3>
+      <p>A <strong>Fire HD 8 like the others</strong> runs on battery, so it wants a socket fed through a spare module for the 80/40 charge limiting &mdash; same arrangement as the Living Room. A <strong>larger mains display</strong> never runs on battery, so it wants a plain permanent socket and <strong>no module at all</strong>, which hands a spare module back.</p>
+      <p>Worth weighing first: the Office is 4.46&nbsp;m&sup2; with a desktop PC already on the desk, so Home&nbsp;Assistant in a browser tab does the same job for nothing. A 21.5&quot; screen is roughly 50&nbsp;cm across on a wall only 1.83&nbsp;m wide, sharing it with an 85&nbsp;cm heater. <strong>Decide before the Office socket positions are agreed</strong>, not after.</p>
+    </div>
     <p class="lede">Agree the exact height and position with Zero before chasing anything &mdash; each socket has to sit behind the tablet, hidden by it, not beside it.</p>
   </section>
 
