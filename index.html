@@ -132,6 +132,12 @@
     font-weight: 700;
     letter-spacing: -.005em;
   }
+  /* a heading that splits one section into two halves, as in 08 */
+  h3.subhead {
+    font-size: 1.125rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+  }
   p { margin: 0; }
   .lede { color: var(--ink-2); max-width: 62ch; }
 
@@ -691,7 +697,7 @@
   </section>
 
   <section>
-    <h2><span class="idx">08</span> Wall tablets</h2>
+    <h2><span class="idx">08</span> Wall tablets and televisions</h2>
     <p class="lede">Four screens run the dashboard: three Fire HD 8 tablets and the 21.5&quot; planner in the Kitchen. Three of the four need a socket; the bedroom tablet does not.</p>
     <div class="scroller">
       <table>
@@ -721,6 +727,31 @@
       <p>The work is in the automation rather than the hardware: a doorbell press wakes the tablet and puts the front door camera on full screen, so it interrupts him rather than needing to be watched. <strong>That only arrives instantly if outbound TCP 5228 to Ring is open</strong> &mdash; blocked, the press comes through on the 60-second poll instead, which is too late to answer a door.</p>
     </div>
     <p class="lede">Agree the exact height and position with Zero before chasing anything &mdash; each socket has to sit behind the tablet, hidden by it, not beside it.</p>
+
+    <h3 class="subhead">Televisions</h3>
+    <p class="lede">Three sets move in, and which one lands in which room was settled on 31 Aug 2026. Nothing here is bought for the install &mdash; they are all Zero&rsquo;s own &mdash; but each one is a position on a wall that needs power, so they belong on the same walk round as the tablets.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Set</th>
+            <th scope="col">Room</th>
+            <th scope="col">Needs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Samsung QN70F</td><td class="room">Living Room</td><td>Double socket at the TV position &mdash; set and Fire TV Stick</td></tr>
+          <tr><td>JVC Fire TV Edition</td><td class="room">Master Bedroom</td><td>Double socket at the TV position &mdash; set and Fire TV Stick</td></tr>
+          <tr><td>Digihome</td><td>Spare room</td><td>An ordinary socket. Nothing smart, nothing to wire</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="stop">
+      <h3>The television sockets are permanent &mdash; never on a module</h3>
+      <p>Both the Living Room and the Master Bedroom set have a Fire TV Stick beside them, and <strong>the stick is what switches the television on</strong>: it is mains powered, so it stays awake and on the network with the screen off, and putting it on the HDMI is what brings the set up. Cut its power at the wall and the house loses the ability to turn that television on at all.</p>
+      <p>So these are plain, permanently live sockets. They are <strong>not</strong> the switched tablet sockets above, and they do not go through a ZBMINI &mdash; same rule as the Office heater in section 10.</p>
+    </div>
+    <p class="lede">The JVC coming upstairs into the Master Bedroom is the reason the bedroom television can be switched on and off by the house at all; the Digihome it replaces has no CEC and never could be. Nothing has to be run for that &mdash; it works over the HDMI lead.</p>
   </section>
 
   <section>
