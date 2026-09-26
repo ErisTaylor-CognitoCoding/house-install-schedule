@@ -332,8 +332,8 @@
         <li><span class="qty">4&times;</span><span class="what">Sonoff SNZB-02B temperature &amp; humidity sensor</span><span class="note">Living Room, Master Bedroom, Office and Kitchen. Bought as a four pack. No display. Two AAA each, about two years. Reports dew point as well as temperature and humidity. All four arrived 21 Aug 2026.</span><span class="st here">arrived</span></li>
         <li><span class="qty">1&times;</span><span class="what">Sonoff SNZB-02WD temperature &amp; humidity sensor</span><span class="note">Bathroom. The IP65 sealed one &mdash; the indoor sensors are rated non-condensing and would corrode in there. One CR2477. Arrived 21 Aug 2026.</span><span class="st here">arrived</span></li>
         <li><span class="qty">3&times;</span><span class="what">Aqara DJT11LM vibration sensor</span><span class="note">Washing machine, and both cat flaps. 36 &times; 36 &times; 9&nbsp;mm, 11.5&nbsp;g, CR2032, about two years. The only Aqara parts in the house &mdash; nothing else makes one. All three arrived 21 Aug 2026.</span><span class="st here">arrived</span></li>
-        <li><span class="qty">1&times;</span><span class="what">Cat Mate microchip cat flap</span><span class="note">Garage. Microchip operated but standalone &mdash; no hub, no app, nothing to connect to. See section 07. Arrived 21 Aug 2026.</span><span class="st here">arrived</span></li>
-        <li><span class="qty">1&times;</span><span class="what">PetSafe microchip cat flap</span><span class="note">The back door into the Kitchen. Same again &mdash; microchip operated, no connectivity of any kind.</span><span class="st way">on order</span></li>
+        <li><span class="qty">1&times;</span><span class="what">Cat Mate microchip cat flap</span><span class="note">Garage. Still being fitted, but the Garage is nobody&rsquo;s base from 26 Sep 2026 &mdash; Marshmellow stays at the old house. Microchip operated but standalone &mdash; no hub, no app, nothing to connect to. See section 07. Arrived 21 Aug 2026.</span><span class="st here">arrived</span></li>
+        <li><span class="qty">1&times;</span><span class="what">PetSafe microchip cat flap</span><span class="note">The back door into the Kitchen &mdash; Sox&rsquo;s flap, and the one that gets daily use. Same again &mdash; microchip operated, no connectivity of any kind.</span><span class="st way">on order</span></li>
         <li><span class="qty">2&times;</span><span class="what">Tractive Cat Tracker Mini (2026)</span><span class="note">One each for Sox and Marshmellow. 25&nbsp;g, works from 1.4&nbsp;kg, built into a breakaway collar. The only cat tracker with a Home Assistant integration &mdash; it puts each cat on a live map, which is the point. <strong>Each tracker needs its own Tractive subscription; they cannot share one.</strong> Ordered 5 Sep 2026 after Marshmellow went missing again, arrived 6 Sep and both are paired.</span><span class="st here">arrived</span></li>
         <li><span class="qty">2&times;</span><span class="what">Sonoff SNZB-02LD probe thermometer</span><span class="note">Fridge and freezer. Stainless probe on a 1.5&nbsp;m lead, &minus;40 to 115&nbsp;&deg;C, IP65, screen on the front. Magnets to the door, probe goes inside. Both arrived 21 Aug 2026.</span><span class="st here">arrived</span></li>
         <li><span class="qty">1&times;</span><span class="what">CHANFOK 16&quot; smart ceiling fan with light</span><span class="note">Master Bedroom. Tuya / Smart Life. Fan and light are separate entities. Arrived 20 Aug 2026.</span><span class="st here">arrived</span></li>
@@ -616,8 +616,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when the cat or anyone goes in, off ten minutes after it empties</td></tr>
-          <tr><td class="room">Kitchen</td><td class="mono">SNZB-06P</td><td>Watches the back-door cat flap &mdash; tells you a cat has come in</td></tr>
+          <tr><td class="room">Garage</td><td class="mono">SNZB-06P</td><td>Light on when anyone goes in, off ten minutes after it empties</td></tr>
+          <tr><td class="room">Kitchen</td><td class="mono">SNZB-06P</td><td>Watches the back-door cat flap &mdash; tells you Sox has come in</td></tr>
           <tr><td class="room">Kitchen &mdash; cat flap</td><td class="mono">DJT11LM</td><td>Feels the flap swing, so you get a time it was last used. Not which way.</td></tr>
           <tr><td class="room">Garage &mdash; cat flap</td><td class="mono">DJT11LM</td><td>Same again on the garage flap</td></tr>
           <tr><td class="room">Kitchen &mdash; washing machine</td><td class="mono">DJT11LM</td><td>Feels the drum. Ten minutes still after a spin means the wash is done and wants emptying.</td></tr>
@@ -675,6 +675,10 @@
       <li class="stop">
         <h3>The gate sensor only survives if the case is properly sealed</h3>
         <p>An SNZB-04P has no IP rating of its own &mdash; outdoors it corrodes at the battery contacts within months. In a sealed weatherproof case it is fine, but the seal is doing all the work, so check it when the batteries are changed.</p>
+      </li>
+      <li class="stop">
+        <h3>Which cat lives where &mdash; changed 26 Sep 2026</h3>
+        <p><strong>Sox moves to the new house and is based in the Kitchen</strong>, on the back-door PetSafe flap. <strong>Marshmellow is staying at the old house</strong> and is not moving, so <strong>the Garage is nobody's base any more</strong>. The Garage flap is still being fitted &mdash; it goes in the garage door as planned, for a cat coming and going rather than living there &mdash; and everything in section 07 about it stands. Expect the Garage flap and its vibration sensor to be quiet most days; that is the flap going unused, not a fault.</p>
       </li>
       <li class="stop">
         <h3>The cat flaps are not smart, and that is fine</h3>
@@ -769,12 +773,12 @@
         <tbody>
           <tr>
             <td class="room">Garage</td>
-            <td>Light on when the cat or anyone goes in, off ten minutes after the room empties</td>
+            <td>Light on when anyone goes in, off ten minutes after the room empties</td>
             <td class="mono">Presence sensor</td>
           </tr>
           <tr>
             <td class="room">Garage, Kitchen</td>
-            <td>Logs each cat arriving and leaving through the flaps, so there is a record of who is in and who is out, plus a time each flap was last used</td>
+            <td>Logs Sox arriving and leaving through the Kitchen flap, so there is a record of in and out, plus a time each flap was last used. The Garage flap is fitted but is nobody&rsquo;s base &mdash; see section 07.</td>
             <td class="mono">Presence sensors</td>
           </tr>
           <tr>
