@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Half Term Jobs</title>
+<style>
+  :root {
+    --paper:#F5F7F9; --card:#FFFFFF; --card-2:#ECF0F4; --ink:#141A20; --ink-2:#4B5763; --ink-3:#7A8794;
+    --rule:#DCE3EA; --live:#8C4A24; --live-bg:#F3E5DB; --neut:#1D5A8A; --neut-bg:#DEEAF4;
+    --earth:#4A7430; --earth-bg:#E3EDDB;
+    --shadow:0 1px 2px rgba(20,26,32,.05), 0 10px 26px -16px rgba(20,26,32,.30);
+    --sans:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#0F1418; --card:#171E25; --card-2:#1E262E; --ink:#E8EDF2; --ink-2:#A7B3BF; --ink-3:#7B8794;
+      --rule:#29323B; --live:#E0996A; --live-bg:#2E1F16; --neut:#6FADDD; --neut-bg:#14232F;
+      --earth:#93C070; --earth-bg:#1B2416;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#0F1418; --card:#171E25; --card-2:#1E262E; --ink:#E8EDF2; --ink-2:#A7B3BF; --ink-3:#7B8794;
+    --rule:#29323B; --live:#E0996A; --live-bg:#2E1F16; --neut:#6FADDD; --neut-bg:#14232F;
+    --earth:#93C070; --earth-bg:#1B2416;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.7);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 var(--sans); }
+  main { max-width:720px; margin:0 auto; padding:28px 16px 48px; }
+  .kicker { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin:0 0 6px; }
+  h1 { font-size:28px; line-height:1.2; margin:0 0 6px; }
+  .sub { color:var(--ink-2); margin:0 0 24px; }
+  section { background:var(--card); border:1px solid var(--rule); border-radius:12px; box-shadow:var(--shadow); padding:18px 18px 8px; margin:0 0 16px; }
+  h2 { font-size:18px; margin:0 0 4px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .tag { font-size:12px; font-weight:600; padding:2px 8px; border-radius:999px; }
+  .t-main { color:var(--live); background:var(--live-bg); }
+  .t-house { color:var(--neut); background:var(--neut-bg); }
+  .t-wait { color:var(--earth); background:var(--earth-bg); }
+  .lede { color:var(--ink-2); font-size:14px; margin:0 0 10px; }
+  ul { list-style:none; margin:0; padding:0; }
+  li { padding:10px 0; border-top:1px solid var(--rule); }
+  li:first-child { border-top:0; }
+  li b { display:block; }
+  li span { color:var(--ink-2); font-size:14px; }
+  .warn { background:var(--live-bg); color:var(--live); border-radius:8px; padding:10px 12px; font-size:14px; margin:4px 0 12px; }
+  footer { color:var(--ink-3); font-size:13px; margin-top:20px; }
+  a { color:var(--neut); }
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">Half term · from Monday 26 October 2026</p>
+  <h1>What's left to do</h1>
+  <p class="sub">The short version. Wiring detail is on the <a href="./">full install page</a>.</p>
+
+  <section>
+    <h2>Office — the summer house <span class="tag t-main">main job</span></h2>
+    <p class="lede">Its own supply and consumer unit. Everything out here hangs off that board.</p>
+    <ul>
+      <li><b>Submain + consumer unit</b><span>32 A submain. Heater on a 16 A way, sockets on a 20 A way. Cable size, depth and earthing are Tony's call.</span></li>
+      <li><b>Data duct in the same trench</b><span>Spare duct for network cable alongside the armoured supply, properly separated.</span></li>
+      <li><b>Heater — switched fused spur</b><span>Behind the heater at mounting height. Permanently live, no module.</span></li>
+      <li><b>Sockets</b><span>Two doubles at the desk, one double for the printer, one single behind the tablet (fed through its ZBMINI, same as the Living Room).</span></li>
+      <li><b>CHANFOK Neo fan + light, with its ZBMINI</b><span>Detach mode. Agree the position with Zero before drilling — not over where you stand up from the desk chair.</span></li>
+      <li><b>Sensors</b><span>Presence (on a USB plate), temperature on the far wall away from the heater, contact on the door.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>House <span class="tag t-house">while you're here</span></h2>
+    <ul>
+      <li><b>Aico Ei428 relay — arrived</b><span>Onto the permanent live left capped off for it, in radio range of the alarms. Needs one more ZBMINI R2 beside it as its Zigbee input: the relay's volt-free contact across S1/S2.</span></li>
+      <li><b>Bedroom 3 fan + its module</b><span>CHANFOK, set up the same as the Master Bedroom. Detach mode.</span></li>
+      <li><b>Radiator valves — walk round first</b><span>Check each of the six radiators for which adapter it needs before any head comes off. Then a couple of minutes each.</span></li>
+      <li><b>Presence sensors</b><span>Garage, hall, landing, Bedroom 3 — each on its USB plate.</span></li>
+      <li><b>Contact sensors</b><span>Front door, back door, garage back door, back gate (in its sealed case), garage up-and-over.</span></li>
+      <li><b>Vibration sensor on the garage cat flap</b><span>High on the flap, within about 20 mm of the hinge.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Still to buy or arrive <span class="tag t-wait">not on site yet</span></h2>
+    <ul>
+      <li><b>1 × Sonoff ZBMINI R2</b><span>To buy — the Zigbee input for the Ei428.</span></li>
+      <li><b>2 × Sonoff SNZB-02B</b><span>To buy — temperature for the Bedroom 2 and Bedroom 3 fans.</span></li>
+      <li><b>Garage SNZB-02WD</b><span>On order.</span></li>
+    </ul>
+  </section>
+
+  <footer>Every module and sensor is joined to Home Assistant from the server afterwards — nothing to do on site for that. Updated 24 October 2026.</footer>
+</main>
+</body>
+</html>
