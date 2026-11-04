@@ -207,7 +207,6 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | `master_bedroom_radiator_schedule` | 06:00 → 20 °C, 09:00 → 14 °C. | He sleeps cold. |
 | `kitchen_radiator_schedule` | 06:00 → 17 °C, 22:00 → 14 °C. | Zero's schedule. |
 | `ring_push_watchdog` | Log "Shutting down push receiver" → reload the Ring entry after 2 min. | firebase_messaging gives up after 3 network errors. Needs `system_log: fire_event: true`, which is in config and loaded since HA started 16:22 on 4 Nov 2026. Not triggered yet. |
-| `tablets_back_to_fully` | Every minute: any tablet whose foreground app has been something other than Fully (`de.ozerov.fully`) for 2 min gets its `Bring to foreground` button pressed. Covers all 5 tablets. | Zero, 4 Nov 2026: tablets must go back to the dashboard after Ring etc. Fully's own regain-focus timer didn't fire. Proven on the Lounge tablet 20:38 4 Nov 2026. |
 
 **Blueprints** in `config/blueprints/automation/zero/`:
 - `fan_when_warm_and_occupied`: used by the Lounge only.
@@ -434,7 +433,7 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | `enablePopups` | true | HA opens url actions as a new window. Off = "popups and new tabs disabled". |
 | `forceScreenOrientation` | `3` (Reverse Portrait: power lead at the bottom) | Zero's choice, 4 Nov 2026. Values from Fully's own page: 0 Auto, 1 Portrait, 2 Landscape, 3 Reverse Portrait, 4 Reverse Landscape. Not on the Apolosign (landscape wall screen). |
 | `forceScreenOrientationGlobal` | true | Makes the Ring app follow the orientation (it locks itself upright otherwise). |
-| `timeToRegainFocus` | `120` | Set, but it did NOT bring Fully back on the Lounge tablet (4 Nov 2026). The real return is the HA automation `tablets_back_to_fully`: add the new tablet's `sensor.<tablet>_foreground_app` + `button.<tablet>_bring_to_foreground` to it. |
+| `timeToRegainFocus` | `120` | Fully comes back to the front 2 min after the **last touch** (its idle clock is `lastUserInteractionTime`; touches in Ring restart it because `touchesOtherAppsBreakIdle=true`). Proven on the Lounge tablet 20:45 4 Nov 2026: flipped back at idle 126 s. It did not fire once earlier that evening, so a backup job runs on Elysium: `/usr/local/sbin/tablets-back-to-fully`, root crontab every minute, same rule (other app + 2 min since last touch → `toForeground`), logs to `journalctl -t tablets-back-to-fully`. It reads hosts from HA's fully_kiosk entries, so a new tablet is covered once it is in HA. |
 | `touchesOtherAppsBreakIdle` | true | Touching Ring restarts the 2 minutes, so it isn't pulled away mid-use. |
 | Dashboard cameras | Every Ring camera card: `tap_action: url` → `intent:#Intent;package=com.ringapp.fire;end`; `camera_view: auto`. | |
 | Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`. |
