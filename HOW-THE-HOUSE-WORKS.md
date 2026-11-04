@@ -343,7 +343,6 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Optimum OP-WFSTAT thermostat ordered. Add a boiler thermostat card to hall-dash once in. | 3 Nov 2026 |
 | Broadband: router goes in the Lounge. Then re-check `ping -c 30 192.168.1.213` and re-make the reservations. Elysium onto its wired point. | 3 Nov 2026 |
 | Ring app installed only on the Office tablet; install `com.ringapp.fire` on the others. | 4 Nov 2026 |
-| Hall tablet `.122` missing from `smoke_co_alarm_phone_alert`. | 4 Nov 2026 |
 | Office tablet still low while "plugged in" (11 % at 17:34). | 4 Nov 2026 |
 | Bedroom and Office Voice PEs unavailable. Living Room Voice PE not in HA. | 4 Nov 2026 |
 | Alexa: rename the bedroom light to "Bedroom Light" in the Alexa app. | 26 Oct 2026 |
@@ -436,6 +435,6 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | `timeToRegainFocus` | `120` | Fully comes back to the front after 2 idle minutes in another app (Ring). |
 | `touchesOtherAppsBreakIdle` | true | Touching Ring restarts the 2 minutes, so it isn't pulled away mid-use. |
 | Dashboard cameras | Every Ring camera card: `tap_action: url` → `intent:#Intent;package=com.ringapp.fire;end`; `camera_view: auto`. | |
-| Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert`. | Hall (.122) is still missing (section 7). |
+| Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`. |
 
 **Fully stops answering on port 2323 when another app (Ring) is in front on some tablets.** Don't send `restartApp` then: it can leave Fully closed until someone opens it by hand.
