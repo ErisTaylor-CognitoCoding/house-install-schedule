@@ -267,7 +267,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | `kioskExitGesture` | 0 (swipe from left) | Never try 3; it left Zero locked in. Don't guess values. PIN is factory 1234. |
 | `disableCamera` | true | Apolosign reads **false** live (memory says it was set true 29 Oct 2026). Conflict. |
 | `motionDetection`, `webcamAccess`, `motionDetectionAcoustic` | false | Camera rule. |
-| `kioskAppWhitelist` | `com.ringapp.fire` | The Ring app on Fire is `com.ringapp.fire`, not `com.ringapp`. Only the Office tablet has Ring installed so far. |
+| `kioskAppWhitelist` | `com.ringapp.fire` | The Ring app on Fire is `com.ringapp.fire`, not `com.ringapp`. Ring is installed on the Office, Lounge and Hall tablets (4 Nov 2026). The Hall tablet's App Store said "network unreachable"; it was installed from amazon.co.uk → Deliver to the tablet instead. |
 | `enableUrlOtherApps` | true | Needed for the intent tap. |
 | `enablePopups` | true | HA opens url actions as a new window. Off = "popups and new tabs disabled". |
 | `injectJsCode` | Office only: forces HA light theme | HA theme is per browser. Use the same on any tablet that flips dark. |
