@@ -248,7 +248,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - Rooms are separate **dashboards, not tabs** inside one. Built wrong once, 18 Aug 2026.
 - `lounge-dash`: lounge light and fan only (never other rooms' lights), TV/stick, PlayStation section, thermostat. The pet cam was removed from the Lounge (18 Aug and 31 Oct 2026); do not put it back. The Garage cam is in its cameras subview.
 - `office-dash`: title "Office", lounge light + fan, diary, front/back/garden cameras, lounge temp/humidity/presence, thermostat. **Never the TV or PS5.**
-- `bedroom-2-dash` / `bedroom-3-dash`: light and fan plus room only, no cameras (31 Oct 2026). Live `bedroom-3-dash` does carry a front-door doorbell card (conflict).
+- `bedroom-2-dash` / `bedroom-3-dash`: **deleted 4 Nov 2026 (Zero: "scrap them").** No tablet pointed at them. Backups of the storage files are in `~/lovelace.bedroom_[23]_dash.bak-20261104`. Do not recreate them.
 - `hall-dash`: doorbell camera, front door contact, doorbell battery, Hall + Top of Stairs lights, hall thermostat, "Before you go" (back door, back gate, garage door, garage back door, summer house, Sox, Marshmellow), hourly weather.
 - `kitchen-dash`: family calendar, weather, date/time, shopping list, Kitchen 1/2, radiator, Front Door camera, Cats badge → `/kitchen-dash/cats` (map + per-cat tiles + "Kitchen flap last used"). Install and Half Term badges were removed 3 Nov 2026.
 - Main views show the house door `camera.front_door_live_view_2`. The 28 door stays in each `cameras-28` subview.
