@@ -207,6 +207,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | `master_bedroom_radiator_schedule` | 06:00 → 20 °C, 09:00 → 14 °C. | He sleeps cold. |
 | `kitchen_radiator_schedule` | 06:00 → 17 °C, 22:00 → 14 °C. | Zero's schedule. |
 | `ring_push_watchdog` | Log "Shutting down push receiver" → reload the Ring entry after 2 min. | firebase_messaging gives up after 3 network errors. Needs `system_log: fire_event: true`, which is in config and loaded since HA started 16:22 on 4 Nov 2026. Not triggered yet. |
+| `tablets_back_to_fully` | Every minute: any tablet whose foreground app has been something other than Fully (`de.ozerov.fully`) for 2 min gets its `Bring to foreground` button pressed. Covers all 5 tablets. | Zero, 4 Nov 2026: tablets must go back to the dashboard after Ring etc. Fully's own regain-focus timer didn't fire. Proven on the Lounge tablet 20:38 4 Nov 2026. |
 
 **Blueprints** in `config/blueprints/automation/zero/`:
 - `fan_when_warm_and_occupied`: used by the Lounge only.
@@ -230,7 +231,6 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 
 ---
 
-| `tablets_back_to_fully` | Every minute: any tablet whose foreground app has been something other than Fully (`de.ozerov.fully`) for 2 min gets its `Bring to foreground` button pressed. Covers all 5 tablets. | Zero, 4 Nov 2026: tablets must go back to the dashboard after Ring etc. Fully's own regain-focus timer didn't fire. Proven on the Lounge tablet 20:38 4 Nov 2026. |
 
 ## 5. Dashboards and tablets
 
