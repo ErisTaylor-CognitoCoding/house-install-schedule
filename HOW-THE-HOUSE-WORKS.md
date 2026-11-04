@@ -230,6 +230,8 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 
 ---
 
+| `tablets_back_to_fully` | Every minute: any tablet whose foreground app has been something other than Fully (`de.ozerov.fully`) for 2 min gets its `Bring to foreground` button pressed. Covers all 5 tablets. | Zero, 4 Nov 2026: tablets must go back to the dashboard after Ring etc. Fully's own regain-focus timer didn't fire. Proven on the Lounge tablet 20:38 4 Nov 2026. |
+
 ## 5. Dashboards and tablets
 
 | Tablet | IP | Start URL | Charging |
@@ -432,7 +434,7 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | `enablePopups` | true | HA opens url actions as a new window. Off = "popups and new tabs disabled". |
 | `forceScreenOrientation` | `3` (Reverse Portrait: power lead at the bottom) | Zero's choice, 4 Nov 2026. Values from Fully's own page: 0 Auto, 1 Portrait, 2 Landscape, 3 Reverse Portrait, 4 Reverse Landscape. Not on the Apolosign (landscape wall screen). |
 | `forceScreenOrientationGlobal` | true | Makes the Ring app follow the orientation (it locks itself upright otherwise). |
-| `timeToRegainFocus` | `120` | Fully comes back to the front after 2 idle minutes in another app (Ring). |
+| `timeToRegainFocus` | `120` | Set, but it did NOT bring Fully back on the Lounge tablet (4 Nov 2026). The real return is the HA automation `tablets_back_to_fully`: add the new tablet's `sensor.<tablet>_foreground_app` + `button.<tablet>_bring_to_foreground` to it. |
 | `touchesOtherAppsBreakIdle` | true | Touching Ring restarts the 2 minutes, so it isn't pulled away mid-use. |
 | Dashboard cameras | Every Ring camera card: `tap_action: url` → `intent:#Intent;package=com.ringapp.fire;end`; `camera_view: auto`. | |
 | Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`. |
