@@ -438,4 +438,8 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | Dashboard cameras | Every Ring camera card: `tap_action: url` → `intent:#Intent;package=com.ringapp.fire;end`; `camera_view: auto`. | |
 | Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`. |
 
-**Fully stops answering on port 2323 when another app (Ring) is in front on some tablets.** Don't send `restartApp` then: it can leave Fully closed until someone opens it by hand.
+| `launchOnBoot` | true | Was false on all four Fire tablets until 4 Nov 2026, so Fully did not come back after a restart. |
+
+**Fire OS kills Fully (4 Nov 2026, proven from Fully's own log via remote admin `home?cmd=showLog`).** A kill shows as "Start app ..." with no "Exit app" before it; a crash shows "Restart app after Uncaught Crash" and Fully restarts itself. Kills seen: Office 16:03/16:05/16:26, Hall 19:50 (Ring open), Lounge ~20:51 (6 min after Ring was left in the background). After a kill the tablet sits on the Fire home screen because `com.amazon.firelauncher` is still the default launcher, and nothing relaunches Fully. The real fix is making Fully the launcher (`adb shell pm disable-user --user 0 com.amazon.firelauncher`), which needs Developer Options + Enable ADB + a USB cable to Elysium once per tablet (adb is installed on Elysium). Zero: "all too much", 4 Nov 2026 — not done. Don't push it again unless he raises it.
+
+**Fully stops answering on port 2323 when another app (Ring) is in front on some tablets** (that is Fully being killed, see above). Don't send `restartApp` then: it can leave Fully closed until someone opens it by hand.
