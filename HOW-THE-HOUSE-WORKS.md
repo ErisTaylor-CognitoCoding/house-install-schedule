@@ -265,7 +265,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | `kioskMode` | true (Apolosign false) | Off = drops out of kiosk. Only takes effect after `restartApp`. `deviceInfo.kioskLocked` is the honest read. |
 | `microphoneAccess` | true | Off = the mic prompt every time. |
 | `kioskExitGesture` | 0 (swipe from left) | Never try 3; it left Zero locked in. Don't guess values. PIN is factory 1234. |
-| `disableCamera` | true | Apolosign reads **false** live (memory says it was set true 29 Oct 2026). Conflict. |
+| `disableCamera` | true | All five true (Apolosign fixed 4 Nov 2026). |
 | `motionDetection`, `webcamAccess`, `motionDetectionAcoustic` | false | Camera rule. |
 | `kioskAppWhitelist` | `com.ringapp.fire` | The Ring app on Fire is `com.ringapp.fire`, not `com.ringapp`. Ring is installed on the Office, Lounge and Hall tablets (4 Nov 2026). The Hall tablet's App Store said "network unreachable"; it was installed from amazon.co.uk → Deliver to the tablet instead. |
 | `enableUrlOtherApps` | true | Needed for the intent tap. |
