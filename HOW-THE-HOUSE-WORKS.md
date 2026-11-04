@@ -411,3 +411,31 @@ ip -br addr; ip route; journalctl -t wifi-watchdog --since today; journalctl -k 
 ```
 
 Where secrets live: HA token in the `nova` container env (`Nova-2.0/.env`). MQTT password in Z2M `configuration.yaml`. Fully passwords in HA `core.config_entries`. Wi-Fi password in esphome `secrets.yaml`. Fully admin password also in the Pantheon vault (`FULLY_KIOSK_ADMIN_PASSWORD`); it is not the same on every tablet, so trust `core.config_entries`.
+
+## 9. New tablet checklist (every Fire tablet; written 4 Nov 2026)
+
+Set these on any new Fire tablet before calling it done. Values were read off live tablets. Set them through Fully's REST (`setBooleanSetting` / `setStringSetting`), then read them back with `listSettings`.
+
+| Step / setting | Value | Why |
+|---|---|---|
+| Fire setup | Tap Back ~5 times fast to get past the forced Amazon Kids screen. | New Fire setup forces Amazon Kids even with no child profile. |
+| Router reservation | Reserve its MAC on the MR600 (see `project_elysium_4g_wifi_dongle` memory for the login method). | Tablets use the IP, not the hostname (no Pi-hole). |
+| Fully Plus licence | Licensed | Popups, kiosk, regain focus and global orientation are Plus features. |
+| HA integration | Add `fully_kiosk` with host + remote admin password | Password then lives in `core.config_entries`. |
+| `startURL` | `http://192.168.1.146:8123/<room>-dash/<view>` | |
+| `kioskMode` | true (Apolosign: false, see section 6) | Off = drops out of kiosk. Takes effect after `loadStartUrl` or `restartApp`. Check `deviceInfo.kioskLocked`. |
+| `kioskExitGesture` / `disableKioskExitGesture` | `0` / false | Left-edge swipe + PIN 1234 is the way out on the tablet. Gesture 3 does not work. |
+| `microphoneAccess` | true | Off = mic prompt every time. |
+| `disableCamera` true; `motionDetection`, `webcamAccess`, `motionDetectionAcoustic` false; HA `camera.<tablet>` disabled | | No tablet cameras (Zero: "creepy"). |
+| Ring app | Install from **amazon.co.uk → Apps & Games → Ring → Deliver to <tablet>** if the tablet's App Store says "network unreachable" (Hall, 4 Nov 2026). | Doorbell/camera cards open the Ring app; live video crashes the Fire WebView. |
+| `kioskAppWhitelist` | `com.ringapp.fire` | Ring's package on Fire. `com.ringapp` does nothing. |
+| `enableUrlOtherApps` | true | Lets the `intent:` link leave Fully. |
+| `enablePopups` | true | HA opens url actions as a new window. Off = "popups and new tabs disabled". |
+| `forceScreenOrientation` | `3` (Reverse Portrait: power lead at the bottom) | Zero's choice, 4 Nov 2026. Values from Fully's own page: 0 Auto, 1 Portrait, 2 Landscape, 3 Reverse Portrait, 4 Reverse Landscape. Not on the Apolosign (landscape wall screen). |
+| `forceScreenOrientationGlobal` | true | Makes the Ring app follow the orientation (it locks itself upright otherwise). |
+| `timeToRegainFocus` | `120` | Fully comes back to the front after 2 idle minutes in another app (Ring). |
+| `touchesOtherAppsBreakIdle` | true | Touching Ring restarts the 2 minutes, so it isn't pulled away mid-use. |
+| Dashboard cameras | Every Ring camera card: `tap_action: url` → `intent:#Intent;package=com.ringapp.fire;end`; `camera_view: auto`. | |
+| Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert`. | Hall (.122) is still missing (section 7). |
+
+**Fully stops answering on port 2323 when another app (Ring) is in front on some tablets.** Don't send `restartApp` then: it can leave Fully closed until someone opens it by hand.
