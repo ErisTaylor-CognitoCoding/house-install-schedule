@@ -253,7 +253,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - `kitchen-dash`: family calendar, weather, date/time, shopping list, Kitchen 1/2, radiator, Front Door camera, Cats badge → `/kitchen-dash/cats` (map + per-cat tiles + "Kitchen flap last used"). Install and Half Term badges were removed 3 Nov 2026.
 - Main views show the house door `camera.front_door_live_view_2`. The 28 door stays in each `cameras-28` subview.
 - Camera cards use `camera_view: auto`, not live. Five live streams eat bandwidth. Live doorbell video also crashes the Fire WebView (Chrome 104). The `cameras` subviews on kitchen, lounge and wall-panel still have `live` on Front Door and Garden (unverified whether they crash).
-- Doorbell cards tap to `intent:#Intent;package=com.ringapp.fire;end`. That opens the Ring app, not live video in the browser. `wall-panel` doorbell cards have no intent tap.
+- Every Ring camera card on `lounge-dash`, `office-dash` and `hall-dash` taps to `intent:#Intent;package=com.ringapp.fire;end` (all cameras, not just the doorbell: Zero, 4 Nov 2026). Other dashboards: doorbell card only; `wall-panel` doorbell cards have no intent tap. The tap opens the Ring app, not live video in the browser.
 - The red smoke banner (`input_boolean.smoke_alarm_sounding`) sits at the top of the first view of kitchen, lounge, bedroom, office and wall-panel.
 - Calendar cards: only `dayGridMonth`, `dayGridDay`, `listWeek` exist. There is no week grid.
 - A bare `switch.` shows under no Lights. Wrap module switches with switch_as_x.
