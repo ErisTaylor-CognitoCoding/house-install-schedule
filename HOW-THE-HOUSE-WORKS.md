@@ -237,7 +237,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 |---|---|---|---|
 | Lounge ("Fire Tablet") | `.163` | `http://192.168.1.146:8123/lounge-dash/lounge` | Lounge Tablet Socket 80/40 |
 | Master Bedroom | `.247` | `.../bedroom-dash/bedroom` | Bed USB |
-| Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | It drained on the PC's USB (29 Oct 2026). Half-term page says the desk double was fitted 29 Oct, yet it read 11 % while plugged in at 17:34 on 4 Nov 2026. Check what it is plugged into. |
+| Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | It drained on the PC's USB (29 Oct 2026). Half-term page says the desk double was fitted 29 Oct, yet it read 11 % while plugged in at 17:34 on 4 Nov 2026, and 9 % on 5 Nov. On 5 Nov it dropped to the Amazon lock screen (screen off 14:35, nothing in HA sent it, Fully did not crash). Cause is the charger not keeping up; check what it is plugged into. |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
 | Kitchen Apolosign 21.5" | `.40` | `.../kitchen-dash/kitchen?kiosk` | Mains |
 | Bedroom 2, Bedroom 3, summer house | — | On order | — |
