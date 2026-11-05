@@ -237,7 +237,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 |---|---|---|---|
 | Lounge ("Fire Tablet") | `.163` | `http://192.168.1.146:8123/lounge-dash/lounge` | Lounge Tablet Socket 80/40 |
 | Master Bedroom | `.247` | `.../bedroom-dash/bedroom` | Bed USB |
-| Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | It drained on the PC's USB (29 Oct 2026). Half-term page says the desk double was fitted 29 Oct, yet it read 11 % while plugged in at 17:34 on 4 Nov 2026, and 9 % on 5 Nov. Lead swapped 5 Nov. The Amazon passcode screen on 5 Nov was not the battery: Fire OS switched the screen off after Ring (see `keepScreenOnAdvanced`). |
+| Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | It drained on the PC's USB (29 Oct 2026). Half-term page says the desk double was fitted 29 Oct, yet it read 11 % while plugged in at 17:34 on 4 Nov 2026, and 9 % on 5 Nov. Lead swapped 5 Nov and it still drained (8→5 % in 20 min), so the desk plug/charger is the fault; Office tablet moved onto the Lounge Tablet Socket (charge-limit automation follows the Lounge tablet's battery, socket switched on by hand). The Amazon passcode screen on 5 Nov was not the battery: Fire OS switched the screen off after Ring (see `keepScreenOnAdvanced`). |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
 | Kitchen Apolosign 21.5" | `.40` | `.../kitchen-dash/kitchen?kiosk` | Mains |
 | Bedroom 2, Bedroom 3, summer house | — | On order | — |
