@@ -237,7 +237,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 |---|---|---|---|
 | Lounge ("Fire Tablet") | `.163` | `http://192.168.1.146:8123/lounge-dash/lounge` | Lounge Tablet Socket 80/40 |
 | Master Bedroom | `.247` | `.../bedroom-dash/bedroom` | Bed USB |
-| Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | It drained on the PC's USB (29 Oct 2026). Half-term page says the desk double was fitted 29 Oct, yet it read 11 % while plugged in at 17:34 on 4 Nov 2026, and 9 % on 5 Nov. On 5 Nov it dropped to the Amazon lock screen (screen off 14:35, nothing in HA sent it, Fully did not crash). Cause is the charger not keeping up; check what it is plugged into. |
+| Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | It drained on the PC's USB (29 Oct 2026). Half-term page says the desk double was fitted 29 Oct, yet it read 11 % while plugged in at 17:34 on 4 Nov 2026, and 9 % on 5 Nov. Lead swapped 5 Nov. The Amazon passcode screen on 5 Nov was not the battery: Fire OS switched the screen off after Ring (see `keepScreenOnAdvanced`). |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
 | Kitchen Apolosign 21.5" | `.40` | `.../kitchen-dash/kitchen?kiosk` | Mains |
 | Bedroom 2, Bedroom 3, summer house | — | On order | — |
@@ -439,6 +439,7 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`. |
 
 | `launchOnBoot` | true | Was false on all four Fire tablets until 4 Nov 2026, so Fully did not come back after a restart. |
+| `keepScreenOn` + `keepScreenOnAdvanced` | true + true | The screen must never really switch off: idle = Fully screensaver (black), tap = dashboard. Every tablet has a Fire OS passcode, so a real screen-off lands on the Amazon passcode screen. Plain `keepScreenOn` only holds while Fully is in front; on 5 Nov 2026 the Office tablet had Ring open, Fire OS switched the screen off at 14:35 and it came back on the passcode. Advanced added to all four Fire tablets 5 Nov 2026. |
 
 **Fire OS kills Fully (4 Nov 2026, proven from Fully's own log via remote admin `home?cmd=showLog`).** A kill shows as "Start app ..." with no "Exit app" before it; a crash shows "Restart app after Uncaught Crash" and Fully restarts itself. Kills seen: Office 16:03/16:05/16:26, Hall 19:50 (Ring open), Lounge ~20:51 (6 min after Ring was left in the background). After a kill the tablet sits on the Fire home screen because `com.amazon.firelauncher` is still the default launcher, and nothing relaunches Fully. The real fix is making Fully the launcher (`adb shell pm disable-user --user 0 com.amazon.firelauncher`), which needs Developer Options + Enable ADB + a USB cable to Elysium once per tablet (adb is installed on Elysium). Zero: "all too much", 4 Nov 2026 — not done. Don't push it again unless he raises it.
 
