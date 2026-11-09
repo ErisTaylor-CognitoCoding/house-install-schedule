@@ -244,7 +244,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | Official Raspberry Pi USB-C supply (5 Nov 2026). Never an extension-lead USB port or the PC's USB: both gave too little power and it drained while "plugged in" (5 Nov: 8→5 % in 20 min). |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
 | Kitchen Apolosign 21.5" | `.40` | `.../kitchen-dash/kitchen?kiosk` | Mains |
-| Summer House | `.176` (reserved 9 Nov 2026) | `.../summer-house-dash/summer-house` | Unverified. Set up 9 Nov 2026: checklist settings applied and read back, HA entry "Summer House Tablet" (`*_fire_tablet_*_3`, camera disabled, area Summer House), in the smoke alert. **Fully Plus not licensed yet** (watermark, `kioskLocked` false). Restoring Fire OS from another tablet's backup does not carry Fully settings or the HA login over. |
+| Summer House | `.176` (reserved 9 Nov 2026) | `.../summer-house-dash/summer-house` | Unverified. Set up 9 Nov 2026: checklist settings applied and read back, HA entry "Summer House Tablet" (`*_fire_tablet_*_3`, camera disabled, area Summer House), in the smoke alert. **Fully Plus not licensed yet** (watermark; kiosk still locks, `kioskLocked` true after HA login). Restoring Fire OS from another tablet's backup does not carry Fully settings or the HA login over. |
 | Bedroom 2, Bedroom 3 | — | On order | — |
 | Garage | — | To buy | — |
 
