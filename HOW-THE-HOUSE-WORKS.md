@@ -315,6 +315,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - OFF = `remote.send_command Standby` on `remote.lounge_tv`. The Philips always reads "off" in HA (`/6/powerstate` 404).
   - Never remove either Fire entity. The old two-entity rule (built-in = power, stick = apps) came from the JVC. The Philips now takes the built-in's power role.
   - Philips Eco "Picture mute" blanks the screen; a volume key brings it back. Ambilight in standby is the TV's own setting, for Zero to turn off.
+- **Philips lounge TV (`custom_components/philips_js`, 9 Nov 2026).** A copy of HA 2026.9.1's core integration with one patch in `coordinator.py`. The 55OLED760 has no `/powerstate` (404) and `/screenstate` always says "Off", so stock HA showed the TV off for good. The patch reads Chromecast port 8008 instead: open = on, closed = standby (both measured on the set 9 Nov). On an HA upgrade, re-copy core `philips_js` and re-apply the patch, or delete the folder if upstream fixes it.
 - **PS5.**
   - `ps5-mqtt` handles rest and wake only. Launching a game is impossible via playactor by design; don't re-research it.
   - When running playactor by hand, add `NODE_OPTIONS=--require /app/ps5-mqtt/server/dist/playactor-preload.js`.
