@@ -244,7 +244,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | Official Raspberry Pi USB-C supply (5 Nov 2026). Never an extension-lead USB port or the PC's USB: both gave too little power and it drained while "plugged in" (5 Nov: 8→5 % in 20 min). |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
 | Kitchen Apolosign 21.5" | `.40` | `.../kitchen-dash/kitchen?kiosk` | Mains |
-| Summer House | `.176` (reserved 9 Nov 2026) | `.../summer-house-dash/summer-house` | Unverified |
+| Summer House | `.176` (reserved 9 Nov 2026) | `.../summer-house-dash/summer-house` | Unverified. Set up 9 Nov 2026: checklist settings applied and read back, HA entry "Summer House Tablet" (`*_fire_tablet_*_3`, camera disabled, area Summer House), in the smoke alert. **Fully Plus not licensed yet** (watermark, `kioskLocked` false). Restoring Fire OS from another tablet's backup does not carry Fully settings or the HA login over. |
 | Bedroom 2, Bedroom 3 | — | On order | — |
 | Garage | — | To buy | — |
 
@@ -443,7 +443,7 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | `timeToRegainFocus` | `120` | Fully comes back to the front 2 min after the **last touch** (its idle clock is `lastUserInteractionTime`; touches in Ring restart it because `touchesOtherAppsBreakIdle=true`). Proven on the Lounge tablet 20:45 4 Nov 2026: flipped back at idle 126 s. It did not fire once earlier that evening, so a backup job runs on Elysium: `/usr/local/sbin/tablets-back-to-fully`, root crontab every minute, same rule (other app + 2 min since last touch → `toForeground`), logs to `journalctl -t tablets-back-to-fully`. It reads hosts from HA's fully_kiosk entries, so a new tablet is covered once it is in HA. |
 | `touchesOtherAppsBreakIdle` | true | Touching Ring restarts the 2 minutes, so it isn't pulled away mid-use. |
 | Dashboard cameras | Every Ring camera card: `tap_action: url` → `intent:#Intent;package=com.ringapp.fire;end`; `camera_view: auto`. | |
-| Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`. |
+| Smoke alert | Add the tablet to `smoke_co_alarm_phone_alert` (screen on + overlay + TTS, and the overlay clear at the end). | Hall added 4 Nov 2026 as `*_fire_tablet_*_2`; summer house 9 Nov 2026 as `*_fire_tablet_*_3`. |
 
 | `launchOnBoot` | true | Was false on all four Fire tablets until 4 Nov 2026, so Fully did not come back after a restart. |
 | `keepScreenOn` + `keepScreenOnAdvanced` | true + true | The screen must never really switch off: idle = Fully screensaver (black), tap = dashboard. Every tablet has a Fire OS passcode, so a real screen-off lands on the Amazon passcode screen. Plain `keepScreenOn` only holds while Fully is in front; on 5 Nov 2026 the Office tablet had Ring open, Fire OS switched the screen off at 14:35 and it came back on the passcode. Advanced added to all four Fire tablets 5 Nov 2026. |
