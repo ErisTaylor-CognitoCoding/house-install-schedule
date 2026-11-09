@@ -147,7 +147,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 
 ### Outside and other
 - Back Gate 04P in a weatherproof case. It reaches the network via the Garage module. Check the seal when the battery is changed.
-- Ring at the house: Front Door doorbell (`_2` entities, Doorbell 3 Plus), Backdoor, Path, Garden, Lounge Pet Cam, and `camera.office_live_view` (named "Summer House Live view"). Unverified which physical camera that last one is: the install page lists the summer-house Ring as "to buy".
+- Ring at the house: Front Door doorbell (`_2` entities, Doorbell 3 Plus), Backdoor, Path, Garden, Lounge Pet Cam, and `camera.office_live_view` (named "Summer House Live view"). That last one IS the summer house camera: its snapshot shows the summer house inside (9 Nov 2026).
 - 28 Courageous (old house): 28 Front Door (`camera.front_door_live_view`, no `_2`), 28 Spotlight, Marshmallow cam.
 
 ---
@@ -244,7 +244,8 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | Official Raspberry Pi USB-C supply (5 Nov 2026). Never an extension-lead USB port or the PC's USB: both gave too little power and it drained while "plugged in" (5 Nov: 8→5 % in 20 min). |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
 | Kitchen Apolosign 21.5" | `.40` | `.../kitchen-dash/kitchen?kiosk` | Mains |
-| Bedroom 2, Bedroom 3, summer house | — | On order | — |
+| Summer House | `.176` (reserved 9 Nov 2026) | `.../summer-house-dash/summer-house` | Unverified |
+| Bedroom 2, Bedroom 3 | — | On order | — |
 | Garage | — | To buy | — |
 
 `wall-panel` (Main DashBoard), `tv-remotes` and `map` are not on any tablet's start URL.
@@ -254,6 +255,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - `lounge-dash`: lounge light and fan only (never other rooms' lights), TV/stick, PlayStation section, thermostat. The pet cam was removed from the Lounge (18 Aug and 31 Oct 2026); do not put it back. The Garage cam is in its cameras subview.
 - `office-dash`: title "Office", lounge light + fan, diary, front/back/garden cameras, lounge temp/humidity/presence, thermostat. **Never the TV or PS5.**
 - `bedroom-2-dash` / `bedroom-3-dash`: **deleted 4 Nov 2026 (Zero: "scrap them").** No tablet pointed at them. Backups of the storage files are in `~/lovelace.bedroom_[23]_dash.bak-20261104`. Do not recreate them.
+- `summer-house-dash` (9 Nov 2026): Front door (doorbell camera → Ring app, front door contact, last ring), Summer house (temperature, humidity, door, `camera.office_live_view` → Ring app), hourly weather. Smoke banner in the header. Built so Zero can watch the front door from the summer house.
 - `hall-dash`: doorbell camera, front door contact, doorbell battery, Hall + Top of Stairs lights, hall thermostat, "Before you go" (back door, back gate, garage door, garage back door, summer house, Sox, Marshmellow), hourly weather.
 - `kitchen-dash`: family calendar, weather, date/time, shopping list, Kitchen 1/2, radiator, Front Door camera, Cats badge → `/kitchen-dash/cats` (map + per-cat tiles + "Kitchen flap last used"). Install and Half Term badges were removed 3 Nov 2026.
 - Main views show the house door `camera.front_door_live_view_2`. The 28 door stays in each `cameras-28` subview.
@@ -281,7 +283,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - Do not send `restartApp` while another app (Ring) is in front. On `.190` it left port 2323 closed until Zero reopened Fully by hand (4 Nov 2026).
 - The Apolosign's kiosk layout comes from `?kiosk` on its URL, not the dashboard's `kiosk_mode`. Any URL pushed to it must keep `?kiosk`.
 - Other dashboards use `kiosk_mode.mobile_settings`: hide sidebar and header below 1000 px.
-- New tablet setup: copy settings by diffing `listSettings` off an existing tablet; camera settings go first. Fire setup forces Amazon Kids; tap Back about 5 times quickly to get past it. Reserve its IP on the MR600.
+- New tablet setup: copy settings by diffing `listSettings` off an existing tablet; camera settings go first. Fire setup forces Amazon Kids; tap Back about 5 times quickly to get past it. Reserve its IP on the EE hub.
 
 ---
 
@@ -423,7 +425,7 @@ Set these on any new Fire tablet before calling it done. Values were read off li
 | Step / setting | Value | Why |
 |---|---|---|
 | Fire setup | Tap Back ~5 times fast to get past the forced Amazon Kids screen. | New Fire setup forces Amazon Kids even with no child profile. |
-| Router reservation | Reserve its MAC on the MR600 (see `project_elysium_4g_wifi_dongle` memory for the login method). | Tablets use the IP, not the hostname (no Pi-hole). |
+| Router reservation | Reserve its MAC on the EE hub (Address table → device → Always use this IP). | Tablets use the IP, not the hostname (no Pi-hole). |
 | Fully Plus licence | Licensed | Popups, kiosk, regain focus and global orientation are Plus features. |
 | HA integration | Add `fully_kiosk` with host + remote admin password | Password then lives in `core.config_entries`. |
 | `startURL` | `http://192.168.1.146:8123/<room>-dash/<view>` | |
