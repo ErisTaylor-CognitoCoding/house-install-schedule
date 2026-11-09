@@ -23,8 +23,12 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
 | `nginx-proxy` | `*.cognitocoding.com` hostnames | Only resolve via Pi-hole. |
 | `nova` | Nova; holds `HA_TOKEN` | Nova has `ha_*` MCP tools. |
 
-**Network (4 Nov 2026)**
-- No broadband yet. Router is a TP-Link Archer MR600 (4G) with a Poynting XPOL-2-5 antenna, gateway `192.168.1.1`, SSID `EE-MX82JZ`. It replaced the EE 4G hub with the same SSID and password.
+**Network (9 Nov 2026)**
+- Broadband live 9 Nov 2026. Router is **the EE hub** (call it that, never "BT hub"), gateway `192.168.1.254`, Hub Manager at `https://192.168.1.254` (self-signed cert). Admin password = the old MR600 one. SSID `EE-MX82JZ`, same password as before.
+- EE hub DHCP range widened to `.20–.253` (default started at `.146`, which blocked the old reservations). 18 "Always use this IP" reservations set 9 Nov, matching the MR600's old addresses: .40 .97 .105 .106 .107 .110 .115 .122 .146 .163 .190 .191 .213 .221 .246 .247 .250. Set in Address table → device → "Always use this IP address". A page reload logs you out; navigate with the in-page tabs.
+- Not reserved yet (the hub hasn't seen them): PS5 `.46` (d4:f7:d5:7e:fd:8f), PlayStation TV `.65` (38:9b:73:4c:0f:15), Bedroom Voice `.153`, Office Voice `.198`, `.215` (98:e7:f4:a7:78:75), Bedroom TV `.244`. Reserve each the first time it connects.
+- Lounge fan `.213`: 0% loss over 30 pings on 9 Nov (was 27% on the 4G router).
+- Before 9 Nov: TP-Link Archer MR600 (4G) with a Poynting XPOL-2-5 antenna, gateway `192.168.1.1`, same SSID.
 - TP-Link RE505X extender added downstairs 3–4 Nov 2026, same SSID.
 - MR600 2.4 GHz is pinned to channel 11 / 20 MHz, auto-channel off (3 Nov 2026). Channel 1 sat on top of Zigbee channel 11 and broke the Bedroom 3 valve. Set the RE505X and the future broadband router the same way.
 - 21 DHCP reservations on the MR600 (3 Nov 2026). Admin login is through the `tplinkrouterc6u` lib, username `admin`.
