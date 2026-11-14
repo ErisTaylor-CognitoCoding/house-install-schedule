@@ -78,7 +78,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Why | One switch drives two lights on separate cables, and there is no neutral at the switch. So there is one module per rose and one rocker per module (6 Oct 2026). One rocker cannot drive two modules. |
 | Sensors | Kitchen Presence (06P), Kitchen Temperature (02B), Kitchen Cat Flap (DJT11LM), Washing Machine (DJT11LM), Fridge and Freezer (02LD probes; only the probe goes inside), Back Door Sensor (04PR2). |
 | Heat | Kitchen Radiator (TRVZB): 17 °C 06:00, 14 °C 22:00. Drops to 5 °C while the back door is open. |
-| Other | Sox's litter box (Tuya). PetSafe microchip flap in the back door. Voice PE `home_assistant_voice_09c7c5` (`.246`), live on Hey Nova. |
+| Other | Sox's litter box (Tuya). PetSafe microchip flap in the back door. Voice PE **Kitchen Voice** (`kitchen_voice`, `.157`, 14 Nov 2026), live on Hey Nova. |
 | Screen | Apolosign 21.5" planner `.40` → `kitchen-dash`. |
 
 ### Living Room / Lounge (the office is a desk in here)
@@ -91,7 +91,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Heat | Living Room Radiator: 18 °C at 10:00, 16 °C at 22:00 ("dog only"). Zero turns it up on the tablet. |
 | Tablets | Lounge `.163` → `lounge-dash`, on `Lounge Tablet Socket` (MINI-ZB1GS) for 80/40 charging. Office `.190` → `office-dash`, on Zero's desk. |
 | TVs | Philips 55OLED760 `media_player.lounge_tv` / `remote.lounge_tv` (`.191`) plus Lounge Fire Stick (`.97`). Hisense 43" "PlayStation TV" (`.65`) plus PS5. TV sockets are permanent live, never on a module. |
-| Voice PE | The 4th unit is for this room. Not in HA as of 4 Nov 2026 (unverified whether it is set up). |
+| Voice PE | **Lounge Voice** = the old Kitchen unit `home_assistant_voice_09c7c5` (`.246`), moved to the Lounge/office desk (Zero, 14 Nov 2026). HA device renamed and set to Living Room; entity IDs kept as `*_09c7c5_*`. Mute switch on. |
 
 ### Master Bedroom
 | | |
@@ -341,7 +341,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - After flashing, reload the esphome entry.
   - Voice "stops working": check `docker logs whisper` for empty transcripts before blaming Nova.
   - **Wake word fires but replies say "I only caught 'you'" or nothing (empty `stt-no-text-recognized`) → weak Wi-Fi, not the mic or Nova.** Read the unit's signal: `esphome logs` fails with "Connection requires encryption" because HA holds a `noise_psk` for every unit, so use `aioesphomeapi` inside the `homeassistant` container with the `noise_psk` from `core.config_entries` (`subscribe_logs(..., dump_config=True)` prints `Signal strength` and `BSSID`). Kitchen reads -42 dB and works. The Summer House unit read -75 dB on the EE hub's BSSID on 14 Nov 2026, logged `api.connection ... Socket operation failed errno=11`, and only one go out of several worked. Pipeline history: websocket `assist_pipeline/pipeline_debug/list` + `/get`.
-  - **Kitchen Voice** (14 Nov 2026): second Kitchen unit, `kitchen-voice.yaml`, `.157`, MAC `20:f8:3b:09:ba:25`, -49 dB on the EE hub. Entities `*.kitchen_voice_*`, area Kitchen, Hey Nova / Nova, finished speaking `aggressive` like the others. A new ESPHome entry defaults that to `default`, so set it. Added over REST: `POST /api/config/config_entries/flow {"handler":"esphome"}` then `{"host":...,"port":6053}`. IP not yet reserved on the EE hub. The old Kitchen unit (`09c7c5`, `.246`) is still in place with mute on.
+  - **Kitchen Voice** (14 Nov 2026): second Kitchen unit, `kitchen-voice.yaml`, `.157`, MAC `20:f8:3b:09:ba:25`, -49 dB on the EE hub. Entities `*.kitchen_voice_*`, area Kitchen, Hey Nova / Nova, finished speaking `aggressive` like the others. A new ESPHome entry defaults that to `default`, so set it. Added over REST: `POST /api/config/config_entries/flow {"handler":"esphome"}` then `{"host":...,"port":6053}`. IP not yet reserved on the EE hub. The old Kitchen unit (`09c7c5`) is now Lounge Voice.
   - The Summer House unit sits on the old **Office Voice** HA entry (host `.72`), so its entities are `*.office_voice_*` with friendly names "Summer House Voice ...".
   - Editing `custom_components/nova/conversation.py` needs a full HA restart.
   - Live 4 Nov 2026: Kitchen is up. Bedroom (`.153`) and Office (`.198`) are unavailable. The 4th unit is not in HA.
