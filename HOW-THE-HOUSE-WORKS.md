@@ -26,7 +26,8 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
 **Network (9 Nov 2026)**
 - Broadband live 9 Nov 2026. Router is **the EE hub** (call it that, never "BT hub"), gateway `192.168.1.254`, Hub Manager at `https://192.168.1.254` (self-signed cert). Admin password = the old MR600 one. SSID `EE-MX82JZ`, same password as before.
 - EE hub DHCP range widened to `.20–.253` (default started at `.146`, which blocked the old reservations). 18 "Always use this IP" reservations set 9 Nov, matching the MR600's old addresses: .40 .97 .105 .106 .107 .110 .115 .122 .146 .163 .190 .191 .213 .221 .246 .247 .250. Set in Address table → device → "Always use this IP address". A page reload logs you out; navigate with the in-page tabs.
-- Not reserved yet (the hub hasn't seen them): PS5 `.46` (d4:f7:d5:7e:fd:8f), PlayStation TV `.65` (38:9b:73:4c:0f:15), Bedroom Voice `.153`, Office Voice `.198`, `.215` (98:e7:f4:a7:78:75), Bedroom TV `.244`. Reserve each the first time it connects.
+- Reserved since (static on the hub, read 14 Nov 2026): PS5 `.46`, PlayStation TV `.65`, Lounge Voice `.246`. Added 14 Nov 2026 at their current addresses: Summer House Voice `.72`, Kitchen Voice `.157`, Bedroom Voice `.99` (was `.153`; HA's esphome entry already follows `.99`), Bedroom TV Hisense `.244`. Not seen on the hub: `.215` (98:e7:f4:a7:78:75).
+- **Reserving on the EE hub from Elysium:** Playwright, a new browser context with `ignoreHTTPSErrors:true` (self-signed cert), `https://192.168.1.254` → Advanced settings → password (the old MR600 admin password; feed it to the page from a throwaway `127.0.0.1` server, never paste it into code) → Address table. Wait about 8 s for the device list, click the button containing `MAC Address: <mac>`, flip `#toggle_switch` to YES, `#save`. To change the IP as well: `#single_device_ip_address_ip_address_button`, fill `#single_device_ip_address_key_3` with the last octet, then `#single_device_ip_address_ip_address_ppopup_set_btn`. Read back `Always use this IP address: YES`.
 - Lounge fan `.213`: 0% loss over 30 pings on 9 Nov (was 27% on the 4G router).
 - Before 9 Nov: TP-Link Archer MR600 (4G) with a Poynting XPOL-2-5 antenna, gateway `192.168.1.1`, same SSID.
 - TP-Link RE505X extender added downstairs 3–4 Nov 2026, same SSID.
@@ -102,7 +103,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Heat | 20 °C at 06:00, 14 °C at 09:00 — he sleeps cold. |
 | Tablet | `.247` → `bedroom-dash`. Charges from the bed's USB; no socket, no module. |
 | TV | Bedroom Fire Stick 4K (`.250`). Install page puts the JVC Fire TV Edition here. HA still lists the JVC built-in as `media_player.lounge_fire_tv` (`.221`, unavailable) in Living Room; unverified. `media_player.bedroom_eris_tv_bedroom_tv` is unavailable. |
-| Voice PE | `bedroom_voice` (`.153`). Unavailable at 17:34 on 4 Nov 2026. |
+| Voice PE | `bedroom_voice` (`.99`, reserved). Zero unplugged it in early Nov because it went off in the night (cause unknown; history gone). Plugged back in 14 Nov 2026: Hey Nova, Nova, Slightly sensitive, aggressive. If it fires at night again, get the time from Zero and read `docker logs -t whisper` for what it heard. |
 
 ### Bedroom 2 (Salia's room — Salia is he/him)
 | | |
