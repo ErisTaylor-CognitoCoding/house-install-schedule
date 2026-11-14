@@ -325,6 +325,12 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - Hisense control uses the `vidaa_tv` custom component with a local HDMI2 patch in `coordinator.py`. Code changes need a full HA restart. The TV's MQTT port 36669 is a dead end.
 - **Fire Sticks.** If an "Allow USB debugging" loop appears, unplug the stick for 30 s. `adb_allowed_connection_time` is 0. Never send Zero into Settings while a dialog blocks the screen.
 - **Voice PE / Hey Nova.**
+  - **Adding a NEW unit — do exactly this, nothing else (14 Nov 2026: I sent Zero to the phone app, then a website, then Bluetooth, before finding this):**
+    1. Copy `esphome/config/home-assistant-voice-office.yaml` to `<room>-voice.yaml`, change `name` (≤31 chars) and `friendly_name`, compile in the `esphome` container.
+    2. Zero plugs the unit into **Elysium's USB** with a USB-C cable. It shows as `/dev/ttyACM0`.
+    3. Flash with a throwaway container that has `--device /dev/ttyACM0` (the `esphome` container has no device mapping). Wi-Fi is baked into the firmware, so no app, website or Bluetooth onboarding.
+    4. He moves it to the room. HA discovers it on Wi-Fi → add it, set area, `select.*_wake_word` = Hey Nova, `select.*_assistant` = Nova, reserve the IP on the EE hub.
+    - Never route a new unit through the HA app, the Voice PE website or HA Bluetooth: Elysium has no BlueZ, and that is not how any unit here was done.
   - Custom microWakeWord model served from `/local/wakeword/hey_nova.*`, cutoff 0.98.
   - If a speaker goes deaf, check `select.*_wake_word` = Hey Nova and `select.*_assistant` = Nova first.
   - After flashing, reload the esphome entry.
