@@ -33,7 +33,8 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
 - MR600 2.4 GHz is pinned to channel 11 / 20 MHz, auto-channel off (3 Nov 2026). Channel 1 sat on top of Zigbee channel 11 and broke the Bedroom 3 valve. Set the RE505X and the future broadband router the same way.
 - 21 DHCP reservations on the MR600 (3 Nov 2026). Admin login is through the `tplinkrouterc6u` lib, username `admin`.
 - Elysium has no Wi-Fi of its own. It is online through an Alfa AWUS036AXM USB dongle (`mt7921u`, interface `wlx00c0cab9c757`). The dongle MUST sit in a black USB 2 rear port; on USB 3 it never comes up. Live: `eno1` has no carrier; the default route is the dongle; the dongle holds `.146`. (Memory said Wi-Fi would get `.149`. Live config says `.146`.)
-- Plan: Elysium goes on a wired data point at the Garage server desk. Physical location today: unverified.
+- Elysium is in the Garage (Zero, 14 Nov 2026). Plan: a second **EE Smart WiFi booster** (ordered 14 Nov 2026) goes in the Garage, which is halfway between the hub and the summer house. Elysium gets wired into the booster's Ethernet port, which ends its reliance on the dongle, and the booster covers the summer house. On cutover: reserve `.146` on the EE hub for `eno1` MAC `c8:7f:54:5d:29:cd`, take the dongle out of the default route, and stop `wifi-watchdog` (it re-plugs the dongle and reboots on its rules).
+- The upstairs EE booster is `6e:70:56:68:e5:5c` (2.4 GHz channel 1, IP `.206`; WPS says "Smart Hub SH31B"). It can't move closer to the summer house. Channel 1 overlaps Zigbee channel 11 (see the channel note below).
 - `/usr/local/sbin/wifi-watchdog`, run every minute by a timer:
   - No internet for 3 min → USB re-plug of the dongle.
   - Kernel logs `mt7921u ... failed:-110` (driver wedged) → forced reboot, NEVER a re-plug. A re-plug of a wedged dongle froze Elysium at 15:58 on 4 Nov 2026.
@@ -41,6 +42,7 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
   - Hub unreachable after a re-plug → reboot, at most once per 30 min.
   - 4G outage (hub answers, no internet) → re-plug every 15 min, never reboot.
   - Alerts go to ntfy topic `elysium-ht5nauq27ayyfma`.
+  - `GW` in the script was still the MR600's `192.168.1.1` until 14 Nov 2026, so any broadband outage of 8+ min would have forced a reboot. Now `192.168.1.254`; backup `/usr/local/sbin/wifi-watchdog.bak-20261114`.
 - `host-scripts/ha-health.sh`, cron 08:00 → ntfy: failed integrations, Repairs, batteries <20%, and (14 Nov 2026) updates. Zigbee firmware updates are installed by it every morning; HACS updates are only reported, because they need an HA restart and that breaks Alexa. `--print` is read-only.
 - **Sleeping Zigbee sensors (SNZB-02 temperature, 02LD fridge/freezer) refuse `update.install`**: Z2M logs "Device didn't respond to OTA request". Fix: `mosquitto_pub -t zigbee2mqtt/bridge/request/device/ota_update/schedule -m '{"id":"<name>"}'` (Z2M 2.13). The sensor updates itself on its next wake. Undo with `.../ota_update/unschedule`. Done for all nine 14 Nov 2026. Mains devices (TRVZB) take `update.install` fine.
 - **HA errors are in `config/home-assistant.log`, not `docker logs`** (docker logs is empty). `sudo grep -E "ERROR|CRITICAL" ~/projects/homeassistant/config/home-assistant.log`.
