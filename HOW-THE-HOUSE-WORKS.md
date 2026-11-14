@@ -338,6 +338,8 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - If a speaker goes deaf, check `select.*_wake_word` = Hey Nova and `select.*_assistant` = Nova first.
   - After flashing, reload the esphome entry.
   - Voice "stops working": check `docker logs whisper` for empty transcripts before blaming Nova.
+  - **Wake word fires but replies say "I only caught 'you'" or nothing (empty `stt-no-text-recognized`) → weak Wi-Fi, not the mic or Nova.** Read the unit's signal: `esphome logs` fails with "Connection requires encryption" because HA holds a `noise_psk` for every unit, so use `aioesphomeapi` inside the `homeassistant` container with the `noise_psk` from `core.config_entries` (`subscribe_logs(..., dump_config=True)` prints `Signal strength` and `BSSID`). Kitchen reads -42 dB and works. The Summer House unit read -75 dB on the EE hub's BSSID on 14 Nov 2026, logged `api.connection ... Socket operation failed errno=11`, and only one go out of several worked. Pipeline history: websocket `assist_pipeline/pipeline_debug/list` + `/get`.
+  - The Summer House unit sits on the old **Office Voice** HA entry (host `.72`), so its entities are `*.office_voice_*` with friendly names "Summer House Voice ...".
   - Editing `custom_components/nova/conversation.py` needs a full HA restart.
   - Live 4 Nov 2026: Kitchen is up. Bedroom (`.153`) and Office (`.198`) are unavailable. The 4th unit is not in HA.
 - **Hue (historical).** No Hue in the house since 8 Oct 2026. If a bulb is ever needed: factory reset from the Hue Bluetooth app. Deleting it doesn't reset it, and touchlink is impossible here.
