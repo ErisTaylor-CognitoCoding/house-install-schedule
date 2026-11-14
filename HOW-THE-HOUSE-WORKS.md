@@ -14,7 +14,7 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
 | `homeassistant` | Home Assistant Container, `:stable`, host network | Config `~/projects/homeassistant/config`. No add-on store. Never propose HA Supervised / HAOS VM / VT-x — rejected twice by Zero (13–14 Aug 2026). |
 | `zigbee2mqtt` | Zigbee, Sonoff ZBDongle-P (zstack), channel 11, transmit_power 20 | `~/projects/zigbee2mqtt/`. Panel on host port 8099. |
 | `mosquitto` | MQTT broker, `192.168.1.146:1883` | User `nova`; password in Z2M `configuration.yaml`. |
-| `esphome` | Voice PE firmware | Configs: `home-assistant-voice-09c7c5.yaml`, `-bedroom.yaml`, `-office.yaml`. |
+| `esphome` | Voice PE firmware | Configs: `home-assistant-voice-09c7c5.yaml`, `-bedroom.yaml`, `-office.yaml`, `summer-house-voice.yaml` (14 Nov 2026; hostnames max 31 chars, so not `home-assistant-voice-summer-house`). |
 | `matter-server` | Matter, host network | Nothing paired to it. |
 | `whisper` | STT, `small-int8`, beam 2 | `base-int8` dropped whole sentences (12 Sep 2026). |
 | `piper` | Local TTS, `en_GB-alan-medium` | Nova's own voice goes through Nova's `/api/tts`, not piper. |
