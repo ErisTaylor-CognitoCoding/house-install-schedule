@@ -42,6 +42,9 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
   - 4G outage (hub answers, no internet) → re-plug every 15 min, never reboot.
   - Alerts go to ntfy topic `elysium-ht5nauq27ayyfma`.
 - `host-scripts/ha-health.sh`, cron 08:00 → ntfy: failed integrations, Repairs, batteries <20%, and (14 Nov 2026) updates. Zigbee firmware updates are installed by it every morning; HACS updates are only reported, because they need an HA restart and that breaks Alexa. `--print` is read-only.
+- **Sleeping Zigbee sensors (SNZB-02 temperature, 02LD fridge/freezer) refuse `update.install`**: Z2M logs "Device didn't respond to OTA request". Fix: `mosquitto_pub -t zigbee2mqtt/bridge/request/device/ota_update/schedule -m '{"id":"<name>"}'` (Z2M 2.13). The sensor updates itself on its next wake. Undo with `.../ota_update/unschedule`. Done for all nine 14 Nov 2026. Mains devices (TRVZB) take `update.install` fine.
+- **HA errors are in `config/home-assistant.log`, not `docker logs`** (docker logs is empty). `sudo grep -E "ERROR|CRITICAL" ~/projects/homeassistant/config/home-assistant.log`.
+- **A Repair that names a service the automation no longer uses is stale.** Check the automation config, then clear it with HA's own fix flow: `POST /api/repairs/issues/fix {"handler":"automation","issue_id":...}`, then `POST /api/repairs/issues/fix/<flow_id> {}`. Two smoke-alert ones cleared 14 Nov 2026.
 - Zero's phone notify service is `notify.mobile_app_mobile` (renamed from `mobile_app_mobile_a57` when the app re-registered; the smoke alert was pointed at the old name until 14 Nov 2026). If a Repair says `service_not_found notify.mobile_app_*`, check `get_services` for the current name.
 
 **If Elysium is down, these still work**
