@@ -41,6 +41,8 @@ Sources: `index.html` (install guide), `next-week.html` (half-term page), memory
   - Hub unreachable after a re-plug → reboot, at most once per 30 min.
   - 4G outage (hub answers, no internet) → re-plug every 15 min, never reboot.
   - Alerts go to ntfy topic `elysium-ht5nauq27ayyfma`.
+- `host-scripts/ha-health.sh`, cron 08:00 → ntfy: failed integrations, Repairs, batteries <20%, and (14 Nov 2026) updates. Zigbee firmware updates are installed by it every morning; HACS updates are only reported, because they need an HA restart and that breaks Alexa. `--print` is read-only.
+- Zero's phone notify service is `notify.mobile_app_mobile` (renamed from `mobile_app_mobile_a57` when the app re-registered; the smoke alert was pointed at the old name until 14 Nov 2026). If a Repair says `service_not_found notify.mobile_app_*`, check `get_services` for the current name.
 
 **If Elysium is down, these still work**
 - Edge-mode lights from the wall: Kitchen 1 and 2, stairs bottom and top, Garage.
