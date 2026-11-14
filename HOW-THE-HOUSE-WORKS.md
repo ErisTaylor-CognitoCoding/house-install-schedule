@@ -91,7 +91,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Heat | Living Room Radiator: 18 °C at 10:00, 16 °C at 22:00 ("dog only"). Zero turns it up on the tablet. |
 | Tablets | Lounge `.163` → `lounge-dash`, on `Lounge Tablet Socket` (MINI-ZB1GS) for 80/40 charging. Office `.190` → `office-dash`, on Zero's desk. |
 | TVs | Philips 55OLED760 `media_player.lounge_tv` / `remote.lounge_tv` (`.191`) plus Lounge Fire Stick (`.97`). Hisense 43" "PlayStation TV" (`.65`) plus PS5. TV sockets are permanent live, never on a module. |
-| Voice PE | **Lounge Voice** = the old Kitchen unit `home_assistant_voice_09c7c5` (`.246`), moved to the Lounge/office desk (Zero, 14 Nov 2026). HA device renamed and set to Living Room; entity IDs kept as `*_09c7c5_*`. Mute switch on. |
+| Voice PE | **Lounge Voice** = the old Kitchen unit `home_assistant_voice_09c7c5` (`.246`), moved to the Lounge/office desk (Zero, 14 Nov 2026). HA device renamed and set to Living Room; entity IDs kept as `*_09c7c5_*`. Unmuted 14 Nov 2026. |
 
 ### Master Bedroom
 | | |
