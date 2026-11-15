@@ -347,7 +347,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - Editing `custom_components/nova/conversation.py` needs a full HA restart.
   - Live 4 Nov 2026: Kitchen is up. Bedroom (`.153`) and Office (`.198`) are unavailable. The 4th unit is not in HA.
 - **Hue (historical).** No Hue in the house since 8 Oct 2026. If a bulb is ever needed: factory reset from the Hue Bluetooth app. Deleting it doesn't reset it, and touchlink is impossible here.
-- **Cats / Tractive.** `device_tracker.sox`, `device_tracker.marshmellow`. Hardware QCGTANTA = Sox, VGDLXEGO = Marshmellow. Each tracker needs its own premium subscription. The CARTO watermark on maps is HA core's.
+- **Cats / Tractive.** `device_tracker.sox`, `device_tracker.marshmellow`. Hardware QCGTANTA = Sox, VGDLXEGO = Marshmellow. Each tracker needs its own premium subscription. Battery `0` + `sensor.*_tracker_status` = `not_reporting` comes from Tractive's cloud: the tracker is flat or off. Reloading the tractive entry does not change it (tested 15 Nov 2026); it needs charging. The CARTO watermark on maps is HA core's.
 - **hOn washing machine** (`custom_components/hon`): cloud only. Not in HA config entries on 4 Nov 2026 (unverified whether it was ever configured).
 - **Hildebrand Glow:** installed via HACS. No config entry on 4 Nov 2026.
 - **Printer:** Canon TS4100i via ipp at `.115`, reserved on the MR600 3 Nov 2026.
