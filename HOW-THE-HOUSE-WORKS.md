@@ -318,6 +318,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - If dings stop but `last_activity` still updates, the push listener is dead. `custom_components/fcm_padding_fix` patches firebase-messaging 0.4.5 padding; remove it when upstream ships #37/#43. A dead listener after network blips is fixed by reloading the Ring entry (`ring_push_watchdog`).
   - Ring motion switches died on upstream bug core#178622 (3 Sep 2026). Unverified whether that bug is still present.
   - The doorbell drops off Wi-Fi when its battery is low.
+  - Daily-run noise, not faults (16 Nov 2026): hundreds of `firebase_messaging ... Unexpected exception during read` a day while `event.*_motion` entities still update (push alive), and `Invalid value for number.*_radiator_timer_mode_target_temp: 0` from the TRVZBs. Only act on Ring if motion/ding events stop.
 - **Lounge TV.**
   - ON = stick HOME (`input keyevent 3`) over CEC. A bare WAKEUP leaves the screen dark.
   - OFF = `remote.send_command Standby` on `remote.lounge_tv`. The Philips always reads "off" in HA (`/6/powerstate` 404).
