@@ -132,7 +132,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Why | One module per light, so the house can switch the bottom one alone (the doorbell-after-dark automation). No Hue anywhere since 8 Oct 2026. |
 | Sensors | Front Door (04PR2), Hall Temperature (02B). Hall and landing presence still to place. |
 | Safety | Ei3016 smoke alarms in the hall and on the landing. Ei3018 CO alarm downstairs by the boiler. All on radio interlink. Ei428 relay → `Smoke Alarm Relay` ZBMINI (detach on, reports only), area Hall. |
-| Heat | Hall Radiator at 18 °C. Drops to 5 °C while the front door is open. |
+| Heat | Hall Radiator at 18 °C. Drops to 5 °C while the front door is open. Cold radiator while its smart valve shows 100 % open and calling = lockshield (capped valve, other end) closed: open it anticlockwise fully. The hall one was seized shut until 16 Nov 2026. |
 | Tablet | `.122` → `hall-dash`. Fully Plus licensed 3 Nov 2026. Locked upside-down (power lead at the bottom, Zero's choice, 4 Nov 2026): `forceScreenOrientation=3` (Reverse Portrait, value read off Fully's own settings page) + `forceScreenOrientationGlobal=true` so the Ring app follows. |
 
 ### Garage
