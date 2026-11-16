@@ -132,7 +132,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Why | One module per light, so the house can switch the bottom one alone (the doorbell-after-dark automation). No Hue anywhere since 8 Oct 2026. |
 | Sensors | Front Door (04PR2), Hall Temperature (02B). Hall and landing presence still to place. |
 | Safety | Ei3016 smoke alarms in the hall and on the landing. Ei3018 CO alarm downstairs by the boiler. All on radio interlink. Ei428 relay → `Smoke Alarm Relay` ZBMINI (detach on, reports only), area Hall. |
-| Heat | Hall Radiator valve in **auto**, running the Optimum thermostat's program every day (16 Nov 2026): 05:15 19.5 °C, 09:30 18, 16:30 19, 22:30 14. Change both together. Drops to 5 °C while the front door is open. Cold radiator while its smart valve shows 100 % open and calling = lockshield (capped valve, other end) closed: open it anticlockwise fully. The hall one was seized shut until 16 Nov 2026. |
+| Heat | Hall Radiator valve in **auto**, running the same program as the Optimum wall thermostat every day (16 Nov 2026): 05:15 19.5 °C, 09:30 18, 16:30 19, 22:30 14. Change both together. Drops to 5 °C while the front door is open. Cold radiator while its smart valve shows 100 % open and calling = lockshield (capped valve, other end) closed: open it anticlockwise fully. The hall one was seized shut until 16 Nov 2026. |
 | Tablet | `.122` → `hall-dash`. Fully Plus licensed 3 Nov 2026. Locked upside-down (power lead at the bottom, Zero's choice, 4 Nov 2026): `forceScreenOrientation=3` (Reverse Portrait, value read off Fully's own settings page) + `forceScreenOrientationGlobal=true` so the Ring app follows. |
 
 ### Garage
@@ -194,7 +194,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Cat names: **Marshmellow** in HA (Tractive spells it Marshmallow; leave that). Sox lives at the house (Kitchen flap). Marshmellow stays at 28 Courageous. | — | 26 Sep 2026 |
 | Lounge dashboard shows only the lounge light and fan, never other rooms' lights. | Zero's request. | 9 Oct 2026 |
 | Apolosign: leave Fully `kioskMode` OFF unless Zero says otherwise. | Kiosk lock knocked it off Wi-Fi and locked him out of settings. | 6 Oct 2026 |
-| Boiler: Potterton combi. Hive SLR1c plan dropped; an Optimum OP-WFSTAT kit was ordered — Amazon "22.5 Team Controls Vibe WiFi + RF" (B0CYLZ2KMF), £47. Receiver never enters fast-flash pairing (7 Nov, 16 Nov 2026 on the EE hub). TFC's Wi-Fi guide (QR058 issue 3) has only the hand-button route. Next: TFC support 01732 351680 or replace the receiver. | Old stat was not the Wi-Fi version. | 2 Nov 2026 |
+| Boiler: Potterton combi, run by the Optimum wall thermostat and its own RF receiver at the boiler. The thermostat's program is what fires the boiler. No HA or Tuya link to the receiver, and none is needed. The hall valve runs the same program. Settled 16 Nov 2026: don't suggest a new thermostat, Hive, a Sonoff thermostat or a ZBMINI on the boiler. | Zero's call. | 16 Nov 2026 |
 
 ---
 
@@ -367,7 +367,6 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Plumber to fit TRV valve bodies. Bedroom 2 valve skipped (bed). 6th head not found. | 3 Nov 2026 |
 | Garage CHANFOK fan into the Tuya app (pairing failed 29 Oct). Garage module mode Edge vs the Detach rule — Zero to decide. | 4 Nov 2026 |
 | `climate.garage_heater` unavailable; no dew-point automation. | 4 Nov 2026 |
-| Optimum OP-WFSTAT thermostat ordered. Add a boiler thermostat card to hall-dash once in. | 3 Nov 2026 |
 | Broadband: router goes in the Lounge. Then re-check `ping -c 30 192.168.1.213` and re-make the reservations. Elysium onto its wired point. | 3 Nov 2026 |
 | Ring app installed only on the Office tablet; install `com.ringapp.fire` on the others. | 4 Nov 2026 |
 | Office tablet still low while "plugged in" (11 % at 17:34). | 4 Nov 2026 |
