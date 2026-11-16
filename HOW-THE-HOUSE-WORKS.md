@@ -142,7 +142,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Conflict | The rule says a smart fitting → Detach. The install page says "if a smart fitting goes in it becomes Detach". Live is Edge. Unresolved: do not change it without Zero. |
 | Sensors | Garage Temperature (02WD sealed), Garage Back Door Sensor (04PR2), Garage Door up-and-over (04P). Presence still to place. |
 | Heat | Devola wall heater with its own frost stat (Zero set it to anti-frost mode 16 Nov 2026), on a permanently live fused spur (Always On, no module). `climate.garage_heater` is unavailable. |
-| Boiler | The Potterton combi is in the Garage (Zero, 16 Nov 2026), and so is Elysium. Its condensate pipe freezes in cold snaps and the boiler locks out (E1…): warm water along the pipe, then reset. |
+| Boiler | The Potterton combi is in the Garage (Zero, 16 Nov 2026), and so is Elysium. Locks out (E1) on low pressure. 16 Nov 2026: hit 3 bar hot after cold top-ups, so the relief valve (copper pipe → tundish → garage drain, not the condensate) dumps water and pressure falls again. Expansion vessel suspected: Gas Safe engineer. Until then: top up only to 1 bar cold, never more. |
 | Camera | Ring Stick Up Cam, `camera.garage_live_view`. |
 | Tablet | To buy (server desk). |
 
