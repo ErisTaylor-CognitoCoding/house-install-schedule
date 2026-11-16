@@ -141,7 +141,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Fixtures | CHANFOK fan/light (29 Oct 2026), on module `Garage Light`, detach **off** (Edge). The fan is not in the Tuya app yet. It came in via the Chanfok Smart app and has to be re-paired in Tuya. |
 | Conflict | The rule says a smart fitting → Detach. The install page says "if a smart fitting goes in it becomes Detach". Live is Edge. Unresolved: do not change it without Zero. |
 | Sensors | Garage Temperature (02WD sealed), Garage Back Door Sensor (04PR2), Garage Door up-and-over (04P). Presence still to place. |
-| Heat | Devola wall heater with its own frost stat, on a permanently live fused spur (Always On, no module). `climate.garage_heater` is unavailable. |
+| Heat | Devola wall heater with its own frost stat (Zero set it to anti-frost mode 16 Nov 2026), on a permanently live fused spur (Always On, no module). `climate.garage_heater` is unavailable. |
 | Boiler | The Potterton combi is in the Garage (Zero, 16 Nov 2026), and so is Elysium. Its condensate pipe freezes in cold snaps and the boiler locks out (E1…): warm water along the pipe, then reset. |
 | Camera | Ring Stick Up Cam, `camera.garage_live_view`. |
 | Tablet | To buy (server desk). |
