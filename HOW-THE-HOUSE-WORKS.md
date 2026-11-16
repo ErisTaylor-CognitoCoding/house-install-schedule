@@ -121,7 +121,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Fixtures | CHANFOK fan + light, Tuya **cloud** only: `light.bedroom_3_light`, `light.bedroom_3_night_light`. No `fan.` entity in HA. |
 | Module | `Bedroom 3 Fan Module`. **Plain power — detach off (4 Nov 2026).** Same as Bedroom 2. |
 | Sensors | Bedroom 3 Temperature (02B). Presence still to place. |
-| Heat | Bedroom 3 Radiator (TRVZB, on the room sensor). **Gets no hot water (16 Nov 2026):** valve 100 % open and calling, lockshield opened (no gush), both pipes cold to the floor. The plumber moved this radiator and added pipe: a plastic push-fit elbow joins plastic pipe to the copper, behind the bed (hard to reach). No flow reaches it, so the fault is upstream of the radiator: a plumber job, with the boiler expansion vessel. Don't re-diagnose the valve. |
+| Heat | Bedroom 3 Radiator (TRVZB, on the room sensor). **Gets no hot water (16 Nov 2026).** Checked by Zero: valve pin under the Sonoff head moves freely; lockshield (brass spindle, new plastic pipe side) turned fully open; both pipes cold to the floor. The plumber moved it without lifting floorboards: plastic pipe along the skirting, a plain grey push-fit elbow behind the bed (no valve in it). Not yet done: feel the new pipe at the lockshield with the heating forced on (the 22:30 test hit the program's 14 °C, boiler off). Cold pipe with heating on = air trapped in the new pipe. |
 | Tablet | On order. `bedroom-3-dash` exists. |
 
 ### Hall and stairs
