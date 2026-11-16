@@ -194,7 +194,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Cat names: **Marshmellow** in HA (Tractive spells it Marshmallow; leave that). Sox lives at the house (Kitchen flap). Marshmellow stays at 28 Courageous. | — | 26 Sep 2026 |
 | Lounge dashboard shows only the lounge light and fan, never other rooms' lights. | Zero's request. | 9 Oct 2026 |
 | Apolosign: leave Fully `kioskMode` OFF unless Zero says otherwise. | Kiosk lock knocked it off Wi-Fi and locked him out of settings. | 6 Oct 2026 |
-| Boiler: Potterton combi. Hive SLR1c plan dropped; an Optimum OP-WFSTAT kit was ordered. | Old stat was not the Wi-Fi version. | 2 Nov 2026 |
+| Boiler: Potterton combi. Hive SLR1c plan dropped; an Optimum OP-WFSTAT kit was ordered — Amazon "22.5 Team Controls Vibe WiFi + RF" (B0CYLZ2KMF), £47. Receiver never enters fast-flash pairing (7 Nov, 16 Nov 2026 on the EE hub). TFC's Wi-Fi guide (QR058 issue 3) has only the hand-button route. Next: TFC support 01732 351680 or replace the receiver. | Old stat was not the Wi-Fi version. | 2 Nov 2026 |
 
 ---
 
