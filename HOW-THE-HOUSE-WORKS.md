@@ -159,6 +159,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 ### Outside and other
 - Back Gate 04P in a weatherproof case. It reaches the network via the Garage module. Check the seal when the battery is changed.
 - Ring at the house: Front Door doorbell (`_2` entities, Doorbell 3 Plus), Backdoor, Path, Garden, Lounge Pet Cam, and `camera.office_live_view` (named "Summer House Live view"). That last one IS the summer house camera: its snapshot shows the summer house inside (9 Nov 2026).
+- 20 Nov 2026 (Zero): new battery in the Backdoor camera, and solar panels fitted to Backdoor and Path. `sensor.backdoor_battery` went 20 → 94 % (09:30), Path read 68 %. HA's Ring integration has no solar or charging entity, so watch charging through the battery %.
 - 28 Courageous (old house): 28 Front Door (`camera.front_door_live_view`, no `_2`), 28 Spotlight, Marshmallow cam.
 
 ---
