@@ -323,6 +323,10 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - The doorbell drops off Wi-Fi when its battery is low.
   - `ha-health.sh` line "28 Marshmallow Battery" is the Ring **camera** at 28 Courageous, not Marshmellow's Tractive tracker (that one is `sensor.marshmellow_tracker_battery`, 95 % on 17 Nov 2026).
 - Daily-run noise, not faults (16 Nov 2026): hundreds of `firebase_messaging ... Unexpected exception during read` a day while `event.*_motion` entities still update (push alive), and `Invalid value for number.*_radiator_timer_mode_target_temp: 0` from the TRVZBs. Only act on Ring if motion/ding events stop.
+- **Daily-run checks (20 Nov 2026).**
+  - HA `/api/history/period/<start>` returns only ONE day after `<start>` unless you pass `end_time`. Without it, a 9-day query looks like events stopped.
+  - "Zigbee device not seen in 24h": `Garage Door` (04P) only checks in about every 36 h (13th 00:05 → 14th 12:03, 16th 00:02 → 17th 12:00). Up to about 40 h quiet is normal for it.
+  - Ring motion pushes (`event.garden_motion`, `event.backdoor_motion`, `event.garage_motion`) stopped about 05:30 on 16 Nov 2026. Those cameras still record motion (`sensor.*_last_activity`, `category: motion`, several on 20 Nov), and the front doorbell still pushes motion and dings. Reloading the Ring entry (20 Nov 07:02) did not bring them back. No automation or script uses them (grep of `automations.yaml` / `scripts.yaml`). `switch.*_motion_detection` are unavailable (core#178622), so the motion setting can't be read from HA.
 - **Lounge TV.**
   - ON = stick HOME (`input keyevent 3`) over CEC. A bare WAKEUP leaves the screen dark.
   - OFF = `remote.send_command Standby` on `remote.lounge_tv`. The Philips always reads "off" in HA (`/6/powerstate` 404).
