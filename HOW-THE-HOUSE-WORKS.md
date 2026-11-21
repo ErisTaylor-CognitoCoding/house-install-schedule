@@ -371,6 +371,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 |---|---|
 | 3 × Fire HD 8 on order (summer house, Bedroom 2, Bedroom 3). 1 × Fire HD 8 to buy (Garage). | 31 Oct 2026 |
 | 2 × FULEN lights and a solar Ring camera to buy for the summer house. | 31 Oct 2026 |
+| Ring → Reolink parts list (21 Nov 2026, not bought): 1 × Reolink Home Hub (8 cameras max, in the Garage by Elysium), 1 × Reolink Doorbell Battery (Front Door), 7 × Argus 4 Pro (Backdoor, Path, Garden, Summer House and Garage with Solar Panel 2; Kitchen and Lounge on battery only). HA Reolink integration via the hub. No Frigate: battery cameras can't stream 24/7. | 21 Nov 2026 |
 | Presence sensors to place: Garage, hall, landing, Bedroom 3. | 31 Oct 2026 |
 | Plumber to fit TRV valve bodies. Bedroom 2 valve skipped (bed). 6th head not found. | 3 Nov 2026 |
 | Garage CHANFOK fan into the Tuya app (pairing failed 29 Oct). Garage module mode Edge vs the Detach rule — Zero to decide. | 4 Nov 2026 |
