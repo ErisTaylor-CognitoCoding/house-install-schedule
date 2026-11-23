@@ -251,7 +251,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 
 | Tablet | IP | Start URL | Charging |
 |---|---|---|---|
-| Lounge ("Fire Tablet") | `.163` | `http://192.168.1.146:8123/lounge-dash/lounge` | Lounge Tablet Socket 80/40 |
+| Lounge ("Fire Tablet") | `.163` | `http://192.168.1.146:8123/lounge-dash/lounge` | Lounge Tablet Socket 80/40. 22 Nov 2026: socket ON (Z2M `state: ON`) yet `sensor.lounge_ft_battery_state` went to discharging at 19:17 at 48 %, and the tablet ran flat about 22:30. Socket power-cycled from HA 23 Nov 07:02; tablet still not answering ping at 07:07; a socket that reads ON while the tablet discharges = the plug, lead or tablet end, not the automation. |
 | Master Bedroom | `.247` | `.../bedroom-dash/bedroom` | Bed USB |
 | Office (Zero's desk, Lounge) | `.190` | `.../office-dash/office` | Official Raspberry Pi USB-C supply (5 Nov 2026). Never an extension-lead USB port or the PC's USB: both gave too little power and it drained while "plugged in" (5 Nov: 8→5 % in 20 min). |
 | Hall | `.122` | `.../hall-dash/hall` | Unverified |
@@ -324,7 +324,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - Ring motion switches died on upstream bug core#178622 (3 Sep 2026). Unverified whether that bug is still present.
   - The doorbell drops off Wi-Fi when its battery is low.
   - `ha-health.sh` line "28 Marshmallow Battery" is the Ring **camera** at 28 Courageous, not Marshmellow's Tractive tracker (that one is `sensor.marshmellow_tracker_battery`, 95 % on 17 Nov 2026).
-- Daily-run noise, not faults (16 Nov 2026): hundreds of `firebase_messaging ... Unexpected exception during read` a day while `event.*_motion` entities still update (push alive), and `Invalid value for number.*_radiator_timer_mode_target_temp: 0` from the TRVZBs. Only act on Ring if motion/ding events stop.
+- Daily-run noise, not faults (16 Nov 2026): hundreds of `firebase_messaging ... Unexpected exception during read` a day while `event.*_motion` entities still update (push alive), and `Invalid value for number.*_radiator_timer_mode_target_temp: 0` from the TRVZBs. Since the 5129 valve firmware (first seen 22 Nov 2026 07:38) the TRVZBs also log `Invalid value for number.*_radiator_frost_protection_temperature: 0`, about 12 a day each; the HA entity keeps its real value (hall read 7 °C on 23 Nov), so it is noise too. Only act on Ring if motion/ding events stop.
 - **Daily-run checks (20 Nov 2026).**
   - HA `/api/history/period/<start>` returns only ONE day after `<start>` unless you pass `end_time`. Without it, a 9-day query looks like events stopped.
   - "Zigbee device not seen in 24h": `Garage Door` (04P) only checks in about every 36 h (13th 00:05 → 14th 12:03, 16th 00:02 → 17th 12:00). Up to about 40 h quiet is normal for it.
