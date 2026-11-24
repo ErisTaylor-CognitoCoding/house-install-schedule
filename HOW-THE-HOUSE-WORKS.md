@@ -330,6 +330,8 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - **Daily-run checks (20 Nov 2026).**
   - HA `/api/history/period/<start>` returns only ONE day after `<start>` unless you pass `end_time`. Without it, a 9-day query looks like events stopped.
   - "Zigbee device not seen in 24h": `Garage Door` (04P) only checks in about every 36 h (13th 00:05 → 14th 12:03, 16th 00:02 → 17th 12:00). Up to about 40 h quiet is normal for it.
+  - Unavailable but not faults (24 Nov 2026): 23 `alexa_devices` switches (`*_announcements`, `*_communications`, some `*_do_not_disturb`) carry `restored: true` = orphans the integration no longer provides, unavailable since the 21 Nov HA start while the entry is `loaded`. Never delete them unattended. `light.bedroom_3_light` / `_night_light` are unavailable whenever `switch.bedroom_3_fan_module` is off (plain power, so the fan has no mains).
+  - Hall tablet `.122` pings but port 2323 refuses = Fully was killed (section 9). Short drops come back in a minute; one that lasts needs Fully opened by hand.
   - Ring motion pushes (`event.garden_motion`, `event.backdoor_motion`, `event.garage_motion`) stopped about 05:30 on 16 Nov 2026. Those cameras still record motion (`sensor.*_last_activity`, `category: motion`, several on 20 Nov), and the front doorbell still pushes motion and dings. Reloading the Ring entry (20 Nov 07:02) did not bring them back. No automation or script uses them (grep of `automations.yaml` / `scripts.yaml`). `switch.*_motion_detection` are unavailable (core#178622), so the motion setting can't be read from HA.
 - **Lounge TV.**
   - ON = stick HOME (`input keyevent 3`) over CEC. A bare WAKEUP leaves the screen dark.
