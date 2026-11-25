@@ -167,6 +167,28 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 
 ---
 
+### Cameras (Reolink, plan 25 Nov 2026 — this table is the plan; change it here first)
+
+**How it connects:** EE hub → cable → garage TP-Link switch port 5. Port 1 = Elysium (`eno1`, `.146`). Port 2 = **Home Hub Pro**. Battery cameras join the Pro's own Wi-Fi (`REOLINK-…-2.4G`). The E1 Pros join the house Wi-Fi `EE-MX82JZ` and the Reolink app adds them to the Pro over the house network (the first E1 Pro did exactly this on the old hub). Every camera's motion clips save to the Pro's hard drive. HA's Reolink integration logs into the Pro (`192.168.1.<tbd>`, `admin`, `reolink_hub_password`) and sees every camera through it. Away from home: phone → Tailscale → HA. No cloud: after setup + firmware, block internet for the Pro and the E1 Pros on the EE hub (Access control, not checked yet).
+
+| Where | Device | Power | Network | Clips go to | Needs | Replaces | Why |
+|---|---|---|---|---|---|---|---|
+| Garage, by Elysium | **Home Hub Pro** (hardware: read on arrival, limit depends on it) | Mains | Ethernet, switch port 2 | Its own HDD | Seagate SkyHawk 4TB ST4000VX015 (3.5", on Reolink's tested list) — bought | Old Home Hub (cleared, for sale) | One box for all 9 cameras and all clips; no microSD anywhere. |
+| Front Door | D340B battery doorbell, white (hw `DB_560MIXDB32M35DBB14MP` = factory-supported) | Battery | Pro Wi-Fi 2.4 GHz | Pro HDD | — (chime on the Pro: not checked) | Ring Doorbell 3 Plus | Battery doorbell can't stream 24/7; the Pro holds the clips. |
+| Backdoor | Argus Eco B330 + solar | Battery + solar | Pro Wi-Fi 2.4 GHz | Pro HDD | Firmware update before adding | Ring Backdoor | 2.4 GHz reaches further outside. |
+| Path | Argus Eco B330 + solar | Battery + solar | Pro Wi-Fi 2.4 GHz | Pro HDD | Firmware update before adding | Ring Path | Same. |
+| Drive | Argus Eco B330 + solar | Battery + solar | Pro Wi-Fi 2.4 GHz | Pro HDD | Firmware update before adding | — (new) | Same. |
+| Back Garden | Solar Floodlight Cam (any hw = factory-supported) | Battery + solar | Pro Wi-Fi 2.4 GHz | Pro HDD | — | Ring Garden | Same. |
+| Garage | E1 Pro | Plug | House Wi-Fi `EE-MX82JZ` | Pro HDD | Mains socket | Ring Stick Up Cam | Plug-in: on the house Wi-Fi like the rest of the house, recorded by the Pro. |
+| Summer House | E1 Pro | Plug | House Wi-Fi (Garage booster) | Pro HDD | Mains socket | Ring "Summer House" (`camera.office_live_view`) | Same. |
+| Kitchen | E1 Pro (pet cam) | Plug | House Wi-Fi | Pro HDD | Mains socket | — (new) | Same. |
+| Lounge | E1 Pro (pet cam) | Plug | House Wi-Fi | Pro HDD | Mains socket | Ring Lounge Pet Cam | Same. Not on `lounge-dash` (Zero's rule). |
+
+**Totals on the Home Hub Pro:** 9 cameras (5 battery, 4 plug-in) of 12 (Zero's £143 listing; Reolink's table: 12 total on hw `BASE_WENNT3NA512C`/`BASE_WUNNT3NA512C`, 24 on `BASE_WENNT3NA5`/`BASE_WUNNT3NA5`, plug-in max 12 on both). Room for 3 more.
+**Storage:** 1 HDD (the 4TB SkyHawk). microSD cards: 0.
+**Already set up:** one E1 Pro (hw `IPC_NT1NA45MP`, firmware up to date) on the house Wi-Fi at `.38`, reserved on the EE hub. It was on the old hub, which was reset, so it goes on the Pro when the Pro is in. Which room it goes in: not decided.
+**Not checked:** Wi-Fi signal at each outdoor spot; the Pro's chime for the doorbell.
+
 ## 3. Rules and decisions
 
 | Rule | Why | Decided |
