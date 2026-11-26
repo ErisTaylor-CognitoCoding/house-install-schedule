@@ -187,7 +187,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 
 **Totals on the Home Hub Pro:** 9 cameras (5 battery, 4 plug-in) of 12 (Zero's £143 listing; Reolink's table: 12 total on hw `BASE_WENNT3NA512C`/`BASE_WUNNT3NA512C`, 24 on `BASE_WENNT3NA5`/`BASE_WUNNT3NA5`, plug-in max 12 on both). Room for 3 more.
 **Storage:** 1 HDD (the 4TB SkyHawk). microSD cards: 0.
-**Already set up:** one E1 Pro (hw `IPC_NT1NA45MP`, firmware up to date) on the house Wi-Fi at `.38`, reserved on the EE hub. It was on the old hub, which was reset, so it goes on the Pro when the Pro is in. Which room it goes in: not decided.
+**Already set up:** one E1 Pro (hw `IPC_NT1NA45MP`, firmware up to date) on the house Wi-Fi at `.38`, reserved on the EE hub. It was on the old hub, which was reset, so it goes on the Pro when the Pro is in. Zero named it "Garage" (EE hub Address table, 26 Nov 2026): it is the Garage E1 Pro. Backdoor B330 set up in the Reolink app by Zero 26 Nov 2026 (charging); asleep, so not on the EE hub's connected list and no port 9000 answer: normal for a battery camera.
 **Not checked:** Wi-Fi signal at each outdoor spot; the Pro's chime for the doorbell.
 
 ## 3. Rules and decisions
