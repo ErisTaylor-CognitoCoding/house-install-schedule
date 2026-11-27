@@ -182,7 +182,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Back Garden | Solar Floodlight Cam (hw BIPC_NT17BNO24MPW5F10V1), `.58` | Battery + built-in solar + a second solar panel (Zero, 27 Nov 2026) | House Wi-Fi | Elysium 4TB | Neolink (proven 27 Nov 2026; Zero saw it go live on his phone) | Ring Garden | Same route. |
 | Garage | E1 Pro (hw IPC_NT1NA45MP), `.38` | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | Ring Stick Up Cam | Plug-in: can stream all day. |
 | Summer House | E1 Pro (same hw), `.49` | Plug | House Wi-Fi (Garage booster) | Elysium 4TB | RTSP switched on | Ring "Summer House" (`camera.office_live_view`) | Same. |
-| Kitchen | E1 Pro (pet cam) | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | — (new) | Same. |
+| Kitchen | E1 Pro (pet cam) | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | — (new) | Same. **Off while Zero is home** (Zero, 27 Nov 2026), same as the Lounge one: a blank Kitchen camera card while he is in is normal, not a fault. |
 | Lounge | E1 Pro (pet cam) | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | Ring Lounge Pet Cam | Same. Not on `lounge-dash` (Zero's rule). **Off while Zero is home** (Zero, 27 Nov 2026), same as the Ring pet cam it replaces: a blank Lounge Pet Cam card while he is in is normal, not a fault. |
 
 **Totals:** 9 cameras (5 battery, 4 plug-in), all recorded by Elysium. Storage: 1 HDD (the 4TB SkyHawk, in Elysium). microSD cards: 0. Hubs: 0.
