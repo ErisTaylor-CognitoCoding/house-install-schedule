@@ -179,7 +179,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Backdoor | Argus B330 + solar (hw BIPC_NT1BNO25MPW5C13V2), `.192` | Battery + solar | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | Ring Backdoor | Neolink proven on the same hardware. |
 | Side Path | Argus B330 + solar (same hw), `.42` | Battery + solar | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | Ring Path | Proven: 15 s recorded on Elysium. |
 | Drive | Argus B330 + solar (same hw), `.196` | Battery + solar | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | — (new) | Same hardware. |
-| Back Garden | Solar Floodlight Cam (hw BIPC_NT17BNO24MPW5F10V1), `.58` | Battery + solar | House Wi-Fi | Elysium 4TB | Neolink (proven 27 Nov 2026) | Ring Garden | Same route. |
+| Back Garden | Solar Floodlight Cam (hw BIPC_NT17BNO24MPW5F10V1), `.58` | Battery + built-in solar + a second solar panel (Zero, 27 Nov 2026) | House Wi-Fi | Elysium 4TB | Neolink (proven 27 Nov 2026; Zero saw it go live on his phone) | Ring Garden | Same route. |
 | Garage | E1 Pro (hw IPC_NT1NA45MP), `.38` | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | Ring Stick Up Cam | Plug-in: can stream all day. |
 | Summer House | E1 Pro (same hw), `.49` | Plug | House Wi-Fi (Garage booster) | Elysium 4TB | RTSP switched on | Ring "Summer House" (`camera.office_live_view`) | Same. |
 | Kitchen | E1 Pro (pet cam) | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | — (new) | Same. |
