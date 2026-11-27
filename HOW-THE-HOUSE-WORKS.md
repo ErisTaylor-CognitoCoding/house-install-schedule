@@ -176,8 +176,8 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 |---|---|---|---|---|---|---|---|
 | Garage | Elysium + Seagate SkyHawk 4TB ST4000VX015 | Mains | Ethernet, switch port 1 | The 4TB disk | SATA data + power cable inside Elysium (not checked) | Home Hub + Home Hub Pro (both returned) | Free software instead of a hub; the B330s don't work with either hub. |
 | Front Door | D340B battery doorbell, white (hw `DB_560MIXDB32M35DBB14MP`) | Battery | House Wi-Fi | Elysium 4TB | Chime without a hub: not checked. Neolink on it: not tested | Ring Doorbell 3 Plus | Same route as the B330s. |
-| Backdoor | Argus B330 + solar (hw BIPC_NT1BNO25MPW5C13V2), `.192` | Battery only for now: no panel attached (Zero, 27 Nov 2026), waiting for a Ring-to-USB-C adapter to use a Ring solar panel. 70 % on 27 Nov 2026 | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | Ring Backdoor | Neolink proven on the same hardware. |
-| Side Path | Argus B330 + solar (same hw), `.42` | Battery + solar | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | Ring Path | Proven: 15 s recorded on Elysium. |
+| Backdoor | Argus B330 + solar (hw BIPC_NT1BNO25MPW5C13V2), `.192` | Battery + the larger Ring solar panel through a Ring-to-USB-C adapter (Zero, 27 Nov 2026; 70 % when it went on) | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | Ring Backdoor | Neolink proven on the same hardware. |
+| Side Path | Argus B330 + solar (same hw), `.42` | Battery + the larger Ring solar panel through a Ring-to-USB-C adapter (Zero, 27 Nov 2026) | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | Ring Path | Proven: 15 s recorded on Elysium. |
 | Drive | Argus B330 + solar (same hw), `.196` | Battery + solar | House Wi-Fi 5 GHz | Elysium 4TB | Neolink | — (new) | Same hardware. |
 | Back Garden | Solar Floodlight Cam (hw BIPC_NT17BNO24MPW5F10V1), `.58` | Battery + built-in solar + a second solar panel (Zero, 27 Nov 2026) | House Wi-Fi | Elysium 4TB | Neolink (proven 27 Nov 2026; Zero saw it go live on his phone) | Ring Garden | Same route. |
 | Garage | E1 Pro (hw IPC_NT1NA45MP), `.38` | Plug | House Wi-Fi | Elysium 4TB | RTSP switched on | Ring Stick Up Cam | Plug-in: can stream all day. |
