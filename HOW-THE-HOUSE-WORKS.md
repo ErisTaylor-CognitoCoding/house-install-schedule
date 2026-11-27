@@ -208,6 +208,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | It is a lived-in house: no "while the floors are up", no first-fix cable runs. Prefer wireless or plug-in. | No floors are up. Zero has corrected this more than once. | 9 Oct 2026 |
 | Say "the house" / home. Never "the new house" or "after the move". | He lives there. | 7 Oct 2026 |
 | Summer house stays a summer house: plug-in heater, battery lights, no fan, no module. | Zero's call. | 27 Oct 2026 |
+| Summer House heater (Devola Intelligent, `.123`, id `bf21f1d94da3285920w4oc`) runs on **tuya_local** (27 Nov 2026, Zero): profile `devola_intelligent_heater`, protocol 3.5, `climate.summer_house_heater` (read: heat, 6 °C, target 5, preset `af` = anti-frost). Cloud device disabled; nothing referenced the old `climate.devola_intelligent_heater_2`. | Same recipe as the litter box (section on Tuya). | 27 Nov 2026 |
 | There is no Office room. The office is Zero's desk in the Lounge. HA keeps an "Office" area on the Downstairs floor for `office-dash` and the Office tablet. | Zero's call. | 29 Oct 2026 |
 | No Hue anywhere. No `emulated_hue`. | Zero rejects anything Hue-named. Alexa reaches Tuya through the Tuya app's Alexa skill. | 8 Oct and 25 Oct 2026 |
 | Garage up-and-over uses a contact sensor, not a tilt sensor. Gate and up-and-over use the older 04P, not the PR2. | Tilt reports seconds late. The PR2 misses the first action after hours idle. | Install page |
@@ -413,7 +414,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Plumber to fit TRV valve bodies. Bedroom 2 valve skipped (bed). 6th head not found. | 3 Nov 2026 |
 | Friday 27 Nov 2026: new boiler fitted, and the plumber looks at the Bedroom 3 radiator (no flow). After: check the thermostat fires the new boiler and Bedroom 3 warms, then log the boiler model. | 24 Nov 2026 |
 | Garage CHANFOK fan into the Tuya app (pairing failed 29 Oct). Garage module mode Edge vs the Detach rule — Zero to decide. | 4 Nov 2026 |
-| `climate.garage_heater` unavailable; no dew-point automation. | 4 Nov 2026 |
+| `climate.garage_heater` unavailable; no dew-point automation. 27 Nov 2026: the Garage heater (id `bfcd9b736d1ef2e38fhubi`, Devola Intelligent, same product as the Summer House one) is offline in the Tuya cloud and not answering on the LAN; the `.119` HA discovered for it now belongs to a Ring camera (MAC `9c:76:13:11:2d:f0`). Its tuya_local move waits until it is back on the Wi-Fi: protocol 3.5 and profile `devola_intelligent_heater`, as on the Summer House one. | 4 Nov 2026 |
 | Broadband: router goes in the Lounge. Then re-check `ping -c 30 192.168.1.213` and re-make the reservations. Elysium onto its wired point. | 3 Nov 2026 |
 | Ring app installed only on the Office tablet; install `com.ringapp.fire` on the others. | 4 Nov 2026 |
 | Office tablet still low while "plugged in" (11 % at 17:34). | 4 Nov 2026 |
