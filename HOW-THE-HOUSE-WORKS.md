@@ -138,7 +138,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | Why | One module per light, so the house can switch the bottom one alone (the doorbell-after-dark automation). No Hue anywhere since 8 Oct 2026. |
 | Sensors | Front Door (04PR2), Hall Temperature (02B). Hall and landing presence still to place. |
 | Safety | Ei3016 smoke alarms in the hall and on the landing. Ei3018 CO alarm downstairs by the boiler. All on radio interlink. Ei428 relay → `Smoke Alarm Relay` ZBMINI (detach on, reports only), area Hall. |
-| Heat | Hall Radiator valve in **auto**, running the same program as the Optimum wall thermostat every day (16 Nov 2026): 05:15 19.5 °C, 09:30 18, 16:30 19, 22:30 14. Change both together. Drops to 5 °C while the front door is open. Cold radiator while its smart valve shows 100 % open and calling = lockshield (capped valve, other end) closed: open it anticlockwise fully. The hall one was seized shut until 16 Nov 2026. |
+| Heat | Hall Radiator runs the same program as the Optimum wall thermostat every day: 05:15 19.5 °C, 09:30 18, 16:30 19, 22:30 14, from HA automation `hall_radiator_schedule` (27 Nov 2026). The valve was never really in auto (it sat in `heat` at 19–19.5 all day), so its own weekly schedule never ran. Change the wall thermostat, the automation and the tablet Schedule card together. Drops to 5 °C while the front door is open. Cold radiator while its smart valve shows 100 % open and calling = lockshield (capped valve, other end) closed: open it anticlockwise fully. The hall one was seized shut until 16 Nov 2026. |
 | Tablet | `.122` → `hall-dash`. Fully Plus licensed 3 Nov 2026. Locked upside-down (power lead at the bottom, Zero's choice, 4 Nov 2026): `forceScreenOrientation=3` (Reverse Portrait, value read off Fully's own settings page) + `forceScreenOrientationGlobal=true` so the Ring app follows. |
 
 ### Garage
@@ -250,6 +250,8 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 | `lounge_radiator_daytime` / `lounge_radiator_night` | 10:00 → 18 °C, 22:00 → 16 °C. | Zero's schedule. |
 | `master_bedroom_radiator_schedule` | 06:00 → 20 °C, 09:00 → 14 °C. | He sleeps cold. |
 | `kitchen_radiator_schedule` | 06:00 → 17 °C, 22:00 → 14 °C. | Zero's schedule. |
+| `hall_radiator_schedule` | 05:15 → 19.5, 09:30 → 18, 16:30 → 19, 22:30 → 14 °C. Front door open → only `input_number.hall_radiator_saved_setpoint` changes; the front-door rule puts it back. | Same program as the Optimum wall thermostat (27 Nov 2026). |
+| Valves' own weekly schedules (`text.*_radiator_weekly_schedule_*`) | Ignored: every valve is in `heat`, not `auto`. Kitchen/Lounge/Bedroom/Bedroom 3 still hold factory times. | The HA automations above are the schedules. |
 | `ring_push_watchdog` | Log "Shutting down push receiver" → reload the Ring entry after 2 min. | firebase_messaging gives up after 3 network errors. Needs `system_log: fire_event: true`, which is in config and loaded since HA started 16:22 on 4 Nov 2026. Not triggered yet. |
 
 **Blueprints** in `config/blueprints/automation/zero/`:
@@ -296,6 +298,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - `office-dash`: title "Office", lounge light + fan, diary, front/back/garden cameras, lounge temp/humidity/presence, thermostat. **Never the TV or PS5.**
 - `bedroom-2-dash` / `bedroom-3-dash`: **deleted 4 Nov 2026 (Zero: "scrap them").** No tablet pointed at them. Backups of the storage files are in `~/lovelace.bedroom_[23]_dash.bak-20261104`. Do not recreate them.
 - `summer-house-dash` (9 Nov 2026): Front door (doorbell camera → Ring app, front door contact, last ring), Summer house (temperature, humidity, door. **No summer house camera** (Zero: not needed when he is in there, 9 Nov 2026), hourly weather. Smoke banner in the header. Built so Zero can watch the front door from the summer house.
+- **Heating → Schedule card (27 Nov 2026, Zero):** under the thermostat on `hall-dash`, `kitchen-dash`, `lounge-dash`, `office-dash` (Lounge) and `bedroom-dash`: a markdown card with that room's times and °C, the current slot in bold with "◀ now". The times are written in the card: when a schedule automation changes, change its card too (script pattern: lovelace/config → insert after the thermostat → lovelace/config/save).
 - `hall-dash`: doorbell camera, front door contact, doorbell battery, Hall + Top of Stairs lights, hall thermostat, "Before you go" (back door, back gate, garage door, garage back door, summer house, Sox, Marshmellow), hourly weather.
 - `kitchen-dash`: family calendar, weather, date/time, shopping list, Kitchen 1/2, radiator, Front Door camera, Cats badge → `/kitchen-dash/cats` (map + per-cat tiles + "Kitchen flap last used"). Install and Half Term badges were removed 3 Nov 2026.
 - Main views show the house door `camera.front_door_live_view_2`. The 28 door stays in each `cameras-28` subview.
