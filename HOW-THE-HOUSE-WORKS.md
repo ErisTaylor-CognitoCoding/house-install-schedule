@@ -164,7 +164,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
 - Back Gate 04P in a weatherproof case. It reaches the network via the Garage module. Check the seal when the battery is changed.
 - Ring at the house: Front Door doorbell (`_2` entities, Doorbell 3 Plus), Backdoor, Path, Garden, Lounge Pet Cam, and `camera.office_live_view` (named "Summer House Live view"). That last one IS the summer house camera: its snapshot shows the summer house inside (9 Nov 2026).
 - 20 Nov 2026 (Zero): new battery in the Backdoor camera, and solar panels fitted to Backdoor and Path. `sensor.backdoor_battery` went 20 → 94 % (09:30), Path read 68 %. HA's Ring integration has no solar or charging entity, so watch charging through the battery %.
-- 28 Courageous (old house): 28 Front Door (`camera.front_door_live_view`, no `_2`), 28 Spotlight, Marshmallow cam.
+- 28 Courageous (old house): **retired 28 Nov 2026 (Zero: "just Marshmellow collar")**. Ring devices 28 Front Door (`camera.front_door_live_view`, no `_2`), 28 Spotlight and 28 Marshmallow are disabled in HA (disable, never delete: Ring re-adds deleted ones). The "28 Courageous" badge and `cameras-28` page are off all five dashboards; automation `front_door_motion_show_cameras` deleted. Only Marshmellow's Tractive collar (`device_tracker.marshmellow`, `sensor.marshmellow_tracker_battery`) stays. The house doorbell keeps `_2` ids. Pantheon task #1859 closed.
 
 ---
 
@@ -358,7 +358,7 @@ HA area names: Living Room (alias Lounge), Kitchen, Master Bedroom, Bedroom 2 (S
   - If dings stop but `last_activity` still updates, the push listener is dead. `custom_components/fcm_padding_fix` patches firebase-messaging 0.4.5 padding; remove it when upstream ships #37/#43. A dead listener after network blips is fixed by reloading the Ring entry (`ring_push_watchdog`).
   - Ring motion switches died on upstream bug core#178622 (3 Sep 2026). Unverified whether that bug is still present.
   - The doorbell drops off Wi-Fi when its battery is low.
-  - `ha-health.sh` line "28 Marshmallow Battery" is the Ring **camera** at 28 Courageous, not Marshmellow's Tractive tracker (that one is `sensor.marshmellow_tracker_battery`, 95 % on 17 Nov 2026).
+  - (Gone since 28 Nov 2026: that camera is disabled.) `ha-health.sh` line "28 Marshmallow Battery" was the Ring **camera** at 28 Courageous, not Marshmellow's Tractive tracker (that one is `sensor.marshmellow_tracker_battery`, 95 % on 17 Nov 2026).
 - Daily-run noise, not faults (16 Nov 2026): hundreds of `firebase_messaging ... Unexpected exception during read` a day while `event.*_motion` entities still update (push alive), and `Invalid value for number.*_radiator_timer_mode_target_temp: 0` from the TRVZBs. Since the 5129 valve firmware (first seen 22 Nov 2026 07:38) the TRVZBs also log `Invalid value for number.*_radiator_frost_protection_temperature: 0`, about 12 a day each; the HA entity keeps its real value (hall read 7 °C on 23 Nov), so it is noise too. Only act on Ring if motion/ding events stop.
 - **Daily-run checks (20 Nov 2026).**
   - HA `/api/history/period/<start>` returns only ONE day after `<start>` unless you pass `end_time`. Without it, a 9-day query looks like events stopped.
